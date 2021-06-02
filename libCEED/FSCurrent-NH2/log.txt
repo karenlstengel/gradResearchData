@@ -1,0 +1,977 @@
+
+-- Elasticity Example - libCEED + PETSc --
+  libCEED:
+    libCEED Backend                    : /cpu/self/opt/blocked
+    libCEED Backend MemType            : host
+  PETSc:
+    PETSc Vec Type                     : seq
+  Problem:
+    Problem Name                       : Hyperelasticity finite strain Current config Neo-Hookean w/ dXref_dxcurr, tau, constant storage
+    Forcing Function                   : None
+  Mesh:
+    File                               : Box Mesh
+    Number of 1D Basis Nodes (p)       : 4
+    Number of 1D Quadrature Points (q) : 4
+    Global nodes                       : 1331
+    Owned nodes                        : 1331
+    DoF per node                       : 3
+  Multigrid:
+    Type                               : P-multigrid, logarithmic coarsening
+    Number of Levels                   : 3
+    Level 0 (coarse):
+      Number of 1D Basis Nodes (p)     : 2
+      Global Nodes                     : 27
+      Owned Nodes                      : 27
+    Level 2 (fine):
+      Number of 1D Basis Nodes (p)     : 4
+      Global Nodes                     : 1331
+      Owned Nodes                      : 1331
+0 Load Increment
+  0 SNES Function norm 5.106361423070e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000110416, 0.00884348]
+      Line search terminated: lambda = 1.01264, fnorms = 0.00997606
+  1 SNES Function norm 9.976061660998e-03 
+      Line search: lambdas = [1., 0.], ftys = [8.90349e-06, 0.00020141]
+      Line search terminated: lambda = 1.04625, fnorms = 0.000231744
+  2 SNES Function norm 2.317441497245e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.00142e-10, 1.18556e-07]
+      Line search terminated: lambda = 1.00085, fnorms = 2.42479e-07
+  3 SNES Function norm 2.424788717330e-07 
+      Line search: lambdas = [1., 0.], ftys = [9.99204e-20, 1.21444e-13]
+      Line search terminated: lambda = 1., fnorms = 1.10461e-13
+  4 SNES Function norm 1.104608717747e-13 
+1 Load Increment
+  0 SNES Function norm 5.107489572761e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000110705, 0.0088432]
+      Line search terminated: lambda = 1.01268, fnorms = 0.00997955
+  1 SNES Function norm 9.979553565504e-03 
+      Line search: lambdas = [1., 0.], ftys = [8.91482e-06, 0.00020142]
+      Line search terminated: lambda = 1.04631, fnorms = 0.000232534
+  2 SNES Function norm 2.325337255723e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.01235e-10, 1.19153e-07]
+      Line search terminated: lambda = 1.00085, fnorms = 2.44137e-07
+  3 SNES Function norm 2.441367487660e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.02035e-19, 1.23046e-13]
+      Line search terminated: lambda = 1., fnorms = 1.1192e-13
+  4 SNES Function norm 1.119197313152e-13 
+2 Load Increment
+  0 SNES Function norm 5.109179306404e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.00011094, 0.00884268]
+      Line search terminated: lambda = 1.01271, fnorms = 0.0099847
+  1 SNES Function norm 9.984697264099e-03 
+      Line search: lambdas = [1., 0.], ftys = [8.92646e-06, 0.000201404]
+      Line search terminated: lambda = 1.04638, fnorms = 0.000233446
+  2 SNES Function norm 2.334456636292e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.02501e-10, 1.19818e-07]
+      Line search terminated: lambda = 1.00086, fnorms = 2.46105e-07
+  3 SNES Function norm 2.461050907029e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.04508e-19, 1.24909e-13]
+      Line search terminated: lambda = 1., fnorms = 1.1363e-13
+  4 SNES Function norm 1.136298707021e-13 
+3 Load Increment
+  0 SNES Function norm 5.111426783156e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000111119, 0.00884194]
+      Line search terminated: lambda = 1.01273, fnorms = 0.00999147
+  1 SNES Function norm 9.991474807901e-03 
+      Line search: lambdas = [1., 0.], ftys = [8.93837e-06, 0.000201362]
+      Line search terminated: lambda = 1.04645, fnorms = 0.00023448
+  2 SNES Function norm 2.344799862203e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.03943e-10, 1.20549e-07]
+      Line search terminated: lambda = 1.00086, fnorms = 2.48388e-07
+  3 SNES Function norm 2.483884630048e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.07354e-19, 1.27043e-13]
+      Line search terminated: lambda = 1., fnorms = 1.15608e-13
+  4 SNES Function norm 1.156076501082e-13 
+4 Load Increment
+  0 SNES Function norm 5.114227416327e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000111243, 0.00884097]
+      Line search terminated: lambda = 1.01274, fnorms = 0.00999987
+  1 SNES Function norm 9.999866192607e-03 
+      Line search: lambdas = [1., 0.], ftys = [8.95053e-06, 0.000201294]
+      Line search terminated: lambda = 1.04653, fnorms = 0.000235637
+  2 SNES Function norm 2.356367176931e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.05564e-10, 1.21347e-07]
+      Line search terminated: lambda = 1.00087, fnorms = 2.50993e-07
+  3 SNES Function norm 2.509933120917e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.10615e-19, 1.29458e-13]
+      Line search terminated: lambda = 1., fnorms = 1.17925e-13
+  4 SNES Function norm 1.179248644620e-13 
+5 Load Increment
+  0 SNES Function norm 5.117575880702e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.00011131, 0.00883976]
+      Line search terminated: lambda = 1.01275, fnorms = 0.0100098
+  1 SNES Function norm 1.000984943085e-02 
+      Line search: lambdas = [1., 0.], ftys = [8.96288e-06, 0.000201199]
+      Line search terminated: lambda = 1.04662, fnorms = 0.000236916
+  2 SNES Function norm 2.369158542062e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.07369e-10, 1.22212e-07]
+      Line search terminated: lambda = 1.00088, fnorms = 2.53928e-07
+  3 SNES Function norm 2.539280240033e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.14339e-19, 1.32171e-13]
+      Line search terminated: lambda = 1., fnorms = 1.2058e-13
+  4 SNES Function norm 1.205803309982e-13 
+6 Load Increment
+  0 SNES Function norm 5.121466131417e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000111319, 0.00883834]
+      Line search terminated: lambda = 1.01276, fnorms = 0.0100214
+  1 SNES Function norm 1.002140059014e-02 
+      Line search: lambdas = [1., 0.], ftys = [8.97538e-06, 0.000201078]
+      Line search terminated: lambda = 1.04672, fnorms = 0.000238317
+  2 SNES Function norm 2.383173311846e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.09364e-10, 1.23144e-07]
+      Line search terminated: lambda = 1.00089, fnorms = 2.57203e-07
+  3 SNES Function norm 2.572029894164e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.18556e-19, 1.35197e-13]
+      Line search terminated: lambda = 1., fnorms = 1.23722e-13
+  4 SNES Function norm 1.237218330775e-13 
+7 Load Increment
+  0 SNES Function norm 5.125891421016e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000111271, 0.00883668]
+      Line search terminated: lambda = 1.01275, fnorms = 0.0100345
+  1 SNES Function norm 1.003449384869e-02 
+      Line search: lambdas = [1., 0.], ftys = [8.98799e-06, 0.00020093]
+      Line search terminated: lambda = 1.04683, fnorms = 0.000239841
+  2 SNES Function norm 2.398409901292e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.11555e-10, 1.24141e-07]
+      Line search terminated: lambda = 1.0009, fnorms = 2.60831e-07
+  3 SNES Function norm 2.608306742573e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.23372e-19, 1.38558e-13]
+      Line search terminated: lambda = 1., fnorms = 1.27523e-13
+  4 SNES Function norm 1.275233533531e-13 
+8 Load Increment
+  0 SNES Function norm 5.130844321025e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000111164, 0.0088348]
+      Line search terminated: lambda = 1.01274, fnorms = 0.0100491
+  1 SNES Function norm 1.004910156400e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.00066e-06, 0.000200755]
+      Line search terminated: lambda = 1.04694, fnorms = 0.000241487
+  2 SNES Function norm 2.414865466529e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.13948e-10, 1.25203e-07]
+      Line search terminated: lambda = 1.00091, fnorms = 2.64826e-07
+  3 SNES Function norm 2.648256935953e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.2887e-19, 1.42276e-13]
+      Line search terminated: lambda = 1., fnorms = 1.32064e-13
+  4 SNES Function norm 1.320639095119e-13 
+9 Load Increment
+  0 SNES Function norm 5.136316746469e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000110999, 0.0088327]
+      Line search terminated: lambda = 1.01273, fnorms = 0.0100652
+  1 SNES Function norm 1.006519435106e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.01333e-06, 0.000200554]
+      Line search terminated: lambda = 1.04706, fnorms = 0.000243254
+  2 SNES Function norm 2.432535603097e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.16552e-10, 1.2633e-07]
+      Line search terminated: lambda = 1.00092, fnorms = 2.69205e-07
+  3 SNES Function norm 2.692048801586e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.3508e-19, 1.46379e-13]
+      Line search terminated: lambda = 1., fnorms = 1.37525e-13
+  4 SNES Function norm 1.375252836317e-13 
+10 Load Increment
+  0 SNES Function norm 5.142299982558e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000110776, 0.00883037]
+      Line search terminated: lambda = 1.0127, fnorms = 0.0100827
+  1 SNES Function norm 1.008274115519e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.02596e-06, 0.000200326]
+      Line search terminated: lambda = 1.04718, fnorms = 0.000245141
+  2 SNES Function norm 2.451414065355e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.19373e-10, 1.27522e-07]
+      Line search terminated: lambda = 1.00094, fnorms = 2.73987e-07
+  3 SNES Function norm 2.739873387901e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.42253e-19, 1.50899e-13]
+      Line search terminated: lambda = 1., fnorms = 1.44231e-13
+  4 SNES Function norm 1.442313865920e-13 
+11 Load Increment
+  0 SNES Function norm 5.148784715749e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000110494, 0.00882781]
+      Line search terminated: lambda = 1.01268, fnorms = 0.0101017
+  1 SNES Function norm 1.010170936338e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.03849e-06, 0.000200071]
+      Line search terminated: lambda = 1.04731, fnorms = 0.000247149
+  2 SNES Function norm 2.471492535498e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.2242e-10, 1.28776e-07]
+      Line search terminated: lambda = 1.00095, fnorms = 2.79194e-07
+  3 SNES Function norm 2.791944809932e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.50481e-19, 1.55872e-13]
+      Line search terminated: lambda = 1., fnorms = 1.5235e-13
+  4 SNES Function norm 1.523499792127e-13 
+12 Load Increment
+  0 SNES Function norm 5.155761065281e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000110154, 0.00882504]
+      Line search terminated: lambda = 1.01264, fnorms = 0.0101221
+  1 SNES Function norm 1.012206489722e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.05085e-06, 0.00019979]
+      Line search terminated: lambda = 1.04745, fnorms = 0.000249276
+  2 SNES Function norm 2.492760419618e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.25704e-10, 1.30091e-07]
+      Line search terminated: lambda = 1.00097, fnorms = 2.8485e-07
+  3 SNES Function norm 2.848500220816e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.59907e-19, 1.61336e-13]
+      Line search terminated: lambda = 1., fnorms = 1.62313e-13
+  4 SNES Function norm 1.623129135048e-13 
+13 Load Increment
+  0 SNES Function norm 5.163218618770e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000109756, 0.00882204]
+      Line search terminated: lambda = 1.0126, fnorms = 0.0101438
+  1 SNES Function norm 1.014377233074e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.063e-06, 0.000199483]
+      Line search terminated: lambda = 1.04759, fnorms = 0.00025152
+  2 SNES Function norm 2.515204701303e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.29234e-10, 1.31468e-07]
+      Line search terminated: lambda = 1.00098, fnorms = 2.9098e-07
+  3 SNES Function norm 2.909799316137e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.70818e-19, 1.67337e-13]
+      Line search terminated: lambda = 1., fnorms = 1.74256e-13
+  4 SNES Function norm 1.742555284545e-13 
+14 Load Increment
+  0 SNES Function norm 5.171146466435e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.0001093, 0.00881883]
+      Line search terminated: lambda = 1.01255, fnorms = 0.0101668
+  1 SNES Function norm 1.016679501326e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.07488e-06, 0.000199149]
+      Line search terminated: lambda = 1.04774, fnorms = 0.000253881
+  2 SNES Function norm 2.538809838075e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.33021e-10, 1.32903e-07]
+      Line search terminated: lambda = 1.001, fnorms = 2.97612e-07
+  3 SNES Function norm 2.976123225400e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.83505e-19, 1.73926e-13]
+      Line search terminated: lambda = 1., fnorms = 1.88688e-13
+  4 SNES Function norm 1.886877163333e-13 
+15 Load Increment
+  0 SNES Function norm 5.179533248788e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000108786, 0.0088154]
+      Line search terminated: lambda = 1.01249, fnorms = 0.0101911
+  1 SNES Function norm 1.019109518018e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.08642e-06, 0.000198789]
+      Line search terminated: lambda = 1.0479, fnorms = 0.000256356
+  2 SNES Function norm 2.563557696325e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.37076e-10, 1.34396e-07]
+      Line search terminated: lambda = 1.00102, fnorms = 3.04777e-07
+  3 SNES Function norm 3.047772639178e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.98195e-19, 1.81157e-13]
+      Line search terminated: lambda = 1., fnorms = 2.0562e-13
+  4 SNES Function norm 2.056202818037e-13 
+16 Load Increment
+  0 SNES Function norm 5.188367184576e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000108216, 0.00881176]
+      Line search terminated: lambda = 1.01243, fnorms = 0.0102166
+  1 SNES Function norm 1.021663414104e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.09757e-06, 0.000198404]
+      Line search terminated: lambda = 1.04806, fnorms = 0.000258943
+  2 SNES Function norm 2.589427579679e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.41411e-10, 1.35943e-07]
+      Line search terminated: lambda = 1.00104, fnorms = 3.12507e-07
+  3 SNES Function norm 3.125065158329e-07 
+      Line search: lambdas = [1., 0.], ftys = [2.15323e-19, 1.89093e-13]
+      Line search terminated: lambda = 1., fnorms = 2.25605e-13
+  4 SNES Function norm 2.256051449121e-13 
+17 Load Increment
+  0 SNES Function norm 5.197636123348e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.00010759, 0.0088079]
+      Line search terminated: lambda = 1.01237, fnorms = 0.0102434
+  1 SNES Function norm 1.024337236818e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.10826e-06, 0.000197993]
+      Line search terminated: lambda = 1.04822, fnorms = 0.00026164
+  2 SNES Function norm 2.616396236252e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.46038e-10, 1.37544e-07]
+      Line search terminated: lambda = 1.00106, fnorms = 3.20833e-07
+  3 SNES Function norm 3.208331600142e-07 
+      Line search: lambdas = [1., 0.], ftys = [2.35293e-19, 1.97798e-13]
+      Line search terminated: lambda = 1., fnorms = 2.49088e-13
+  4 SNES Function norm 2.490880364814e-13 
+18 Load Increment
+  0 SNES Function norm 5.207327583165e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000106908, 0.00880383]
+      Line search terminated: lambda = 1.01229, fnorms = 0.0102713
+  1 SNES Function norm 1.027126969241e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.11845e-06, 0.000197557]
+      Line search terminated: lambda = 1.04839, fnorms = 0.000264444
+  2 SNES Function norm 2.644437960941e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.50971e-10, 1.39196e-07]
+      Line search terminated: lambda = 1.00109, fnorms = 3.29791e-07
+  3 SNES Function norm 3.297911408389e-07 
+      Line search: lambdas = [1., 0.], ftys = [2.58604e-19, 2.07346e-13]
+      Line search terminated: lambda = 1., fnorms = 2.75834e-13
+  4 SNES Function norm 2.758336137224e-13 
+19 Load Increment
+  0 SNES Function norm 5.217428797829e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000106172, 0.00879955]
+      Line search terminated: lambda = 1.01221, fnorms = 0.0103003
+  1 SNES Function norm 1.030028544136e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.12807e-06, 0.000197097]
+      Line search terminated: lambda = 1.04856, fnorms = 0.000267352
+  2 SNES Function norm 2.673524707935e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.56223e-10, 1.40896e-07]
+      Line search terminated: lambda = 1.00111, fnorms = 3.39415e-07
+  3 SNES Function norm 3.394147059778e-07 
+      Line search: lambdas = [1., 0.], ftys = [2.85841e-19, 2.17815e-13]
+      Line search terminated: lambda = 1., fnorms = 3.06347e-13
+  4 SNES Function norm 3.063473646981e-13 
+20 Load Increment
+  0 SNES Function norm 5.227926756479e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000105382, 0.00879507]
+      Line search terminated: lambda = 1.01213, fnorms = 0.0103304
+  1 SNES Function norm 1.033037859311e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.13707e-06, 0.000196612]
+      Line search terminated: lambda = 1.04874, fnorms = 0.000270363
+  2 SNES Function norm 2.703626217642e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.61808e-10, 1.42642e-07]
+      Line search terminated: lambda = 1.00114, fnorms = 3.49738e-07
+  3 SNES Function norm 3.497377539062e-07 
+      Line search: lambdas = [1., 0.], ftys = [3.1763e-19, 2.29286e-13]
+      Line search terminated: lambda = 1., fnorms = 3.4081e-13
+  4 SNES Function norm 3.408100626422e-13 
+21 Load Increment
+  0 SNES Function norm 5.238808255529e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000104539, 0.00879038]
+      Line search terminated: lambda = 1.01204, fnorms = 0.0103615
+  1 SNES Function norm 1.036150795782e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.14539e-06, 0.000196104]
+      Line search terminated: lambda = 1.04892, fnorms = 0.000273471
+  2 SNES Function norm 2.734710217621e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.67739e-10, 1.44431e-07]
+      Line search terminated: lambda = 1.00116, fnorms = 3.60793e-07
+  3 SNES Function norm 3.607931161434e-07 
+      Line search: lambdas = [1., 0.], ftys = [3.54611e-19, 2.41846e-13]
+      Line search terminated: lambda = 1., fnorms = 3.7912e-13
+  4 SNES Function norm 3.791203430297e-13 
+22 Load Increment
+  0 SNES Function norm 5.250059939267e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000103644, 0.00878549]
+      Line search terminated: lambda = 1.01194, fnorms = 0.0103936
+  1 SNES Function norm 1.039363232166e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.153e-06, 0.000195572]
+      Line search terminated: lambda = 1.0491, fnorms = 0.000276674
+  2 SNES Function norm 2.766742578292e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.74032e-10, 1.46259e-07]
+      Line search terminated: lambda = 1.00119, fnorms = 3.72612e-07
+  3 SNES Function norm 3.726117679694e-07 
+      Line search: lambdas = [1., 0.], ftys = [3.97623e-19, 2.55587e-13]
+      Line search terminated: lambda = 1., fnorms = 4.21762e-13
+  4 SNES Function norm 4.217617469447e-13 
+23 Load Increment
+  0 SNES Function norm 5.261668340474e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000102697, 0.0087804]
+      Line search terminated: lambda = 1.01183, fnorms = 0.0104267
+  1 SNES Function norm 1.042671056908e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.15983e-06, 0.000195018]
+      Line search terminated: lambda = 1.04928, fnorms = 0.000279969
+  2 SNES Function norm 2.799687479376e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.80701e-10, 1.48124e-07]
+      Line search terminated: lambda = 1.00122, fnorms = 3.85222e-07
+  3 SNES Function norm 3.852220069305e-07 
+      Line search: lambdas = [1., 0.], ftys = [4.47605e-19, 2.70602e-13]
+      Line search terminated: lambda = 1., fnorms = 4.68528e-13
+  4 SNES Function norm 4.685281607017e-13 
+24 Load Increment
+  0 SNES Function norm 5.273619933973e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000101701, 0.00877512]
+      Line search terminated: lambda = 1.01173, fnorms = 0.0104607
+  1 SNES Function norm 1.046070194897e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.16585e-06, 0.000194441]
+      Line search terminated: lambda = 1.04947, fnorms = 0.000283351
+  2 SNES Function norm 2.833507675176e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.87759e-10, 1.50023e-07]
+      Line search terminated: lambda = 1.00125, fnorms = 3.98649e-07
+  3 SNES Function norm 3.986486460607e-07 
+      Line search: lambdas = [1., 0.], ftys = [5.05215e-19, 2.86985e-13]
+      Line search terminated: lambda = 1., fnorms = 5.19554e-13
+  4 SNES Function norm 5.195535049253e-13 
+25 Load Increment
+  0 SNES Function norm 5.285901173548e-02 
+      Line search: lambdas = [1., 0.], ftys = [0.000100656, 0.00876964]
+      Line search terminated: lambda = 1.01161, fnorms = 0.0104956
+  1 SNES Function norm 1.049556611472e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.17102e-06, 0.000193843]
+      Line search terminated: lambda = 1.04966, fnorms = 0.000286816
+  2 SNES Function norm 2.868164620104e-04 
+      Line search: lambdas = [1., 0.], ftys = [1.95221e-10, 1.51951e-07]
+      Line search terminated: lambda = 1.00129, fnorms = 4.12912e-07
+  3 SNES Function norm 4.129122025702e-07 
+      Line search: lambdas = [1., 0.], ftys = [5.71735e-19, 3.04832e-13]
+      Line search terminated: lambda = 1., fnorms = 5.75111e-13
+  4 SNES Function norm 5.751110031494e-13 
+26 Load Increment
+  0 SNES Function norm 5.298498536173e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.95631e-05, 0.00876397]
+      Line search terminated: lambda = 1.01149, fnorms = 0.0105313
+  1 SNES Function norm 1.053126330606e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.17529e-06, 0.000193225]
+      Line search terminated: lambda = 1.04985, fnorms = 0.000290362
+  2 SNES Function norm 2.903618669889e-04 
+      Line search: lambdas = [1., 0.], ftys = [2.031e-10, 1.53906e-07]
+      Line search terminated: lambda = 1.00132, fnorms = 4.28028e-07
+  3 SNES Function norm 4.280281536607e-07 
+      Line search: lambdas = [1., 0.], ftys = [6.48021e-19, 3.24237e-13]
+      Line search terminated: lambda = 1., fnorms = 6.35054e-13
+  4 SNES Function norm 6.350536203650e-13 
+27 Load Increment
+  0 SNES Function norm 5.311398559821e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.84233e-05, 0.00875811]
+      Line search terminated: lambda = 1.01137, fnorms = 0.0105678
+  1 SNES Function norm 1.056775449532e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.17865e-06, 0.000192585]
+      Line search terminated: lambda = 1.05005, fnorms = 0.000293983
+  2 SNES Function norm 2.939829245493e-04 
+      Line search: lambdas = [1., 0.], ftys = [2.11408e-10, 1.55883e-07]
+      Line search terminated: lambda = 1.00136, fnorms = 4.44006e-07
+  3 SNES Function norm 4.440062709595e-07 
+      Line search: lambdas = [1., 0.], ftys = [7.35163e-19, 3.4529e-13]
+      Line search terminated: lambda = 1., fnorms = 6.99677e-13
+  4 SNES Function norm 6.996774816246e-13 
+28 Load Increment
+  0 SNES Function norm 5.324587886481e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.72378e-05, 0.00875207]
+      Line search terminated: lambda = 1.01124, fnorms = 0.010605
+  1 SNES Function norm 1.060500150328e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.18105e-06, 0.000191927]
+      Line search terminated: lambda = 1.05024, fnorms = 0.000297675
+  2 SNES Function norm 2.976754995249e-04 
+      Line search: lambdas = [1., 0.], ftys = [2.20158e-10, 1.5788e-07]
+      Line search terminated: lambda = 1.0014, fnorms = 4.6085e-07
+  3 SNES Function norm 4.608500588021e-07 
+      Line search: lambdas = [1., 0.], ftys = [8.34253e-19, 3.68078e-13]
+      Line search terminated: lambda = 1., fnorms = 7.69025e-13
+  4 SNES Function norm 7.690252250981e-13 
+29 Load Increment
+  0 SNES Function norm 5.338053297376e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.60078e-05, 0.00874585]
+      Line search terminated: lambda = 1.0111, fnorms = 0.010643
+  1 SNES Function norm 1.064296712990e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.18248e-06, 0.000191249]
+      Line search terminated: lambda = 1.05043, fnorms = 0.000301435
+  2 SNES Function norm 3.014353929613e-04 
+      Line search: lambdas = [1., 0.], ftys = [2.29358e-10, 1.59892e-07]
+      Line search terminated: lambda = 1.00144, fnorms = 4.78556e-07
+  3 SNES Function norm 4.785563141381e-07 
+      Line search: lambdas = [1., 0.], ftys = [9.46347e-19, 3.92679e-13]
+      Line search terminated: lambda = 1., fnorms = 8.43269e-13
+  4 SNES Function norm 8.432694545488e-13 
+30 Load Increment
+  0 SNES Function norm 5.351781753817e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.47344e-05, 0.00873946]
+      Line search terminated: lambda = 1.01096, fnorms = 0.0106816
+  1 SNES Function norm 1.068161524755e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.18291e-06, 0.000190554]
+      Line search terminated: lambda = 1.05063, fnorms = 0.000305258
+  2 SNES Function norm 3.052583549939e-04 
+      Line search: lambdas = [1., 0.], ftys = [2.39017e-10, 1.61917e-07]
+      Line search terminated: lambda = 1.00148, fnorms = 4.97115e-07
+  3 SNES Function norm 4.971148217782e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.07256e-18, 4.19163e-13]
+      Line search terminated: lambda = 1., fnorms = 9.22496e-13
+  4 SNES Function norm 9.224959575212e-13 
+31 Load Increment
+  0 SNES Function norm 5.365760419591e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.34186e-05, 0.00873289]
+      Line search terminated: lambda = 1.01081, fnorms = 0.0107209
+  1 SNES Function norm 1.072091090538e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.18233e-06, 0.00018984]
+      Line search terminated: lambda = 1.05083, fnorms = 0.00030914
+  2 SNES Function norm 3.091400923740e-04 
+      Line search: lambdas = [1., 0.], ftys = [2.49142e-10, 1.63949e-07]
+      Line search terminated: lambda = 1.00152, fnorms = 5.16508e-07
+  3 SNES Function norm 5.165081874142e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.21384e-18, 4.4759e-13]
+      Line search terminated: lambda = 1., fnorms = 1.00733e-12
+  4 SNES Function norm 1.007330921405e-12 
+32 Load Increment
+  0 SNES Function norm 5.379976709428e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.20616e-05, 0.00872615]
+      Line search terminated: lambda = 1.01066, fnorms = 0.0107608
+  1 SNES Function norm 1.076082041494e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.18072e-06, 0.000189111]
+      Line search terminated: lambda = 1.05102, fnorms = 0.000313076
+  2 SNES Function norm 3.130762810396e-04 
+      Line search: lambdas = [1., 0.], ftys = [2.59738e-10, 1.65986e-07]
+      Line search terminated: lambda = 1.00157, fnorms = 5.36712e-07
+  3 SNES Function norm 5.367118256693e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.37127e-18, 4.78004e-13]
+      Line search terminated: lambda = 1., fnorms = 1.09778e-12
+  4 SNES Function norm 1.097781807230e-12 
+33 Load Increment
+  0 SNES Function norm 5.394418300938e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.06646e-05, 0.00871925]
+      Line search terminated: lambda = 1.01051, fnorms = 0.0108013
+  1 SNES Function norm 1.080131143835e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.17809e-06, 0.000188365]
+      Line search terminated: lambda = 1.05122, fnorms = 0.000317063
+  2 SNES Function norm 3.170625698995e-04 
+      Line search: lambdas = [1., 0.], ftys = [2.70806e-10, 1.68023e-07]
+      Line search terminated: lambda = 1.00161, fnorms = 5.57694e-07
+  3 SNES Function norm 5.576940765637e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.54541e-18, 5.10438e-13]
+      Line search terminated: lambda = 1., fnorms = 1.19426e-12
+  4 SNES Function norm 1.194262844091e-12 
+34 Load Increment
+  0 SNES Function norm 5.409073177222e-02 
+      Line search: lambdas = [1., 0.], ftys = [8.92285e-05, 0.00871219]
+      Line search terminated: lambda = 1.01035, fnorms = 0.0108424
+  1 SNES Function norm 1.084235303552e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.17442e-06, 0.000187604]
+      Line search terminated: lambda = 1.05142, fnorms = 0.000321095
+  2 SNES Function norm 3.210945882058e-04 
+      Line search: lambdas = [1., 0.], ftys = [2.82345e-10, 1.70057e-07]
+      Line search terminated: lambda = 1.00166, fnorms = 5.79416e-07
+  3 SNES Function norm 5.794164631688e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.73728e-18, 5.44905e-13]
+      Line search terminated: lambda = 1., fnorms = 1.29712e-12
+  4 SNES Function norm 1.297119390092e-12 
+35 Load Increment
+  0 SNES Function norm 5.423929643046e-02 
+      Line search: lambdas = [1., 0.], ftys = [8.77545e-05, 0.00870496]
+      Line search terminated: lambda = 1.01018, fnorms = 0.0108839
+  1 SNES Function norm 1.088391571610e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.16973e-06, 0.000186829]
+      Line search terminated: lambda = 1.05161, fnorms = 0.000325168
+  2 SNES Function norm 3.251679478653e-04 
+      Line search: lambdas = [1., 0.], ftys = [2.94351e-10, 1.72084e-07]
+      Line search terminated: lambda = 1.00171, fnorms = 6.01834e-07
+  3 SNES Function norm 6.018340650373e-07 
+      Line search: lambdas = [1., 0.], ftys = [1.94727e-18, 5.81403e-13]
+      Line search terminated: lambda = 1., fnorms = 1.407e-12
+  4 SNES Function norm 1.406998121133e-12 
+36 Load Increment
+  0 SNES Function norm 5.438976352097e-02 
+      Line search: lambdas = [1., 0.], ftys = [8.62437e-05, 0.00869759]
+      Line search terminated: lambda = 1.01002, fnorms = 0.010926
+  1 SNES Function norm 1.092597148375e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.164e-06, 0.000186041]
+      Line search terminated: lambda = 1.05181, fnorms = 0.000329278
+  2 SNES Function norm 3.292782477028e-04 
+      Line search: lambdas = [1., 0.], ftys = [3.06818e-10, 1.741e-07]
+      Line search terminated: lambda = 1.00177, fnorms = 6.24896e-07
+  3 SNES Function norm 6.248960051244e-07 
+      Line search: lambdas = [1., 0.], ftys = [2.17595e-18, 6.19909e-13]
+      Line search terminated: lambda = 1., fnorms = 1.52385e-12
+  4 SNES Function norm 1.523852439256e-12 
+37 Load Increment
+  0 SNES Function norm 5.454202323793e-02 
+      Line search: lambdas = [1., 0.], ftys = [8.4697e-05, 0.00869007]
+      Line search terminated: lambda = 1.00984, fnorms = 0.0109685
+  1 SNES Function norm 1.096849387442e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.15726e-06, 0.000185239]
+      Line search terminated: lambda = 1.05201, fnorms = 0.000333421
+  2 SNES Function norm 3.334210755510e-04 
+      Line search: lambdas = [1., 0.], ftys = [3.19735e-10, 1.76102e-07]
+      Line search terminated: lambda = 1.00182, fnorms = 6.48546e-07
+  3 SNES Function norm 6.485460257406e-07 
+      Line search: lambdas = [1., 0.], ftys = [2.42355e-18, 6.60379e-13]
+      Line search terminated: lambda = 1., fnorms = 1.6484e-12
+  4 SNES Function norm 1.648395266010e-12 
+38 Load Increment
+  0 SNES Function norm 5.469596966508e-02 
+      Line search: lambdas = [1., 0.], ftys = [8.31155e-05, 0.00868241]
+      Line search terminated: lambda = 1.00967, fnorms = 0.0110115
+  1 SNES Function norm 1.101145796212e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.14951e-06, 0.000184426]
+      Line search terminated: lambda = 1.0522, fnorms = 0.000337592
+  2 SNES Function norm 3.375920083316e-04 
+      Line search: lambdas = [1., 0.], ftys = [3.33088e-10, 1.78085e-07]
+      Line search terminated: lambda = 1.00187, fnorms = 6.72723e-07
+  3 SNES Function norm 6.727231423619e-07 
+      Line search: lambdas = [1., 0.], ftys = [2.69016e-18, 7.02752e-13]
+      Line search terminated: lambda = 1., fnorms = 1.78057e-12
+  4 SNES Function norm 1.780572947507e-12 
+39 Load Increment
+  0 SNES Function norm 5.485150090516e-02 
+      Line search: lambdas = [1., 0.], ftys = [8.15002e-05, 0.0086746]
+      Line search terminated: lambda = 1.00948, fnorms = 0.0110548
+  1 SNES Function norm 1.105484038117e-02 
+      Line search: lambdas = [1., 0.], ftys = [9.14077e-06, 0.000183602]
+      Line search terminated: lambda = 1.05239, fnorms = 0.000341787
+  2 SNES Function norm 3.417866150300e-04 
+      Line search: lambdas = [1., 0.], ftys = [3.46859e-10, 1.80047e-07]
+      Line search terminated: lambda = 1.00193, fnorms = 6.97362e-07
+  3 SNES Function norm 6.973623651187e-07 
+      Line search: lambdas = [1., 0.], ftys = [2.97609e-18, 7.46943e-13]
+      Line search terminated: lambda = 1., fnorms = 1.92043e-12
+  4 SNES Function norm 1.920432636787e-12 
+  SNES:
+    SNES Type                          : newtonls
+    SNES Convergence                   : CONVERGED_FNORM_RELATIVE
+    Number of Load Increments          : 40
+    Completed Load Increments          : 40
+    Total SNES Iterations              : 160
+    Final rnorm                        : 1.920433e-12
+  Linear Solver:
+    KSP Type                           : cg
+    Total KSP Iterations               : 1201
+    PC Type                            : mg
+  P-Multigrid:
+    PCMG Type                          : MULTIPLICATIVE
+    PCMG Cycle Type                    : v
+    Coarse Solve:
+      KSP Type                         : preonly
+      PC Type                          : gamg
+  Performance:
+    SNES Solve Time                    : 155.942 (155.942) sec
+    DoFs/Sec in SNES                   : 0.0307524 (0.0307524) million
+    Strain Energy                      : 1.129033224826e-01
+************************************************************************************************************************
+***             WIDEN YOUR WINDOW TO 120 CHARACTERS.  Use 'enscript -r -fCourier9' to print this document            ***
+************************************************************************************************************************
+
+---------------------------------------------- PETSc Performance Summary: ----------------------------------------------
+
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+./elasticity on a libceed named Karens-MacBook-Pro.local with 1 processor, by klstengel Fri Apr 30 16:42:28 2021
+Using Petsc Development GIT revision: v3.15.0-236-g1ac03d2b70  GIT Date: 2021-04-19 19:56:59 +0000
+
+                         Max       Max/Min     Avg       Total
+Time (sec):           1.576e+02     1.000   1.576e+02
+Objects:              5.849e+04     1.000   5.849e+04
+Flop:                 5.656e+09     1.000   5.656e+09  5.656e+09
+Flop/sec:             3.588e+07     1.000   3.588e+07  3.588e+07
+Memory:               5.464e+07     1.000   5.464e+07  5.464e+07
+MPI Messages:         0.000e+00     0.000   0.000e+00  0.000e+00
+MPI Message Lengths:  2.520e+02     1.000   0.000e+00  2.520e+02
+MPI Reductions:       4.200e+01     1.000
+
+Flop counting convention: 1 flop = 1 real number operation of type (multiply/divide/add/subtract)
+                            e.g., VecAXPY() for real vectors of length N --> 2N flop
+                            and VecAXPY() for complex vectors of length N --> 8N flop
+
+Summary of Stages:   ----- Time ------  ----- Flop ------  --- Messages ---  -- Message Lengths --  -- Reductions --
+                        Avg     %Total     Avg     %Total    Count   %Total     Avg         %Total    Count   %Total
+ 0:      Main Stage: 7.5209e-01   0.5%  1.6902e+07   0.3%  0.000e+00   0.0%  0.000e+00        4.8%  2.000e+00   4.8%
+ 1: DM and Vector Setup Stage: 8.3155e-01   0.5%  2.8444e+09  50.3%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 2: libCEED Setup Stage: 2.8465e-02   0.0%  0.0000e+00   0.0%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 3: SNES Setup Stage: 9.4135e-02   0.1%  0.0000e+00   0.0%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 4: SNES Solve Stage: 1.5594e+02  98.9%  2.7947e+09  49.4%  0.000e+00   0.0%  0.000e+00       95.2%  4.000e+01  95.2%
+
+------------------------------------------------------------------------------------------------------------------------
+See the 'Profiling' chapter of the users' manual for details on interpreting output.
+Phase summary info:
+   Count: number of times phase was executed
+   Time and Flop: Max - maximum over all processors
+                  Ratio - ratio of maximum to minimum over all processors
+   Mess: number of messages sent
+   AvgLen: average message length (bytes)
+   Reduct: number of global reductions
+   Global: entire computation
+   Stage: stages of a computation. Set stages with PetscLogStagePush() and PetscLogStagePop().
+      %T - percent time in this phase         %F - percent flop in this phase
+      %M - percent messages in this phase     %L - percent message lengths in this phase
+      %R - percent reductions in this phase
+   Total Mflop/s: 10e-6 * (sum of flop over all processors)/(max time over all processors)
+------------------------------------------------------------------------------------------------------------------------
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+Event                Count      Time (sec)     Flop                              --- Global ---  --- Stage ----  Total
+                   Max Ratio  Max     Ratio   Max  Ratio  Mess   AvgLen  Reduct  %T %F %M %L %R  %T %F %M %L %R Mflop/s
+------------------------------------------------------------------------------------------------------------------------
+
+--- Event Stage 0: Main Stage
+
+BuildTwoSided          1 1.0 8.8215e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+DMPlexInterp          13 1.0 8.9386e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+DMPlexStratify        17 1.0 5.1651e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+DMPlexSymmetrize      17 1.0 7.0238e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetGraph             1 1.0 8.4162e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetUp                1 1.0 1.1311e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastBegin           4 1.0 1.3685e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastEnd             4 1.0 4.7207e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceBegin          2 1.0 2.6536e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceEnd            2 1.0 2.2888e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFPack                 6 1.0 2.1219e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack               6 1.0 2.0266e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatMult              288 1.0 5.7387e-04 1.0 5.53e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    96
+MatAssemblyBegin      18 1.0 6.5804e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd        18 1.0 2.0409e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecView                2 1.0 2.5017e-01 1.0 5.63e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  33 33  0  0  0    22
+VecCopy                4 1.0 4.9829e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                34 1.0 3.3641e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecPointwiseMult       1 1.0 5.1975e-05 1.0 1.76e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   338
+DualSpaceSetUp         1 1.0 6.5083e-02 1.0 4.92e+02 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   9  0  0  0  0     0
+FESetUp                1 1.0 5.9605e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+
+--- Event Stage 1: DM and Vector Setup Stage
+
+DMPlexInterp          58 1.0 4.3208e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   5  0  0  0  0     0
+DMPlexStratify        78 1.0 3.0872e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   4  0  0  0  0     0
+DMPlexSymmetrize      78 1.0 9.0103e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+MatAssemblyBegin     159 1.0 5.5194e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd       159 1.0 1.8506e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                84 1.0 6.9880e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+DualSpaceSetUp         5 1.0 3.4665e-01 1.0 6.62e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  42  0  0  0  0     0
+FESetUp                5 1.0 6.7382e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   8  0  0  0  0     0
+
+--- Event Stage 2: libCEED Setup Stage
+
+BuildTwoSided          2 1.0 4.1008e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetGraph             2 1.0 3.0041e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetUp                2 1.0 4.4918e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   2  0  0  0  0     0
+SFBcastBegin           2 1.0 5.3167e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastEnd             2 1.0 2.1935e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceBegin          2 1.0 1.0610e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceEnd            2 1.0 2.8372e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFPack                 4 1.0 1.4782e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack               4 1.0 1.2159e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                14 1.0 1.3614e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+
+--- Event Stage 3: SNES Setup Stage
+
+DMCreateMat            1 1.0 8.6456e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  92  0  0  0  0     0
+DMPlexPrealloc         1 1.0 8.1367e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  86  0  0  0  0     0
+MatAssemblyBegin       1 1.0 4.0531e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd         1 1.0 2.0981e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                 3 1.0 2.6226e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+
+--- Event Stage 4: SNES Solve Stage
+
+PetscBarrier           1 1.0 8.1062e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+BuildTwoSided          1 1.0 6.9141e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetGraph             2 1.0 8.1062e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetUp                1 1.0 4.1962e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastBegin       39699 1.0 8.3452e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0     0
+SFBcastEnd         39699 1.0 4.2581e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceBegin      39979 1.0 9.4267e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0     0
+SFReduceEnd        39979 1.0 4.3174e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFPack             79678 1.0 2.7188e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack           79678 1.0 2.7133e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatMult            70499 1.0 4.3418e+01 1.0 6.00e+07 1.0 0.0e+00 0.0e+00 0.0e+00 28  1  0  0  0  28  2  0  0  0     1
+MatMultAdd          4083 1.0 8.1093e-01 1.0 1.43e+07 1.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  1  0  0  0    18
+MatMultTranspose    4245 1.0 8.0469e-01 1.0 6.61e+05 1.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0     1
+MatSolve            1361 1.0 2.4495e-02 1.0 2.04e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     1
+MatSOR              7204 1.0 1.0136e-01 1.0 4.45e+07 1.0 0.0e+00 0.0e+00 0.0e+00  0  1  0  0  0   0  2  0  0  0   439
+MatLUFactorSym       160 1.0 1.5532e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatLUFactorNum       160 1.0 2.6779e-03 1.0 2.56e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     1
+MatScale             480 1.0 7.3946e-03 1.0 1.88e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    25
+MatResidual         4083 1.0 5.7145e+00 1.0 1.52e+07 1.0 0.0e+00 0.0e+00 0.0e+00  4  0  0  0  0   4  1  0  0  0     3
+MatAssemblyBegin    2080 1.0 7.2589e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd      2080 1.0 1.6907e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatGetRowIJ          161 1.0 1.5411e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatGetOrdering       160 1.0 4.0507e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatCoarsen           160 1.0 4.4472e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAXPY              160 1.0 4.1751e-02 1.0 3.89e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     1
+MatFDColorCreate       1 1.0 1.0586e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatFDColorSetUp        1 1.0 3.2849e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatFDColorApply      160 1.0 2.5555e+01 1.0 2.10e+06 1.0 0.0e+00 0.0e+00 0.0e+00 16  0  0  0  0  16  0  0  0  0     0
+MatFDColorFunc     12960 1.0 2.5051e+01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00 16  0  0  0  0  16  0  0  0  0     0
+MatMatMultSym        160 1.0 3.2757e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatMatMultNum        160 1.0 1.9168e-02 1.0 3.00e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   157
+MatPtAPSymbolic      160 1.0 3.0574e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatPtAPNumeric       160 1.0 2.3190e-02 1.0 3.20e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   138
+MatTrnMatMultSym     160 1.0 6.5137e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatGetSymTrans       160 1.0 1.0557e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatColoringApply       1 1.0 2.0695e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecView               40 1.0 7.1938e+00 1.0 2.25e+08 1.0 0.0e+00 0.0e+00 0.0e+00  5  4  0  0  0   5  8  0  0  0    31
+VecDot               320 1.0 3.3216e-03 1.0 2.56e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   769
+VecMDot             3200 1.0 4.6398e-02 1.0 2.83e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    61
+VecTDot             9282 1.0 7.4843e-02 1.0 5.42e+07 1.0 0.0e+00 0.0e+00 0.0e+00  0  1  0  0  0   0  2  0  0  0   724
+VecNorm             7080 1.0 4.0185e-02 1.0 1.86e+07 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  1  0  0  0   462
+VecScale           30179 1.0 1.1502e-01 1.0 2.85e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     2
+VecCopy            21765 1.0 1.7822e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet            140899 1.0 1.1795e+00 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0     0
+VecAXPY            25484 1.0 2.2272e-01 1.0 7.26e+07 1.0 0.0e+00 0.0e+00 0.0e+00  0  1  0  0  0   0  3  0  0  0   326
+VecAYPX            33863 1.0 4.3284e-01 1.0 9.20e+07 1.0 0.0e+00 0.0e+00 0.0e+00  0  2  0  0  0   0  3  0  0  0   213
+VecAXPBYCZ         13610 1.0 2.2827e-01 1.0 1.38e+08 1.0 0.0e+00 0.0e+00 0.0e+00  0  2  0  0  0   0  5  0  0  0   604
+VecMAXPY            3520 1.0 5.7078e-02 1.0 3.37e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    59
+VecPointwiseMult   21772 1.0 3.3235e-01 1.0 5.02e+07 1.0 0.0e+00 0.0e+00 0.0e+00  0  1  0  0  0   0  2  0  0  0   151
+VecSetRandom         160 1.0 1.2056e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecReduceArith       480 1.0 3.4423e-03 1.0 3.83e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0  1113
+VecReduceComm        160 1.0 6.0081e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecNormalize        3520 1.0 8.9198e-02 1.0 8.52e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    10
+KSPSetUp            1280 1.0 1.2770e+01 1.0 1.31e+08 1.0 0.0e+00 0.0e+00 0.0e+00  8  2  0  0  0   8  5  0  0  0    10
+KSPSolve             160 1.0 4.1211e+01 1.0 3.78e+08 1.0 0.0e+00 0.0e+00 0.0e+00 26  7  0  0  0  26 14  0  0  0     9
+KSPGMRESOrthog      3200 1.0 1.6656e-01 1.0 5.68e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    34
+SNESSolve             40 1.0 1.4723e+02 1.0 2.57e+09 1.0 0.0e+00 0.0e+00 0.0e+00 93 45  0  0  0  94 92  0  0  0    17
+SNESSetUp              1 1.0 4.9114e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SNESFunctionEval   13320 1.0 9.0503e+01 1.0 2.03e+09 1.0 0.0e+00 0.0e+00 0.0e+00 57 36  0  0  0  58 72  0  0  0    22
+SNESJacobianEval     160 1.0 2.5586e+01 1.0 2.10e+06 1.0 0.0e+00 0.0e+00 0.0e+00 16  0  0  0  0  16  0  0  0  0     0
+SNESLineSearch       160 1.0 5.8477e+01 1.0 1.81e+09 1.0 0.0e+00 0.0e+00 0.0e+00 37 32  0  0  0  37 65  0  0  0    31
+PCGAMGGraph_AGG      160 1.0 2.8165e-01 1.0 5.49e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     2
+PCGAMGCoarse_AGG     160 1.0 1.3681e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+PCGAMGProl_AGG       160 1.0 4.0896e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+PCGAMGPOpt_AGG       160 1.0 7.2494e-01 1.0 1.66e+07 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  1  0  0  0    23
+GAMG: createProl     160 1.0 1.2157e+00 1.0 1.71e+07 1.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  1  0  0  0    14
+  Graph              320 1.0 2.6551e-01 1.0 5.49e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     2
+  MIS/Agg            160 1.0 1.4570e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+  SA: col data       160 1.0 6.7377e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+  SA: frmProl0       160 1.0 1.3351e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+  SA: smooth         160 1.0 1.3977e-01 1.0 3.12e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    22
+GAMG: partLevel      160 1.0 6.6151e-02 1.0 3.20e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    48
+PCGAMG Squ l00       160 1.0 6.6467e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+PCGAMG Gal l00       160 1.0 6.3568e-02 1.0 3.20e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    50
+PCGAMG Opt l00       160 1.0 6.2715e-02 1.0 3.00e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    48
+PCSetUp              320 1.0 1.4644e+01 1.0 1.52e+08 1.0 0.0e+00 0.0e+00 0.0e+00  9  3  0  0  0   9  5  0  0  0    10
+PCSetUpOnBlocks     1361 1.0 8.2050e-02 1.0 2.56e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+PCApply             1361 1.0 3.8517e+01 1.0 3.30e+08 1.0 0.0e+00 0.0e+00 0.0e+00 24  6  0  0  0  25 12  0  0  0     9
+------------------------------------------------------------------------------------------------------------------------
+
+Memory usage is given in bytes:
+
+Object Type          Creations   Destructions     Memory  Descendants' Mem.
+Reports information only for process 0.
+
+--- Event Stage 0: Main Stage
+
+           Container    16             48        27648     0.
+    Distributed Mesh    60            138       729616     0.
+            DM Label   112            263       166216     0.
+          Quadrature   104           1331       787952     0.
+           Index Set   494            753       757404     0.
+   IS L to G Mapping     0              2         2168     0.
+             Section   109            271       192952     0.
+    Section Symmetry     0              3         2064     0.
+   Star Forest Graph   120            226       239808     0.
+     Discrete System   102            180       161300     0.
+           Weak Form   102            198       161568     0.
+    GraphPartitioner    17             38        26144     0.
+              Matrix    34             80       340512     0.
+  Matrix FD Coloring     0              1        69924     0.
+              Vector    26            137      2315024     0.
+        Linear Space     1              6         4080     0.
+          Dual Space    17             37        34632     0.
+            FE Space     1              6         4728     0.
+                SNES     0              2         3060     0.
+              DMSNES     0              2         1344     0.
+      SNESLineSearch     0              1          992     0.
+       Krylov Solver     0             11      4641160     0.
+     DMKSP interface     0              1          656     0.
+      Preconditioner     0              8         9428     0.
+              Viewer     3              3         2408     0.
+       Field over DM     1              1          704     0.
+
+--- Event Stage 1: DM and Vector Setup Stage
+
+           Container    73             42        24192     0.
+    Distributed Mesh   282            205      1055376     0.
+            DM Label   564            413       261016     0.
+          Quadrature  1648            421       249232     0.
+           Index Set  1211           1036       934048     0.
+             Section   531            369       262728     0.
+    Section Symmetry     3              0            0     0.
+   Star Forest Graph   564            461       486816     0.
+     Discrete System   481            404       361984     0.
+           Weak Form   499            404       329664     0.
+    GraphPartitioner    78             57        39216     0.
+              Matrix   232            195       627884     0.
+              Vector    84             42        68736     0.
+        Linear Space     5              0            0     0.
+          Dual Space    95             75        70200     0.
+            FE Space     5              0            0     0.
+
+--- Event Stage 2: libCEED Setup Stage
+
+              Vector     6              0            0     0.
+
+--- Event Stage 3: SNES Setup Stage
+
+   IS L to G Mapping     1              0            0     0.
+             Section     4              4         2848     0.
+   Star Forest Graph     2              2         2112     0.
+              Matrix     6              0            0     0.
+              Vector     3              0            0     0.
+                SNES     2              0            0     0.
+              DMSNES     2              0            0     0.
+      SNESLineSearch     1              0            0     0.
+       Krylov Solver     8              1         1664     0.
+      Preconditioner     5              0            0     0.
+              Viewer     1              0            0     0.
+
+--- Event Stage 4: SNES Solve Stage
+
+           Container   160            159        91584     0.
+    Distributed Mesh   161            160       807680     0.
+          Quadrature  2400           2400      1420800     0.
+           Index Set 37043          36959     43528660     0.
+   IS L to G Mapping     1              0            0     0.
+   Star Forest Graph   323            320       337920     0.
+     Discrete System   161            160       143360     0.
+           Weak Form   161            160       130560     0.
+              Matrix  1281           1278      6522756     0.
+  Matrix FD Coloring     1              0            0     0.
+     Matrix Coloring     1              1          648     0.
+      Matrix Coarsen   160            160        99840     0.
+              Vector  8074           8014     38237560     0.
+       Krylov Solver   164            160      4908800     0.
+     DMKSP interface     1              0            0     0.
+      Preconditioner   325            322       273024     0.
+              Viewer    40             40        31360     0.
+         PetscRandom   320            320       211840     0.
+========================================================================================================================
+Average time to get PetscTime(): 9.53674e-08
+#PETSc Option Table entries:
+-bc_clamp 1,2,3,4,5,6
+-bc_clamp_1_rotate 0,0,1,0,.3
+-bc_clamp_2_rotate 0,0,1,0,.3
+-bc_clamp_3_rotate 0,0,1,0,.3
+-bc_clamp_4_rotate 0,0,1,0,.3
+-bc_clamp_5_rotate 0,0,1,0,.3
+-bc_clamp_6_rotate 0,0,1,0,.3
+-dm_plex_box_faces 4,4,4
+-E 1
+-log_view
+-nu 0.3
+-num_steps 40
+-output_dir /Users/klstengel/Desktop/libCEED_out/FSCurrent-NH2/
+-problem FSCurrent-NH2
+-snes_linesearch_atol 1e-30
+-snes_linesearch_monitor
+-snes_linesearch_type cp
+-snes_monitor
+-view_soln
+#End of PETSc Option Table entries
+Compiled without FORTRAN kernels
+Compiled with full precision matrices (default)
+sizeof(short) 2 sizeof(int) 4 sizeof(long) 8 sizeof(void*) 8 sizeof(PetscScalar) 8 sizeof(PetscInt) 4
+Configure options: PETSC_ARCH=libceed --download-{hdf5,netcdf,pnetcdf,exodusii, lib,mpich}
+-----------------------------------------
+Libraries compiled on 2021-04-20 03:21:50 on Karens-MacBook-Pro.local 
+Machine characteristics: Darwin-18.7.0-x86_64-i386-64bit
+Using PETSc directory: /Users/klstengel/Projects/CU_research_Brown/petsc
+Using PETSc arch: libceed
+-----------------------------------------
+
+Using C compiler: mpicc  -fPIC -Wall -Wwrite-strings -Wno-strict-aliasing -Wno-unknown-pragmas -fstack-protector -Qunused-arguments -fvisibility=hidden -g3   
+Using Fortran compiler: mpif90  -fPIC -Wall -ffree-line-length-0 -Wno-unused-dummy-argument -g     
+-----------------------------------------
+
+Using include paths: -I/Users/klstengel/Projects/CU_research_Brown/petsc/include -I/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/include -I/opt/X11/include
+-----------------------------------------
+
+Using C linker: mpicc
+Using Fortran linker: mpif90
+Using libraries: -Wl,-rpath,/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -L/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -lpetsc -Wl,-rpath,/opt/X11/lib -L/opt/X11/lib -Wl,-rpath,/usr/local/Cellar/mpich/3.3.2_1/lib -L/usr/local/Cellar/mpich/3.3.2_1/lib -Wl,-rpath,/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -Wl,-rpath,/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10 -L/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10 -llapack -lblas -lX11 -lc++ -ldl -lmpifort -lmpi -lpmpi -lgfortran -lquadmath -lm -lc++ -ldl
+-----------------------------------------
+
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+

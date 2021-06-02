@@ -1,0 +1,766 @@
+
+-- Elasticity Example - libCEED + PETSc --
+  libCEED:
+    libCEED Backend                    : /cpu/self/opt/blocked
+    libCEED Backend MemType            : host
+  PETSc:
+    PETSc Vec Type                     : seq
+  Problem:
+    Problem Name                       : Hyperelasticity finite strain Initial config Neo-Hookean w/ dXref_dxinit, Grad(u) storage
+    Forcing Function                   : None
+  Mesh:
+    File                               : Box Mesh
+    Number of 1D Basis Nodes (p)       : 2
+    Number of 1D Quadrature Points (q) : 2
+    Global nodes                       : 100
+    Owned nodes                        : 100
+    DoF per node                       : 3
+  Multigrid:
+    Type                               : Algebraic multigrid
+    Number of Levels                   : 0
+    Level 0 (coarse):
+      Number of 1D Basis Nodes (p)     : 2
+      Global Nodes                     : 100
+      Owned Nodes                      : 100
+    Level 0 (fine):
+      Number of 1D Basis Nodes (p)     : 2
+      Global Nodes                     : 100
+      Owned Nodes                      : 100
+0 Load Increment
+  0 SNES Function norm 5.468750000000e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-7.86572e-07, 7.65879e-05]
+      Line search terminated: lambda = 0.989834, fnorms = 0.000336701
+  1 SNES Function norm 3.367013919916e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-8.46935e-11, 3.79006e-07]
+      Line search terminated: lambda = 0.999777, fnorms = 1.57559e-07
+  2 SNES Function norm 1.575593601883e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-5.79257e-18, 1.27102e-12]
+      Line search terminated: lambda = 0.999995, fnorms = 8.05281e-12
+  3 SNES Function norm 8.052810430767e-12
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-4.9567e-30, 1.87692e-22]
+      Line search terminated: lambda = 1., fnorms = 8.9808e-18
+  4 SNES Function norm 8.980804988559e-18
+    Strain Energy                      : 3.828396436549e-05
+1 Load Increment
+  0 SNES Function norm 5.468750000000e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-8.2517e-07, 7.65479e-05]
+      Line search terminated: lambda = 0.989335, fnorms = 0.000335942
+  1 SNES Function norm 3.359420909583e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-8.09889e-11, 3.77534e-07]
+      Line search terminated: lambda = 0.999786, fnorms = 1.58474e-07
+  2 SNES Function norm 1.584742906424e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-6.04844e-18, 1.29101e-12]
+      Line search terminated: lambda = 0.999995, fnorms = 8.24259e-12
+  3 SNES Function norm 8.242588959512e-12
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-5.9518e-29, 1.96172e-22]
+      Line search terminated: lambda = 1., fnorms = 1.92532e-17
+  4 SNES Function norm 1.925315928664e-17
+    Strain Energy                      : 1.530158452229e-04
+2 Load Increment
+  0 SNES Function norm 5.468750000000e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-8.61087e-07, 7.64279e-05]
+      Line search terminated: lambda = 0.988859, fnorms = 0.000334584
+  1 SNES Function norm 3.345837908972e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-7.74296e-11, 3.748e-07]
+      Line search terminated: lambda = 0.999793, fnorms = 1.58612e-07
+  2 SNES Function norm 1.586124045201e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-6.21484e-18, 1.29731e-12]
+      Line search terminated: lambda = 0.999995, fnorms = 8.33434e-12
+  3 SNES Function norm 8.334343268154e-12
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-2.28697e-29, 2.00295e-22]
+      Line search terminated: lambda = 1., fnorms = 2.60069e-17
+  4 SNES Function norm 2.600688846536e-17
+    Strain Energy                      : 3.438361070859e-04
+3 Load Increment
+  0 SNES Function norm 5.468750000000e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-8.9422e-07, 7.62283e-05]
+      Line search terminated: lambda = 0.988405, fnorms = 0.000332626
+  1 SNES Function norm 3.326260131943e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-7.41015e-11, 3.70815e-07]
+      Line search terminated: lambda = 0.9998, fnorms = 1.57937e-07
+  2 SNES Function norm 1.579365670454e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-6.27361e-18, 1.28904e-12]
+      Line search terminated: lambda = 0.999995, fnorms = 8.31806e-12
+  3 SNES Function norm 8.318062716241e-12
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-4.02901e-29, 1.99475e-22]
+      Line search terminated: lambda = 1., fnorms = 3.50645e-17
+  4 SNES Function norm 3.506446517681e-17
+    Strain Energy                      : 6.101472524219e-04
+4 Load Increment
+  0 SNES Function norm 5.468750000000e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-9.24452e-07, 7.59496e-05]
+      Line search terminated: lambda = 0.987974, fnorms = 0.000330067
+  1 SNES Function norm 3.300672484352e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-7.10617e-11, 3.65593e-07]
+      Line search terminated: lambda = 0.999806, fnorms = 1.56418e-07
+  2 SNES Function norm 1.564175862869e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-6.21156e-18, 1.26578e-12]
+      Line search terminated: lambda = 0.999995, fnorms = 8.18811e-12
+  3 SNES Function norm 8.188110511207e-12
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-7.32747e-29, 1.93483e-22]
+      Line search terminated: lambda = 1., fnorms = 4.61938e-17
+  4 SNES Function norm 4.619382207437e-17
+    Strain Energy                      : 9.511166071444e-04
+5 Load Increment
+  0 SNES Function norm 5.468750000000e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-9.51659e-07, 7.55926e-05]
+      Line search terminated: lambda = 0.987567, fnorms = 0.000326906
+  1 SNES Function norm 3.269060974920e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-6.83372e-11, 3.59154e-07]
+      Line search terminated: lambda = 0.99981, fnorms = 1.54038e-07
+  2 SNES Function norm 1.540380708198e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-6.02271e-18, 1.22765e-12]
+      Line search terminated: lambda = 0.999995, fnorms = 7.94415e-12
+  3 SNES Function norm 7.944145297378e-12
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-4.95576e-29, 1.82526e-22]
+      Line search terminated: lambda = 1., fnorms = 5.13064e-17
+  4 SNES Function norm 5.130635032521e-17
+    Strain Energy                      : 1.365680578023e-03
+6 Load Increment
+  0 SNES Function norm 5.468750000000e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-9.75708e-07, 7.51584e-05]
+      Line search terminated: lambda = 0.987184, fnorms = 0.000323143
+  1 SNES Function norm 3.231426495667e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-6.59255e-11, 3.51531e-07]
+      Line search terminated: lambda = 0.999812, fnorms = 1.50796e-07
+  2 SNES Function norm 1.507962629818e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-5.71024e-18, 1.17538e-12]
+      Line search terminated: lambda = 0.999995, fnorms = 7.59155e-12
+  3 SNES Function norm 7.591550053571e-12
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [2.11884e-28, 1.67249e-22]
+      Line search terminated: lambda = 1., fnorms = 6.21219e-17
+  4 SNES Function norm 6.212193493088e-17
+    Strain Energy                      : 1.852550677295e-03
+7 Load Increment
+  0 SNES Function norm 5.468750000000e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-9.96467e-07, 7.46484e-05]
+      Line search terminated: lambda = 0.986827, fnorms = 0.00031878
+  1 SNES Function norm 3.187799550589e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-6.37979e-11, 3.42766e-07]
+      Line search terminated: lambda = 0.999814, fnorms = 1.46709e-07
+  2 SNES Function norm 1.467093175657e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-5.28677e-18, 1.11033e-12]
+      Line search terminated: lambda = 0.999995, fnorms = 7.14138e-12
+  3 SNES Function norm 7.141378604691e-12
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.56659e-28, 1.4868e-22]
+      Line search terminated: lambda = 0.999999, fnorms = 6.14229e-17
+  4 SNES Function norm 6.142285321929e-17
+    Strain Energy                      : 2.410221614376e-03
+8 Load Increment
+  0 SNES Function norm 5.468750000000e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.01381e-06, 7.40647e-05]
+      Line search terminated: lambda = 0.986497, fnorms = 0.000313825
+  1 SNES Function norm 3.138254457510e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-6.19044e-11, 3.32916e-07]
+      Line search terminated: lambda = 0.999814, fnorms = 1.41816e-07
+  2 SNES Function norm 1.418155361546e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-4.77345e-18, 1.03442e-12]
+      Line search terminated: lambda = 0.999995, fnorms = 6.60972e-12
+  3 SNES Function norm 6.609724460406e-12
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-4.82388e-29, 1.28098e-22]
+      Line search terminated: lambda = 1., fnorms = 6.9157e-17
+  4 SNES Function norm 6.915697738507e-17
+    Strain Energy                      : 3.036981714413e-03
+9 Load Increment
+  0 SNES Function norm 5.468750000000e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.02763e-06, 7.34094e-05]
+      Line search terminated: lambda = 0.986195, fnorms = 0.000308292
+  1 SNES Function norm 3.082921653880e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-6.01797e-11, 3.22056e-07]
+      Line search terminated: lambda = 0.999813, fnorms = 1.36175e-07
+  2 SNES Function norm 1.361751833758e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-4.19773e-18, 9.50022e-13]
+      Line search terminated: lambda = 0.999996, fnorms = 6.01661e-12
+  3 SNES Function norm 6.016611738440e-12
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-2.30938e-28, 1.0687e-22]
+      Line search terminated: lambda = 0.999998, fnorms = 9.34214e-17
+  4 SNES Function norm 9.342139001235e-17
+    Strain Energy                      : 3.730925842402e-03
+10 Load Increment
+  0 SNES Function norm 5.468750000000e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.03786e-06, 7.26856e-05]
+      Line search terminated: lambda = 0.985922, fnorms = 0.0003022
+  1 SNES Function norm 3.021996980751e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-5.855e-11, 3.10275e-07]
+      Line search terminated: lambda = 0.999811, fnorms = 1.2987e-07
+  2 SNES Function norm 1.298696866804e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-3.59013e-18, 8.59848e-13]
+      Line search terminated: lambda = 0.999996, fnorms = 5.38449e-12
+  3 SNES Function norm 5.384489283570e-12
+    Strain Energy                      : 4.489970898566e-03
+11 Load Increment
+  0 SNES Function norm 5.468749993536e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.04444e-06, 7.18964e-05]
+      Line search terminated: lambda = 0.985681, fnorms = 0.000295575
+  1 SNES Function norm 2.955747177822e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-5.69407e-11, 2.97681e-07]
+      Line search terminated: lambda = 0.999809, fnorms = 1.22999e-07
+  2 SNES Function norm 1.229992285208e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-2.98927e-18, 7.66742e-13]
+      Line search terminated: lambda = 0.999996, fnorms = 4.73605e-12
+  3 SNES Function norm 4.736045634670e-12
+    Strain Energy                      : 5.311873883722e-03
+12 Load Increment
+  0 SNES Function norm 5.468749993609e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.04737e-06, 7.10457e-05]
+      Line search terminated: lambda = 0.985472, fnorms = 0.000288451
+  1 SNES Function norm 2.884511247267e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-5.52829e-11, 2.84397e-07]
+      Line search terminated: lambda = 0.999806, fnorms = 1.15679e-07
+  2 SNES Function norm 1.156786392053e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-2.4279e-18, 6.73496e-13]
+      Line search terminated: lambda = 0.999996, fnorms = 4.0933e-12
+  3 SNES Function norm 4.093298851657e-12
+    Strain Energy                      : 6.194251996017e-03
+13 Load Increment
+  0 SNES Function norm 5.468749993863e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.0467e-06, 7.01378e-05]
+      Line search terminated: lambda = 0.985296, fnorms = 0.00028087
+  1 SNES Function norm 2.808697174415e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-5.35177e-11, 2.70555e-07]
+      Line search terminated: lambda = 0.999802, fnorms = 1.08033e-07
+  2 SNES Function norm 1.080333668444e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.91481e-18, 5.82686e-13]
+      Line search terminated: lambda = 0.999997, fnorms = 3.47614e-12
+  3 SNES Function norm 3.476140234239e-12
+    Strain Energy                      : 7.134605132132e-03
+14 Load Increment
+  0 SNES Function norm 5.468749994260e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.04253e-06, 6.91773e-05]
+      Line search terminated: lambda = 0.985153, fnorms = 0.000272878
+  1 SNES Function norm 2.728775917945e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-5.1602e-11, 2.563e-07]
+      Line search terminated: lambda = 0.999799, fnorms = 1.00193e-07
+  2 SNES Function norm 1.001929593086e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.46827e-18, 4.96514e-13]
+      Line search terminated: lambda = 0.999997, fnorms = 2.90011e-12
+  3 SNES Function norm 2.900112375841e-12
+    Strain Energy                      : 8.130339580112e-03
+15 Load Increment
+  0 SNES Function norm 5.468749994767e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.03499e-06, 6.81695e-05]
+      Line search terminated: lambda = 0.985044, fnorms = 0.000264527
+  1 SNES Function norm 2.645271182445e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-4.95095e-11, 2.41778e-07]
+      Line search terminated: lambda = 0.999795, fnorms = 9.22863e-08
+  2 SNES Function norm 9.228633988073e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.09374e-18, 4.16713e-13]
+      Line search terminated: lambda = 0.999997, fnorms = 2.37707e-12
+  3 SNES Function norm 2.377073600367e-12
+    Strain Energy                      : 9.178792906026e-03
+16 Load Increment
+  0 SNES Function norm 5.468749995344e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.02427e-06, 6.71196e-05]
+      Line search terminated: lambda = 0.984969, fnorms = 0.000255875
+  1 SNES Function norm 2.558746571061e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-4.72319e-11, 2.27137e-07]
+      Line search terminated: lambda = 0.999792, fnorms = 8.44358e-08
+  2 SNES Function norm 8.443580894071e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-7.90558e-19, 3.44496e-13]
+      Line search terminated: lambda = 0.999998, fnorms = 1.91432e-12
+  3 SNES Function norm 1.914323440458e-12
+    Strain Energy                      : 1.027725896662e-02
+17 Load Increment
+  0 SNES Function norm 5.468749995955e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-1.01058e-06, 6.60332e-05]
+      Line search terminated: lambda = 0.984927, fnorms = 0.000246979
+  1 SNES Function norm 2.469793037827e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-4.47773e-11, 2.12519e-07]
+      Line search terminated: lambda = 0.999789, fnorms = 7.67534e-08
+  2 SNES Function norm 7.675342233199e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-5.54215e-19, 2.80562e-13]
+      Line search terminated: lambda = 0.999998, fnorms = 1.51475e-12
+  3 SNES Function norm 1.514745005694e-12
+    Strain Energy                      : 1.142301317760e-02
+18 Load Increment
+  0 SNES Function norm 5.468749996566e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-9.94175e-07, 6.49161e-05]
+      Line search terminated: lambda = 0.984916, fnorms = 0.000237901
+  1 SNES Function norm 2.379014029178e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-4.21678e-11, 1.9806e-07]
+      Line search terminated: lambda = 0.999787, fnorms = 6.93371e-08
+  2 SNES Function norm 6.933712735214e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-3.76616e-19, 2.25132e-13]
+      Line search terminated: lambda = 0.999998, fnorms = 1.17776e-12
+  3 SNES Function norm 1.177759087105e-12
+    Strain Energy                      : 1.261333683838e-02
+19 Load Increment
+  0 SNES Function norm 5.468749997150e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-9.75325e-07, 6.37741e-05]
+      Line search terminated: lambda = 0.984937, fnorms = 0.000228701
+  1 SNES Function norm 2.287011778943e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-3.94366e-11, 1.83883e-07]
+      Line search terminated: lambda = 0.999786, fnorms = 6.22686e-08
+  2 SNES Function norm 6.226858755658e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-2.47816e-19, 1.7803e-13]
+      Line search terminated: lambda = 0.999999, fnorms = 8.9992e-13
+  3 SNES Function norm 8.999204971003e-13
+    Strain Energy                      : 1.384554030236e-02
+20 Load Increment
+  0 SNES Function norm 5.468749997687e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-9.54314e-07, 6.26129e-05]
+      Line search terminated: lambda = 0.984987, fnorms = 0.000219437
+  1 SNES Function norm 2.194374444033e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-3.66238e-11, 1.70097e-07]
+      Line search terminated: lambda = 0.999785, fnorms = 5.5612e-08
+  2 SNES Function norm 5.561204630523e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.57648e-19, 1.38766e-13]
+      Line search terminated: lambda = 0.999999, fnorms = 6.7562e-13
+  3 SNES Function norm 6.756198549018e-13
+    Strain Energy                      : 1.511698450241e-02
+21 Load Increment
+  0 SNES Function norm 5.468749998165e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-9.31432e-07, 6.14382e-05]
+      Line search terminated: lambda = 0.985066, fnorms = 0.000210166
+  1 SNES Function norm 2.101664763949e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-3.37734e-11, 1.56797e-07]
+      Line search terminated: lambda = 0.999785, fnorms = 4.94142e-08
+  2 SNES Function norm 4.941422998679e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-9.6759e-20, 1.06638e-13]
+      Line search terminated: lambda = 0.999999, fnorms = 4.9845e-13
+  3 SNES Function norm 4.984498815897e-13
+    Strain Energy                      : 1.642510048111e-02
+22 Load Increment
+  0 SNES Function norm 5.468749998576e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-9.06967e-07, 6.02553e-05]
+      Line search terminated: lambda = 0.985171, fnorms = 0.000200941
+  1 SNES Function norm 2.009410591554e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-3.09293e-11, 1.4406e-07]
+      Line search terminated: lambda = 0.999785, fnorms = 4.37051e-08
+  2 SNES Function norm 4.370511817388e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-5.70855e-20, 8.08133e-14]
+      Line search terminated: lambda = 0.999999, fnorms = 3.61345e-13
+  3 SNES Function norm 3.613446938031e-13
+    Strain Energy                      : 1.776740666715e-02
+23 Load Increment
+  0 SNES Function norm 5.468749998921e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-8.81199e-07, 5.90695e-05]
+      Line search terminated: lambda = 0.985301, fnorms = 0.00019181
+  1 SNES Function norm 1.918097474513e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-2.8133e-11, 1.31945e-07]
+      Line search terminated: lambda = 0.999787, fnorms = 3.84994e-08
+  2 SNES Function norm 3.849937194526e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-3.22009e-20, 6.04136e-14]
+      Line search terminated: lambda = 0.999999, fnorms = 2.57289e-13
+  3 SNES Function norm 2.572893681182e-13
+    Strain Energy                      : 1.914152373227e-02
+24 Load Increment
+  0 SNES Function norm 5.468749999201e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-8.544e-07, 5.78857e-05]
+      Line search terminated: lambda = 0.985455, fnorms = 0.000182816
+  1 SNES Function norm 1.828163273889e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-2.54214e-11, 1.20497e-07]
+      Line search terminated: lambda = 0.999789, fnorms = 3.37982e-08
+  2 SNES Function norm 3.379817684977e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.72179e-20, 4.45694e-14]
+      Line search terminated: lambda = 1., fnorms = 1.79907e-13
+  3 SNES Function norm 1.799065770303e-13
+    Strain Energy                      : 2.054518693394e-02
+25 Load Increment
+  0 SNES Function norm 5.468749999423e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-8.26822e-07, 5.67085e-05]
+      Line search terminated: lambda = 0.985629, fnorms = 0.000174
+  1 SNES Function norm 1.739995307636e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-2.28254e-11, 1.09743e-07]
+      Line search terminated: lambda = 0.999792, fnorms = 2.95914e-08
+  2 SNES Function norm 2.959142696486e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-8.68595e-21, 3.24661e-14]
+      Line search terminated: lambda = 1., fnorms = 1.23499e-13
+  3 SNES Function norm 1.234987825546e-13
+    Strain Energy                      : 2.197625609544e-02
+26 Load Increment
+  0 SNES Function norm 5.468749999595e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-7.98698e-07, 5.5542e-05]
+      Line search terminated: lambda = 0.985824, fnorms = 0.000165393
+  1 SNES Function norm 1.653927111823e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-2.03696e-11, 9.9699e-08]
+      Line search terminated: lambda = 0.999796, fnorms = 2.58599e-08
+  2 SNES Function norm 2.585987743555e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-4.03777e-21, 2.33714e-14]
+      Line search terminated: lambda = 1., fnorms = 8.3245e-14
+  3 SNES Function norm 8.324502412535e-14
+    Strain Energy                      : 2.343272275851e-02
+27 Load Increment
+  0 SNES Function norm 5.468749999724e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-7.70245e-07, 5.439e-05]
+      Line search terminated: lambda = 0.986036, fnorms = 0.000157024
+  1 SNES Function norm 1.570241464367e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.80717e-11, 9.03655e-08]
+      Line search terminated: lambda = 0.9998, fnorms = 2.2577e-08
+  2 SNES Function norm 2.257696221140e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.64585e-21, 1.66479e-14]
+      Line search terminated: lambda = 1., fnorms = 5.51321e-14
+  3 SNES Function norm 5.513210729196e-14
+    Strain Energy                      : 2.491271566741e-02
+28 Load Increment
+  0 SNES Function norm 5.468749999818e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-7.41656e-07, 5.3256e-05]
+      Line search terminated: lambda = 0.986265, fnorms = 0.000148917
+  1 SNES Function norm 1.489169047620e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.59431e-11, 8.1734e-08]
+      Line search terminated: lambda = 0.999805, fnorms = 1.97111e-08
+  2 SNES Function norm 1.971112674342e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-5.15786e-22, 1.17586e-14]
+      Line search terminated: lambda = 1., fnorms = 3.58513e-14
+  3 SNES Function norm 3.585133131558e-14
+    Strain Energy                      : 2.641450358343e-02
+29 Load Increment
+  0 SNES Function norm 5.468749999885e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-7.13104e-07, 5.21429e-05]
+      Line search terminated: lambda = 0.986509, fnorms = 0.000141089
+  1 SNES Function norm 1.410892092442e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.39895e-11, 7.3787e-08]
+      Line search terminated: lambda = 0.99981, fnorms = 1.72273e-08
+  2 SNES Function norm 1.722728045085e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search terminated: lambda = 1., fnorms = 2.29889e-14
+  3 SNES Function norm 2.298890080370e-14
+    Strain Energy                      : 2.793649638527e-02
+30 Load Increment
+  0 SNES Function norm 5.468749999930e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-6.84738e-07, 5.10533e-05]
+      Line search terminated: lambda = 0.986765, fnorms = 0.000133555
+  1 SNES Function norm 1.335547827557e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.22118e-11, 6.64999e-08]
+      Line search terminated: lambda = 0.999816, fnorms = 1.50884e-08
+  2 SNES Function norm 1.508844734743e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [9.92234e-23, 5.80247e-15]
+      Line search terminated: lambda = 1., fnorms = 1.4642e-14
+  3 SNES Function norm 1.464200097672e-14
+    Strain Energy                      : 2.947724458360e-02
+31 Load Increment
+  0 SNES Function norm 5.468749999960e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-6.5669e-07, 4.99896e-05]
+      Line search terminated: lambda = 0.987034, fnorms = 0.000126323
+  1 SNES Function norm 1.263230534809e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-1.06067e-11, 5.98426e-08]
+      Line search terminated: lambda = 0.999823, fnorms = 1.32568e-08
+  2 SNES Function norm 1.325678675491e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [1.05598e-22, 4.10257e-15]
+      Line search terminated: lambda = 1., fnorms = 9.16745e-15
+  3 SNES Function norm 9.167450448578e-15
+    Strain Energy                      : 3.103543701082e-02
+32 Load Increment
+  0 SNES Function norm 5.468749999978e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-6.29073e-07, 4.89535e-05]
+      Line search terminated: lambda = 0.987313, fnorms = 0.0001194
+  1 SNES Function norm 1.194000329232e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-9.16786e-12, 5.37813e-08]
+      Line search terminated: lambda = 0.99983, fnorms = 1.16951e-08
+  2 SNES Function norm 1.169511111063e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [7.90347e-23, 2.94772e-15]
+      Line search terminated: lambda = 1., fnorms = 5.91962e-15
+  3 SNES Function norm 5.919624923344e-15
+    Strain Energy                      : 3.260989759153e-02
+33 Load Increment
+  0 SNES Function norm 5.468749999989e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-6.0198e-07, 4.79465e-05]
+      Line search terminated: lambda = 0.9876, fnorms = 0.000112788
+  1 SNES Function norm 1.127879250704e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-7.88645e-12, 4.82796e-08]
+      Line search terminated: lambda = 0.999837, fnorms = 1.03675e-08
+  2 SNES Function norm 1.036747987926e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [4.82214e-23, 2.17636e-15]
+      Line search terminated: lambda = 1., fnorms = 4.13108e-15
+  3 SNES Function norm 4.131078879334e-15
+    Strain Energy                      : 3.419958092979e-02
+34 Load Increment
+  0 SNES Function norm 5.468749999994e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-5.75492e-07, 4.69699e-05]
+      Line search terminated: lambda = 0.987896, fnorms = 0.000106486
+  1 SNES Function norm 1.064862859468e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-6.75227e-12, 4.32996e-08]
+      Line search terminated: lambda = 0.999844, fnorms = 9.24004e-09
+  2 SNES Function norm 9.240044417157e-09
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [2.57549e-23, 1.669e-15]
+      Line search terminated: lambda = 1., fnorms = 3.38156e-15
+  3 SNES Function norm 3.381563916067e-15
+    Strain Energy                      : 3.580356721878e-02
+35 Load Increment
+  0 SNES Function norm 5.468749999996e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-5.49668e-07, 4.60246e-05]
+      Line search terminated: lambda = 0.988198, fnorms = 0.000100492
+  1 SNES Function norm 1.004924546279e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [-5.75406e-12, 3.88033e-08]
+      Line search terminated: lambda = 0.999852, fnorms = 8.28172e-09
+  2 SNES Function norm 8.281718225015e-09
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [1.46356e-23, 1.33908e-15]
+      Line search terminated: lambda = 1., fnorms = 3.21247e-15
+  3 SNES Function norm 3.212469859298e-15
+    Strain Energy                      : 3.742105616990e-02
+36 Load Increment
+  0 SNES Function norm 5.468749999996e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-5.24561e-07, 4.51112e-05]
+      Line search terminated: lambda = 0.988505, fnorms = 9.48011e-05
+  1 SNES Function norm 9.480108072139e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-4.88013e-12, 3.47527e-08]
+      Line search terminated: lambda = 0.99986, fnorms = 7.46484e-09
+  2 SNES Function norm 7.464838957267e-09
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search terminated: lambda = 1., fnorms = 3.23356e-15
+  3 SNES Function norm 3.233557099182e-15
+    Strain Energy                      : 3.905136103630e-02
+37 Load Increment
+  0 SNES Function norm 5.468749999995e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-5.00208e-07, 4.423e-05]
+      Line search terminated: lambda = 0.988817, fnorms = 8.94055e-05
+  1 SNES Function norm 8.940546148237e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-4.11877e-12, 3.11108e-08]
+      Line search terminated: lambda = 0.999868, fnorms = 6.76533e-09
+  2 SNES Function norm 6.765332421518e-09
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search terminated: lambda = 1., fnorms = 3.30904e-15
+  3 SNES Function norm 3.309036805957e-15
+    Strain Energy                      : 4.069390185234e-02
+38 Load Increment
+  0 SNES Function norm 5.468749999995e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-4.76637e-07, 4.33813e-05]
+      Line search terminated: lambda = 0.989132, fnorms = 8.42975e-05
+  1 SNES Function norm 8.429754739750e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-3.45857e-12, 2.78423e-08]
+      Line search terminated: lambda = 0.999876, fnorms = 6.16254e-09
+  2 SNES Function norm 6.162538833834e-09
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [9.34414e-24, 8.88559e-16]
+      Line search terminated: lambda = 1., fnorms = 3.21181e-15
+  3 SNES Function norm 3.211806219449e-15
+    Strain Energy                      : 4.234819877572e-02
+39 Load Increment
+  0 SNES Function norm 5.468749999994e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-4.53866e-07, 4.25651e-05]
+      Line search terminated: lambda = 0.98945, fnorms = 7.94679e-05
+  1 SNES Function norm 7.946792878935e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 12
+      Line search: lambdas = [1., 0.], ftys = [-2.88865e-12, 2.49134e-08]
+      Line search terminated: lambda = 0.999884, fnorms = 5.63951e-09
+  2 SNES Function norm 5.639514747421e-09
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 13
+      Line search: lambdas = [1., 0.], ftys = [1.06399e-23, 8.18187e-16]
+      Line search terminated: lambda = 1., fnorms = 3.15285e-15
+  3 SNES Function norm 3.152849010424e-15
+    Strain Energy                      : 4.401386533095e-02
+  SNES:
+    SNES Type                          : newtonls
+    SNES Convergence                   : CONVERGED_FNORM_RELATIVE
+    Number of Load Increments          : 40
+    Completed Load Increments          : 40
+    Total SNES Iterations              : 130
+    Final rnorm                        : 3.152849e-15
+  Linear Solver:
+    KSP Type                           : cg
+    Total KSP Iterations               : 1663
+    PC Type                            : gamg
+  Performance:
+    SNES Solve Time                    : 1115.21 (1115.21) sec
+    DoFs/Sec in SNES                   : 0.000447358 (0.000447358) million
+    Strain Energy                      : 4.401386533095e-02
+
+Average time to get PetscTime(): 0.
+#PETSc Option Table entries:
+-bc_clamp 1,2,3,4,5,6
+-bc_clamp_1_rotate 0,0,1,0,.3
+-bc_clamp_2_rotate 0,0,1,0,.3
+-bc_clamp_3_rotate 0,0,1,0,.3
+-bc_clamp_4_rotate 0,0,1,0,.3
+-bc_clamp_5_rotate 0,0,1,0,.3
+-bc_clamp_6_rotate 0,0,1,0,.3
+-degree 1
+-dm_plex_box_faces 4,4,4
+-E .5
+-K 10
+-log_view
+-mu_1 0.5
+-mu_2 0
+-nu .4
+-num_steps 40
+-outer_ksp_converged_reason
+-outer_ksp_max_it 50
+-outer_ksp_monitor_true_residual
+-outer_ksp_norm_type preconditioned
+-outer_ksp_type gmres
+-outer_pc_type lu
+-output_dir /Users/klstengel/Desktop/libCEED_out/strain_plot/MR/
+-print_strain_every_increment
+-problem FSInitial-NH1
+-snes_fd
+-snes_linesearch_atol 1e-30
+-snes_linesearch_monitor
+-snes_linesearch_type cp
+-snes_monitor
+-snes_view
+-view_soln
+#End of PETSc Option Table entries
+Compiled without FORTRAN kernels
+Compiled with full precision matrices (default)
+sizeof(short) 2 sizeof(int) 4 sizeof(long) 8 sizeof(void*) 8 sizeof(PetscScalar) 8 sizeof(PetscInt) 4
+Configure options: PETSC_ARCH=libceed --download-{hdf5,netcdf,pnetcdf,exodusii, lib,mpich}
+-----------------------------------------
+Libraries compiled on 2021-05-07 21:32:11 on Karens-MacBook-Pro.local
+Machine characteristics: macOS-10.14.6-x86_64-i386-64bit
+Using PETSc directory: /Users/klstengel/Projects/CU_research_Brown/petsc
+Using PETSc arch: libceed
+-----------------------------------------
+
+Using C compiler: mpicc  -fPIC -Wall -Wwrite-strings -Wno-strict-aliasing -Wno-unknown-pragmas -fstack-protector -Qunused-arguments -fvisibility=hidden -g3
+Using Fortran compiler: mpif90  -fPIC -Wall -ffree-line-length-0 -Wno-unused-dummy-argument -g
+-----------------------------------------
+
+Using include paths: -I/Users/klstengel/Projects/CU_research_Brown/petsc/include -I/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/include -I/opt/X11/include
+-----------------------------------------
+
+Using C linker: mpicc
+Using Fortran linker: mpif90
+Using libraries: -Wl,-rpath,/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -L/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -lpetsc -Wl,-rpath,/opt/X11/lib -L/opt/X11/lib -Wl,-rpath,/usr/local/Cellar/mpich/3.3.2_1/lib -L/usr/local/Cellar/mpich/3.3.2_1/lib -Wl,-rpath,/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -Wl,-rpath,/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10 -L/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10 -llapack -lblas -lX11 -lc++ -ldl -lmpifort -lmpi -lpmpi -lgfortran -lquadmath -lm -lc++ -ldl
+-----------------------------------------
+
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+WARNING! There are options you set that were not used!
+WARNING! could be spelling mistake, etc!
+There are 2 unused database options. They are:
+Option left: name:-E value: .5
+Option left: name:-nu value: .4
+
+WARNING! There are options you set that were not used!
+WARNING! could be spelling mistake, etc!
+There are 4 unused database options. They are:
+Option left: name:-K value: 10
+Option left: name:-mu_1 value: 0.5
+Option left: name:-mu_2 value: 0
+Option left: name:-outer (no value)

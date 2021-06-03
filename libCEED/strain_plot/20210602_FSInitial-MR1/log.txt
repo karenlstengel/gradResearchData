@@ -1,0 +1,3209 @@
+
+-- Elasticity Example - libCEED + PETSc --
+  libCEED:
+    libCEED Backend                    : /cpu/self/opt/blocked
+    libCEED Backend MemType            : host
+  PETSc:
+    PETSc Vec Type                     : seq
+  Problem:
+    Problem Name                       : Hyperelasticity finite strain Initial config Moony-Rivlin w/ dXref_dxinit, Grad(u) storage
+    Forcing Function                   : None
+  Mesh:
+    File                               : Box Mesh
+    Number of 1D Basis Nodes (p)       : 2
+    Number of 1D Quadrature Points (q) : 2
+    Global nodes                       : 27
+    Owned nodes                        : 27
+    DoF per node                       : 3
+  Multigrid:
+    Type                               : Algebraic multigrid
+    Number of Levels                   : 0
+    Level 0 (coarse):
+      Number of 1D Basis Nodes (p)     : 2
+      Global Nodes                     : 27
+      Owned Nodes                      : 27
+    Level 0 (fine):
+      Number of 1D Basis Nodes (p)     : 2
+      Global Nodes                     : 27
+      Owned Nodes                      : 27
+0 Load Increment
+  0 SNES Function norm 5.776423902962e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.051567154790e-02 true resid norm 5.776423902962e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.227732533623e-10 true resid norm 2.520748656685e-09 ||r(i)||/||b|| 4.363856771994e-08
+    2 KSP preconditioned resid norm 1.865294408239e-17 true resid norm 1.519016326330e-09 ||r(i)||/||b|| 2.629682917749e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.68458e-06, 0.00254209]
+      Line search terminated: lambda = 0.999338, fnorms = 0.00113893
+  1 SNES Function norm 1.138931838387e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.991799169302e-04 true resid norm 1.138931838387e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.493200177172e-11 true resid norm 1.532796180018e-09 ||r(i)||/||b|| 1.345819063403e-06
+    2 KSP preconditioned resid norm 3.591595949283e-19 true resid norm 1.531599650446e-09 ||r(i)||/||b|| 1.344768491691e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.7727e-10, 6.14306e-07]
+      Line search terminated: lambda = 1.00029, fnorms = 2.80737e-07
+  2 SNES Function norm 2.807374104348e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.619199348805e-07 true resid norm 2.807374104348e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 5.053841953413e-15 true resid norm 1.100577879744e-09 ||r(i)||/||b|| 3.920310720396e-03
+    2 KSP preconditioned resid norm 1.057534218171e-22 true resid norm 1.100578117174e-09 ||r(i)||/||b|| 3.920311566134e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.12518e-21, 3.75211e-14]
+      Line search terminated: lambda = 1., fnorms = 3.01368e-14
+  3 SNES Function norm 3.013678668094e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.792710704439e-04
+1 Load Increment
+  0 SNES Function norm 5.777369343872e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.051295976136e-02 true resid norm 5.777369343872e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 7.953867916397e-10 true resid norm 1.922617832239e-09 ||r(i)||/||b|| 3.327843033402e-08
+    2 KSP preconditioned resid norm 2.185007533883e-17 true resid norm 1.158747412316e-09 ||r(i)||/||b|| 2.005666148980e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.67644e-06, 0.00254198]
+      Line search terminated: lambda = 0.999341, fnorms = 0.00113887
+  1 SNES Function norm 1.138872208552e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.993153371743e-04 true resid norm 1.138872208552e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.556055106163e-11 true resid norm 1.212019920593e-09 ||r(i)||/||b|| 1.064228200048e-06
+    2 KSP preconditioned resid norm 4.349684705345e-19 true resid norm 1.223385479944e-09 ||r(i)||/||b|| 1.074207861740e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.77229e-10, 6.14301e-07]
+      Line search terminated: lambda = 1.00029, fnorms = 2.80819e-07
+  2 SNES Function norm 2.808190871378e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.619224103342e-07 true resid norm 2.808190871378e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 5.346229097854e-15 true resid norm 1.049202131949e-09 ||r(i)||/||b|| 3.736220862488e-03
+    2 KSP preconditioned resid norm 1.120372718785e-22 true resid norm 1.049202109753e-09 ||r(i)||/||b|| 3.736220783448e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.1352e-21, 3.75216e-14]
+      Line search terminated: lambda = 1., fnorms = 3.02445e-14
+  3 SNES Function norm 3.024453750465e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 7.170717928345e-04
+2 Load Increment
+  0 SNES Function norm 5.778971964482e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.050949651862e-02 true resid norm 5.778971964482e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.122757109895e-10 true resid norm 2.134782148131e-09 ||r(i)||/||b|| 3.694051747008e-08
+    2 KSP preconditioned resid norm 2.032263928954e-17 true resid norm 1.085336907418e-09 ||r(i)||/||b|| 1.878079551326e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.66811e-06, 0.00254178]
+      Line search terminated: lambda = 0.999344, fnorms = 0.00113877
+  1 SNES Function norm 1.138772415533e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.994400235781e-04 true resid norm 1.138772415533e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.497070874083e-11 true resid norm 1.159780818972e-09 ||r(i)||/||b|| 1.018448289713e-06
+    2 KSP preconditioned resid norm 3.979814120011e-19 true resid norm 1.137738838198e-09 ||r(i)||/||b|| 9.990923758595e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.77124e-10, 6.14227e-07]
+      Line search terminated: lambda = 1.00029, fnorms = 2.80933e-07
+  2 SNES Function norm 2.809325555966e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.619235854437e-07 true resid norm 2.809325555966e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 5.250822725038e-15 true resid norm 1.243165346077e-09 ||r(i)||/||b|| 4.425138067168e-03
+    2 KSP preconditioned resid norm 1.122519178291e-22 true resid norm 1.243165796244e-09 ||r(i)||/||b|| 4.425139669569e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.13738e-21, 3.75208e-14]
+      Line search terminated: lambda = 1., fnorms = 3.03913e-14
+  3 SNES Function norm 3.039131796232e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.613364700594e-03
+3 Load Increment
+  0 SNES Function norm 5.781230570485e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.050528365518e-02 true resid norm 5.781230570485e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.299794561249e-10 true resid norm 2.366193048890e-09 ||r(i)||/||b|| 4.092888218246e-08
+    2 KSP preconditioned resid norm 2.131955972622e-17 true resid norm 1.496330179635e-09 ||r(i)||/||b|| 2.588255495765e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.65957e-06, 0.00254148]
+      Line search terminated: lambda = 0.999347, fnorms = 0.00113863
+  1 SNES Function norm 1.138632529067e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.995536278896e-04 true resid norm 1.138632529067e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.582828248288e-11 true resid norm 1.113286779218e-09 ||r(i)||/||b|| 9.777401846498e-07
+    2 KSP preconditioned resid norm 4.269995066237e-19 true resid norm 1.108316457926e-09 ||r(i)||/||b|| 9.733750175173e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.76957e-10, 6.14083e-07]
+      Line search terminated: lambda = 1.00029, fnorms = 2.81078e-07
+  2 SNES Function norm 2.810775303677e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.619231206135e-07 true resid norm 2.810775303677e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 5.427850442901e-15 true resid norm 1.087240680930e-09 ||r(i)||/||b|| 3.868116670541e-03
+    2 KSP preconditioned resid norm 1.142569189299e-22 true resid norm 1.087240748412e-09 ||r(i)||/||b|| 3.868116910625e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.14812e-21, 3.75185e-14]
+      Line search terminated: lambda = 1., fnorms = 3.04557e-14
+  3 SNES Function norm 3.045571760186e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 2.868087350250e-03
+4 Load Increment
+  0 SNES Function norm 5.784143496234e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.050032295444e-02 true resid norm 5.784143496234e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.405590502867e-10 true resid norm 2.047819771439e-09 ||r(i)||/||b|| 3.540402780070e-08
+    2 KSP preconditioned resid norm 2.180149475181e-17 true resid norm 1.113892660969e-09 ||r(i)||/||b|| 1.925769410276e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.65083e-06, 0.00254108]
+      Line search terminated: lambda = 0.999351, fnorms = 0.00113845
+  1 SNES Function norm 1.138452646426e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.996557438096e-04 true resid norm 1.138452646426e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.606520853455e-11 true resid norm 1.124042036596e-09 ||r(i)||/||b|| 9.873419330396e-07
+    2 KSP preconditioned resid norm 4.423898936516e-19 true resid norm 1.116505360587e-09 ||r(i)||/||b|| 9.807218280811e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.76727e-10, 6.1387e-07]
+      Line search terminated: lambda = 1.00029, fnorms = 2.81254e-07
+  2 SNES Function norm 2.812540866264e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.619206938606e-07 true resid norm 2.812540866264e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 5.640664176589e-15 true resid norm 1.164173345192e-09 ||r(i)||/||b|| 4.139222861278e-03
+    2 KSP preconditioned resid norm 1.223934181521e-22 true resid norm 1.164173572125e-09 ||r(i)||/||b|| 4.139223668139e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.13774e-21, 3.75148e-14]
+      Line search terminated: lambda = 1., fnorms = 3.05775e-14
+  3 SNES Function norm 3.057750733058e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 4.481152322701e-03
+5 Load Increment
+  0 SNES Function norm 5.787708608216e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.049461620031e-02 true resid norm 5.787708608216e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.815390399659e-10 true resid norm 2.179648949760e-09 ||r(i)||/||b|| 3.765996350726e-08
+    2 KSP preconditioned resid norm 2.834533634776e-17 true resid norm 1.303975731911e-09 ||r(i)||/||b|| 2.253008608727e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.64189e-06, 0.00254058]
+      Line search terminated: lambda = 0.999354, fnorms = 0.00113823
+  1 SNES Function norm 1.138232777812e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.997458866304e-04 true resid norm 1.138232777812e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.679842444512e-11 true resid norm 1.296147842389e-09 ||r(i)||/||b|| 1.138737055948e-06
+    2 KSP preconditioned resid norm 4.838603924626e-19 true resid norm 1.285091873131e-09 ||r(i)||/||b|| 1.129023779830e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.76434e-10, 6.13588e-07]
+      Line search terminated: lambda = 1.00029, fnorms = 2.81462e-07
+  2 SNES Function norm 2.814621361737e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.619158017522e-07 true resid norm 2.814621361737e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 5.713866233806e-15 true resid norm 1.134328164061e-09 ||r(i)||/||b|| 4.030127034072e-03
+    2 KSP preconditioned resid norm 1.280649344639e-22 true resid norm 1.134328787803e-09 ||r(i)||/||b|| 4.030129250147e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.13294e-21, 3.75096e-14]
+      Line search terminated: lambda = 1., fnorms = 3.07357e-14
+  3 SNES Function norm 3.073566234197e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 6.452447225043e-03
+6 Load Increment
+  0 SNES Function norm 5.791923309530e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.048816495655e-02 true resid norm 5.791923309530e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.921773996538e-10 true resid norm 2.114189924762e-09 ||r(i)||/||b|| 3.650238119147e-08
+    2 KSP preconditioned resid norm 2.439388954453e-17 true resid norm 1.470376388350e-09 ||r(i)||/||b|| 2.538666881053e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.63276e-06, 0.00253999]
+      Line search terminated: lambda = 0.999358, fnorms = 0.00113797
+  1 SNES Function norm 1.137973039820e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.998235636084e-04 true resid norm 1.137973039820e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.624873554752e-11 true resid norm 1.290318809642e-09 ||r(i)||/||b|| 1.133874674084e-06
+    2 KSP preconditioned resid norm 4.734842137796e-19 true resid norm 1.275344799583e-09 ||r(i)||/||b|| 1.120716181278e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.76079e-10, 6.13237e-07]
+      Line search terminated: lambda = 1.00029, fnorms = 2.81701e-07
+  2 SNES Function norm 2.817009111549e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.619073694014e-07 true resid norm 2.817009111549e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 5.811338271442e-15 true resid norm 1.073579610008e-09 ||r(i)||/||b|| 3.811061901101e-03
+    2 KSP preconditioned resid norm 1.345916889455e-22 true resid norm 1.073579557252e-09 ||r(i)||/||b|| 3.811061713826e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.12743e-21, 3.75026e-14]
+      Line search terminated: lambda = 1., fnorms = 3.0802e-14
+  3 SNES Function norm 3.080199262231e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 8.781834693009e-03
+7 Load Increment
+  0 SNES Function norm 5.796784545340e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.048097092518e-02 true resid norm 5.796784545340e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 9.230763376119e-10 true resid norm 2.409053041113e-09 ||r(i)||/||b|| 4.155843678975e-08
+    2 KSP preconditioned resid norm 2.600284928202e-17 true resid norm 1.273606235044e-09 ||r(i)||/||b|| 2.197090861463e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.62342e-06, 0.0025393]
+      Line search terminated: lambda = 0.999361, fnorms = 0.00113767
+  1 SNES Function norm 1.137673519170e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.998882083862e-04 true resid norm 1.137673519170e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.727581067826e-11 true resid norm 1.055029944551e-09 ||r(i)||/||b|| 9.273573892457e-07
+    2 KSP preconditioned resid norm 5.297389879788e-19 true resid norm 1.041687995193e-09 ||r(i)||/||b|| 9.156299919444e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.75662e-10, 6.12816e-07]
+      Line search terminated: lambda = 1.00029, fnorms = 2.81971e-07
+  2 SNES Function norm 2.819709901983e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.618953211202e-07 true resid norm 2.819709901983e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 5.872098545494e-15 true resid norm 1.178426022736e-09 ||r(i)||/||b|| 4.179245609300e-03
+    2 KSP preconditioned resid norm 1.406585150666e-22 true resid norm 1.178426603640e-09 ||r(i)||/||b|| 4.179247669456e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.12652e-21, 3.74938e-14]
+      Line search terminated: lambda = 1., fnorms = 3.09391e-14
+  3 SNES Function norm 3.093909267191e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.146915239409e-02
+8 Load Increment
+  0 SNES Function norm 5.802288809288e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.047303563328e-02 true resid norm 5.802288809288e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 9.590234856574e-10 true resid norm 2.418012102698e-09 ||r(i)||/||b|| 4.167341857971e-08
+    2 KSP preconditioned resid norm 2.824237407068e-17 true resid norm 1.582720529522e-09 ||r(i)||/||b|| 2.727752067405e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.61388e-06, 0.00253851]
+      Line search terminated: lambda = 0.999365, fnorms = 0.00113733
+  1 SNES Function norm 1.137334222373e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.999391927843e-04 true resid norm 1.137334222373e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.750145461249e-11 true resid norm 1.124836323494e-09 ||r(i)||/||b|| 9.890112346635e-07
+    2 KSP preconditioned resid norm 5.507262102429e-19 true resid norm 1.139720716123e-09 ||r(i)||/||b|| 1.002098322290e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.75183e-10, 6.12326e-07]
+      Line search terminated: lambda = 1.00029, fnorms = 2.82272e-07
+  2 SNES Function norm 2.822718318266e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.618781501376e-07 true resid norm 2.822718318266e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 6.060167111134e-15 true resid norm 1.121819226659e-09 ||r(i)||/||b|| 3.974251413607e-03
+    2 KSP preconditioned resid norm 1.390380673208e-22 true resid norm 1.121819295848e-09 ||r(i)||/||b|| 3.974251658725e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.11301e-21, 3.74831e-14]
+      Line search terminated: lambda = 1., fnorms = 3.10903e-14
+  3 SNES Function norm 3.109027098138e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.451421303141e-02
+9 Load Increment
+  0 SNES Function norm 5.808432150843e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.046436044230e-02 true resid norm 5.808432150843e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 9.682647356189e-10 true resid norm 2.681299286927e-09 ||r(i)||/||b|| 4.616218658142e-08
+    2 KSP preconditioned resid norm 2.968200096537e-17 true resid norm 1.207026391425e-09 ||r(i)||/||b|| 2.078058863527e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.60416e-06, 0.00253762]
+      Line search terminated: lambda = 0.999368, fnorms = 0.00113696
+  1 SNES Function norm 1.136955289939e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.999759119041e-04 true resid norm 1.136955289939e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.764305157582e-11 true resid norm 1.324410368391e-09 ||r(i)||/||b|| 1.164874626215e-06
+    2 KSP preconditioned resid norm 5.852456130617e-19 true resid norm 1.292798819542e-09 ||r(i)||/||b|| 1.137070939361e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.74644e-10, 6.11766e-07]
+      Line search terminated: lambda = 1.00029, fnorms = 2.82603e-07
+  2 SNES Function norm 2.826031716317e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.618553738450e-07 true resid norm 2.826031716317e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 5.939084156194e-15 true resid norm 1.265014635921e-09 ||r(i)||/||b|| 4.476293130813e-03
+    2 KSP preconditioned resid norm 1.416854892804e-22 true resid norm 1.265013613417e-09 ||r(i)||/||b|| 4.476289512650e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.10274e-21, 3.74703e-14]
+      Line search terminated: lambda = 1., fnorms = 3.13394e-14
+  3 SNES Function norm 3.133936903621e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.791680434848e-02
+10 Load Increment
+  0 SNES Function norm 5.815210183548e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.045494701176e-02 true resid norm 5.815210183548e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 9.684591865590e-10 true resid norm 2.689212018767e-09 ||r(i)||/||b|| 4.624445091211e-08
+    2 KSP preconditioned resid norm 3.368058447329e-17 true resid norm 1.384731328106e-09 ||r(i)||/||b|| 2.381223179212e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.59424e-06, 0.00253664]
+      Line search terminated: lambda = 0.999372, fnorms = 0.00113654
+  1 SNES Function norm 1.136536795649e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.999976689861e-04 true resid norm 1.136536795649e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.790457285708e-11 true resid norm 1.199935592559e-09 ||r(i)||/||b|| 1.055782441143e-06
+    2 KSP preconditioned resid norm 5.594401189192e-19 true resid norm 1.213188161507e-09 ||r(i)||/||b|| 1.067442924991e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.74046e-10, 6.11138e-07]
+      Line search terminated: lambda = 1.00028, fnorms = 2.82965e-07
+  2 SNES Function norm 2.829651347092e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.618258095083e-07 true resid norm 2.829651347092e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 6.434585775845e-15 true resid norm 1.392806078153e-09 ||r(i)||/||b|| 4.922182655415e-03
+    2 KSP preconditioned resid norm 1.651594582089e-22 true resid norm 1.392805430590e-09 ||r(i)||/||b|| 4.922180366924e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.09571e-21, 3.74553e-14]
+      Line search terminated: lambda = 1., fnorms = 3.15379e-14
+  3 SNES Function norm 3.153786476925e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 2.167668913485e-02
+11 Load Increment
+  0 SNES Function norm 5.822618094143e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.044479651731e-02 true resid norm 5.822618094143e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.047093138318e-09 true resid norm 2.786483455914e-09 ||r(i)||/||b|| 4.785619477117e-08
+    2 KSP preconditioned resid norm 3.494276865796e-17 true resid norm 1.503215815006e-09 ||r(i)||/||b|| 2.581683687133e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.58414e-06, 0.00253556]
+      Line search terminated: lambda = 0.999376, fnorms = 0.00113608
+  1 SNES Function norm 1.136078774250e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 6.000037493120e-04 true resid norm 1.136078774250e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.830085586478e-11 true resid norm 1.597618369505e-09 ||r(i)||/||b|| 1.406256683706e-06
+    2 KSP preconditioned resid norm 5.941559726281e-19 true resid norm 1.573448186363e-09 ||r(i)||/||b|| 1.384981589329e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.73388e-10, 6.10441e-07]
+      Line search terminated: lambda = 1.00028, fnorms = 2.83357e-07
+  2 SNES Function norm 2.833567337898e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.617882918122e-07 true resid norm 2.833567337898e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 6.377643629456e-15 true resid norm 1.254084586537e-09 ||r(i)||/||b|| 4.425815366250e-03
+    2 KSP preconditioned resid norm 1.543709523936e-22 true resid norm 1.254084467110e-09 ||r(i)||/||b|| 4.425814944775e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.08659e-21, 3.74378e-14]
+      Line search terminated: lambda = 1., fnorms = 3.16985e-14
+  3 SNES Function norm 3.169851692088e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 2.579360523285e-02
+12 Load Increment
+  0 SNES Function norm 5.830650652518e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.043391040968e-02 true resid norm 5.830650652518e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.059801697150e-09 true resid norm 2.724365497851e-09 ||r(i)||/||b|| 4.672489676043e-08
+    2 KSP preconditioned resid norm 3.719309398526e-17 true resid norm 1.388579412239e-09 ||r(i)||/||b|| 2.381517081013e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.57386e-06, 0.00253438]
+      Line search terminated: lambda = 0.999379, fnorms = 0.00113558
+  1 SNES Function norm 1.135581339997e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.999934419679e-04 true resid norm 1.135581339997e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.886410523073e-11 true resid norm 1.401826941332e-09 ||r(i)||/||b|| 1.234457534619e-06
+    2 KSP preconditioned resid norm 6.441082740722e-19 true resid norm 1.396183489475e-09 ||r(i)||/||b|| 1.229487875769e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.72672e-10, 6.09675e-07]
+      Line search terminated: lambda = 1.00028, fnorms = 2.83778e-07
+  2 SNES Function norm 2.837775495467e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.617418234576e-07 true resid norm 2.837775495467e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 6.389578055551e-15 true resid norm 1.457282320033e-09 ||r(i)||/||b|| 5.135298131796e-03
+    2 KSP preconditioned resid norm 1.652754316166e-22 true resid norm 1.457281885500e-09 ||r(i)||/||b|| 5.135296600552e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.0452e-21, 3.74176e-14]
+      Line search terminated: lambda = 1., fnorms = 3.19486e-14
+  3 SNES Function norm 3.194857844164e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 3.026726554544e-02
+13 Load Increment
+  0 SNES Function norm 5.839302222458e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.042228976688e-02 true resid norm 5.839302222458e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.013450773479e-09 true resid norm 2.895496540570e-09 ||r(i)||/||b|| 4.958634491351e-08
+    2 KSP preconditioned resid norm 3.508817561455e-17 true resid norm 1.413657944733e-09 ||r(i)||/||b|| 2.420936425068e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.5634e-06, 0.00253311]
+      Line search terminated: lambda = 0.999383, fnorms = 0.00113504
+  1 SNES Function norm 1.135044580640e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.999659915082e-04 true resid norm 1.135044580640e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.937816727073e-11 true resid norm 1.426994499595e-09 ||r(i)||/||b|| 1.257214495303e-06
+    2 KSP preconditioned resid norm 6.343719579703e-19 true resid norm 1.412591184083e-09 ||r(i)||/||b|| 1.244524847902e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.71898e-10, 6.08841e-07]
+      Line search terminated: lambda = 1.00028, fnorms = 2.84228e-07
+  2 SNES Function norm 2.842280126777e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.616854327699e-07 true resid norm 2.842280126777e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 6.305876496450e-15 true resid norm 1.434012707673e-09 ||r(i)||/||b|| 5.045289850791e-03
+    2 KSP preconditioned resid norm 1.605346926232e-22 true resid norm 1.434012996320e-09 ||r(i)||/||b|| 5.045290866339e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.02823e-21, 3.73947e-14]
+      Line search terminated: lambda = 1., fnorms = 3.21586e-14
+  3 SNES Function norm 3.215864291756e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 3.509735804541e-02
+14 Load Increment
+  0 SNES Function norm 5.848566773135e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.040993590354e-02 true resid norm 5.848566773135e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.059872524642e-09 true resid norm 2.992898766699e-09 ||r(i)||/||b|| 5.117319991021e-08
+    2 KSP preconditioned resid norm 3.702660481016e-17 true resid norm 1.283110769358e-09 ||r(i)||/||b|| 2.193889236680e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.55278e-06, 0.00253174]
+      Line search terminated: lambda = 0.999387, fnorms = 0.00113447
+  1 SNES Function norm 1.134468642514e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.999206483602e-04 true resid norm 1.134468642514e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.914117473775e-11 true resid norm 1.377838652919e-09 ||r(i)||/||b|| 1.214523347129e-06
+    2 KSP preconditioned resid norm 6.181356861228e-19 true resid norm 1.302922676969e-09 ||r(i)||/||b|| 1.148487166716e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.71068e-10, 6.07938e-07]
+      Line search terminated: lambda = 1.00028, fnorms = 2.84706e-07
+  2 SNES Function norm 2.847060184120e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.616174103384e-07 true resid norm 2.847060184120e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 6.559993140786e-15 true resid norm 1.575895024262e-09 ||r(i)||/||b|| 5.535165828426e-03
+    2 KSP preconditioned resid norm 1.701700400336e-22 true resid norm 1.575895202470e-09 ||r(i)||/||b|| 5.535166454363e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.01434e-21, 3.73685e-14]
+      Line search terminated: lambda = 1., fnorms = 3.23993e-14
+  3 SNES Function norm 3.239929285139e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 4.028354578586e-02
+15 Load Increment
+  0 SNES Function norm 5.858437891313e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.039684982816e-02 true resid norm 5.858437891313e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.076467119228e-09 true resid norm 2.925665731512e-09 ||r(i)||/||b|| 4.993934877845e-08
+    2 KSP preconditioned resid norm 3.880443229571e-17 true resid norm 1.759462789371e-09 ||r(i)||/||b|| 3.003296820778e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.54199e-06, 0.00253027]
+      Line search terminated: lambda = 0.999391, fnorms = 0.00113385
+  1 SNES Function norm 1.133853574263e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.998566503869e-04 true resid norm 1.133853574263e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.935145642820e-11 true resid norm 1.443205901803e-09 ||r(i)||/||b|| 1.272832696004e-06
+    2 KSP preconditioned resid norm 6.616296774219e-19 true resid norm 1.439332480625e-09 ||r(i)||/||b|| 1.269416539574e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.70183e-10, 6.06968e-07]
+      Line search terminated: lambda = 1.00028, fnorms = 2.85212e-07
+  2 SNES Function norm 2.852122968182e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.615369445300e-07 true resid norm 2.852122968182e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 6.745264629085e-15 true resid norm 1.366510319366e-09 ||r(i)||/||b|| 4.791204077140e-03
+    2 KSP preconditioned resid norm 1.673917110198e-22 true resid norm 1.366510070072e-09 ||r(i)||/||b|| 4.791203203078e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.97678e-21, 3.7339e-14]
+      Line search terminated: lambda = 1., fnorms = 3.24961e-14
+  3 SNES Function norm 3.249614848426e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 4.582546691221e-02
+16 Load Increment
+  0 SNES Function norm 5.868908794193e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.038303258873e-02 true resid norm 5.868908794193e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.107546213506e-09 true resid norm 3.413737314053e-09 ||r(i)||/||b|| 5.816647410555e-08
+    2 KSP preconditioned resid norm 4.071139945132e-17 true resid norm 1.772207140207e-09 ||r(i)||/||b|| 3.019653571650e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.53104e-06, 0.00252871]
+      Line search terminated: lambda = 0.999395, fnorms = 0.0011332
+  1 SNES Function norm 1.133199506443e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.997732130297e-04 true resid norm 1.133199506443e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.975041010214e-11 true resid norm 1.540856191421e-09 ||r(i)||/||b|| 1.359739553945e-06
+    2 KSP preconditioned resid norm 6.924692661477e-19 true resid norm 1.533102980743e-09 ||r(i)||/||b|| 1.352897677793e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.69244e-10, 6.0593e-07]
+      Line search terminated: lambda = 1.00028, fnorms = 2.85746e-07
+  2 SNES Function norm 2.857457722348e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.614430251324e-07 true resid norm 2.857457722348e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 6.688509194130e-15 true resid norm 1.399002860122e-09 ||r(i)||/||b|| 4.895970460667e-03
+    2 KSP preconditioned resid norm 1.987186231257e-22 true resid norm 1.399003410003e-09 ||r(i)||/||b|| 4.895972385037e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.93825e-21, 3.73061e-14]
+      Line search terminated: lambda = 1., fnorms = 3.25612e-14
+  3 SNES Function norm 3.256118412640e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 5.172273467578e-02
+17 Load Increment
+  0 SNES Function norm 5.879972342867e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.036848547206e-02 true resid norm 5.879972342867e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.170919169766e-09 true resid norm 3.222558150867e-09 ||r(i)||/||b|| 5.480566851265e-08
+    2 KSP preconditioned resid norm 4.491658559658e-17 true resid norm 1.433633522766e-09 ||r(i)||/||b|| 2.438163717734e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.51995e-06, 0.00252705]
+      Line search terminated: lambda = 0.999399, fnorms = 0.00113251
+  1 SNES Function norm 1.132506593100e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.996695966199e-04 true resid norm 1.132506593100e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.998356833819e-11 true resid norm 1.607874652448e-09 ||r(i)||/||b|| 1.419748602122e-06
+    2 KSP preconditioned resid norm 7.084604760065e-19 true resid norm 1.527741033488e-09 ||r(i)||/||b|| 1.348990851617e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.68251e-10, 6.04825e-07]
+      Line search terminated: lambda = 1.00028, fnorms = 2.86305e-07
+  2 SNES Function norm 2.863053231109e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.613340873897e-07 true resid norm 2.863053231109e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 7.073181314660e-15 true resid norm 1.893115696222e-09 ||r(i)||/||b|| 6.612226680428e-03
+    2 KSP preconditioned resid norm 1.933331690659e-22 true resid norm 1.893115206643e-09 ||r(i)||/||b|| 6.612224970437e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.91635e-21, 3.72693e-14]
+      Line search terminated: lambda = 1., fnorms = 3.29044e-14
+  3 SNES Function norm 3.290439315528e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 5.797493744907e-02
+18 Load Increment
+  0 SNES Function norm 5.891621056321e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.035320920029e-02 true resid norm 5.891621056321e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.078035883287e-09 true resid norm 2.512102700019e-09 ||r(i)||/||b|| 4.263856544751e-08
+    2 KSP preconditioned resid norm 3.737552173200e-17 true resid norm 1.924077660686e-09 ||r(i)||/||b|| 3.265786516636e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.50873e-06, 0.00252529]
+      Line search terminated: lambda = 0.999403, fnorms = 0.00113177
+  1 SNES Function norm 1.131774949741e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.995450017291e-04 true resid norm 1.131774949741e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.080439588631e-11 true resid norm 2.298377904202e-09 ||r(i)||/||b|| 2.030772906510e-06
+    2 KSP preconditioned resid norm 7.737146529110e-19 true resid norm 2.305659871935e-09 ||r(i)||/||b|| 2.037207019347e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.67208e-10, 6.03654e-07]
+      Line search terminated: lambda = 1.00028, fnorms = 2.8689e-07
+  2 SNES Function norm 2.868900113063e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.612092270150e-07 true resid norm 2.868900113063e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 6.985877726607e-15 true resid norm 2.303376364935e-09 ||r(i)||/||b|| 8.028778535883e-03
+    2 KSP preconditioned resid norm 1.956350447163e-22 true resid norm 2.303375932876e-09 ||r(i)||/||b|| 8.028777029871e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.87757e-21, 3.72284e-14]
+      Line search terminated: lambda = 1., fnorms = 3.30487e-14
+  3 SNES Function norm 3.304868237449e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 6.458163874275e-02
+19 Load Increment
+  0 SNES Function norm 5.903847125926e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.033720488239e-02 true resid norm 5.903847125926e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.160965401829e-09 true resid norm 3.072031420498e-09 ||r(i)||/||b|| 5.203439985780e-08
+    2 KSP preconditioned resid norm 4.656695811442e-17 true resid norm 1.555661679333e-09 ||r(i)||/||b|| 2.634996547424e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.49737e-06, 0.00252344]
+      Line search terminated: lambda = 0.999407, fnorms = 0.001131
+  1 SNES Function norm 1.131004695346e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.993987110643e-04 true resid norm 1.131004695346e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.131249889467e-11 true resid norm 1.908223987005e-09 ||r(i)||/||b|| 1.687193691466e-06
+    2 KSP preconditioned resid norm 7.854160838541e-19 true resid norm 1.880544681328e-09 ||r(i)||/||b|| 1.662720490080e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.66114e-10, 6.02416e-07]
+      Line search terminated: lambda = 1.00028, fnorms = 2.875e-07
+  2 SNES Function norm 2.874996498162e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.610674739091e-07 true resid norm 2.874996498162e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 7.113559597965e-15 true resid norm 1.885438272248e-09 ||r(i)||/||b|| 6.558054152252e-03
+    2 KSP preconditioned resid norm 2.025028303908e-22 true resid norm 1.885438544768e-09 ||r(i)||/||b|| 6.558055100148e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.83523e-21, 3.71834e-14]
+      Line search terminated: lambda = 1., fnorms = 3.35387e-14
+  3 SNES Function norm 3.353874719191e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 7.154237722455e-02
+20 Load Increment
+  0 SNES Function norm 5.916642430368e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.032047324688e-02 true resid norm 5.916642430368e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.246966373215e-09 true resid norm 3.272372592042e-09 ||r(i)||/||b|| 5.530793233753e-08
+    2 KSP preconditioned resid norm 4.968763261081e-17 true resid norm 1.773424785284e-09 ||r(i)||/||b|| 2.997349943241e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.4859e-06, 0.0025215]
+      Line search terminated: lambda = 0.999411, fnorms = 0.0011302
+  1 SNES Function norm 1.130196047539e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.992300229057e-04 true resid norm 1.130196047539e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.149760559760e-11 true resid norm 1.918780756231e-09 ||r(i)||/||b|| 1.697741520517e-06
+    2 KSP preconditioned resid norm 7.841234032907e-19 true resid norm 1.910458274414e-09 ||r(i)||/||b|| 1.690377769923e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.64971e-10, 6.01112e-07]
+      Line search terminated: lambda = 1.00027, fnorms = 2.88132e-07
+  2 SNES Function norm 2.881322587895e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.609073954053e-07 true resid norm 2.881322587895e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 7.142001693520e-15 true resid norm 2.145874191261e-09 ||r(i)||/||b|| 7.447531908701e-03
+    2 KSP preconditioned resid norm 2.063735927994e-22 true resid norm 2.145874605522e-09 ||r(i)||/||b|| 7.447533346449e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.81132e-21, 3.71339e-14]
+      Line search terminated: lambda = 1., fnorms = 3.38414e-14
+  3 SNES Function norm 3.384138488998e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 7.885666674005e-02
+21 Load Increment
+  0 SNES Function norm 5.929998550956e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.030301510093e-02 true resid norm 5.929998550956e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.279709376223e-09 true resid norm 3.429165577266e-09 ||r(i)||/||b|| 5.782742690069e-08
+    2 KSP preconditioned resid norm 5.408159974279e-17 true resid norm 1.745252428686e-09 ||r(i)||/||b|| 2.943090818133e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.47432e-06, 0.00251946]
+      Line search terminated: lambda = 0.999415, fnorms = 0.00112935
+  1 SNES Function norm 1.129349223246e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.990381856848e-04 true resid norm 1.129349223246e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.174017007977e-11 true resid norm 2.259520073919e-09 ||r(i)||/||b|| 2.000727522904e-06
+    2 KSP preconditioned resid norm 8.121435980014e-19 true resid norm 2.262981512254e-09 ||r(i)||/||b|| 2.003792507821e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.63781e-10, 5.99744e-07]
+      Line search terminated: lambda = 1.00027, fnorms = 2.88787e-07
+  2 SNES Function norm 2.887870716934e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.607285991194e-07 true resid norm 2.887870716934e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 7.365401305989e-15 true resid norm 2.223331368588e-09 ||r(i)||/||b|| 7.698860463356e-03
+    2 KSP preconditioned resid norm 2.186851144368e-22 true resid norm 2.223331248574e-09 ||r(i)||/||b|| 7.698860047775e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.74267e-21, 3.70796e-14]
+      Line search terminated: lambda = 1., fnorms = 3.39683e-14
+  3 SNES Function norm 3.396832955610e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 8.652399633538e-02
+22 Load Increment
+  0 SNES Function norm 5.943906787243e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.028483151279e-02 true resid norm 5.943906787243e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.336731158911e-09 true resid norm 3.277571486071e-09 ||r(i)||/||b|| 5.514170399013e-08
+    2 KSP preconditioned resid norm 5.728515758714e-17 true resid norm 2.149728516029e-09 ||r(i)||/||b|| 3.616692846939e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.46264e-06, 0.00251732]
+      Line search terminated: lambda = 0.999419, fnorms = 0.00112846
+  1 SNES Function norm 1.128464299586e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.988225402739e-04 true resid norm 1.128464299586e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.233907490832e-11 true resid norm 2.213295272322e-09 ||r(i)||/||b|| 1.961333888129e-06
+    2 KSP preconditioned resid norm 8.000889031394e-19 true resid norm 2.180064963277e-09 ||r(i)||/||b|| 1.931886515219e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.62545e-10, 5.98311e-07]
+      Line search terminated: lambda = 1.00027, fnorms = 2.89463e-07
+  2 SNES Function norm 2.894631767125e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.605303147099e-07 true resid norm 2.894631767125e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 7.365074021218e-15 true resid norm 2.543375008524e-09 ||r(i)||/||b|| 8.786523513662e-03
+    2 KSP preconditioned resid norm 2.076195848781e-22 true resid norm 2.543375028619e-09 ||r(i)||/||b|| 8.786523583084e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.71331e-21, 3.70206e-14]
+      Line search terminated: lambda = 1., fnorms = 3.43085e-14
+  3 SNES Function norm 3.430847954511e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 9.454383028204e-02
+23 Load Increment
+  0 SNES Function norm 5.958358172921e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.026592320192e-02 true resid norm 5.958358172921e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.343279919005e-09 true resid norm 3.992248674642e-09 ||r(i)||/||b|| 6.700249563354e-08
+    2 KSP preconditioned resid norm 5.698861771525e-17 true resid norm 2.651224855480e-09 ||r(i)||/||b|| 4.449589599244e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.45089e-06, 0.00251509]
+      Line search terminated: lambda = 0.999423, fnorms = 0.00112754
+  1 SNES Function norm 1.127541603638e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.985824378395e-04 true resid norm 1.127541603638e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.253084270546e-11 true resid norm 2.535926374239e-09 ||r(i)||/||b|| 2.249075658101e-06
+    2 KSP preconditioned resid norm 9.065121825110e-19 true resid norm 2.493921556102e-09 ||r(i)||/||b|| 2.211822205100e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.61264e-10, 5.96815e-07]
+      Line search terminated: lambda = 1.00027, fnorms = 2.90159e-07
+  2 SNES Function norm 2.901589611852e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.603108422612e-07 true resid norm 2.901589611852e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 7.367993472562e-15 true resid norm 2.012232274514e-09 ||r(i)||/||b|| 6.934930654198e-03
+    2 KSP preconditioned resid norm 2.184309844393e-22 true resid norm 2.012231907180e-09 ||r(i)||/||b|| 6.934929388224e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.68236e-21, 3.69564e-14]
+      Line search terminated: lambda = 1., fnorms = 3.43083e-14
+  3 SNES Function norm 3.430834617874e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.029156081036e-01
+24 Load Increment
+  0 SNES Function norm 5.973343491899e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.024629076902e-02 true resid norm 5.973343491899e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.312981652072e-09 true resid norm 3.728342466221e-09 ||r(i)||/||b|| 6.241634138866e-08
+    2 KSP preconditioned resid norm 5.859027011320e-17 true resid norm 2.700666855684e-09 ||r(i)||/||b|| 4.521197984589e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.43906e-06, 0.00251277]
+      Line search terminated: lambda = 0.999428, fnorms = 0.00112658
+  1 SNES Function norm 1.126581296653e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.983172836878e-04 true resid norm 1.126581296653e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.322637294126e-11 true resid norm 2.079388484268e-09 ||r(i)||/||b|| 1.845750937323e-06
+    2 KSP preconditioned resid norm 9.129815288222e-19 true resid norm 2.091321264707e-09 ||r(i)||/||b|| 1.856342965146e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.59941e-10, 5.95255e-07]
+      Line search terminated: lambda = 1.00027, fnorms = 2.90873e-07
+  2 SNES Function norm 2.908731880872e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.600705449494e-07 true resid norm 2.908731880872e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 7.658728717265e-15 true resid norm 2.039350629834e-09 ||r(i)||/||b|| 7.011133075703e-03
+    2 KSP preconditioned resid norm 2.455141985077e-22 true resid norm 2.039350147549e-09 ||r(i)||/||b|| 7.011131417645e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.63382e-21, 3.6887e-14]
+      Line search terminated: lambda = 1., fnorms = 3.46465e-14
+  3 SNES Function norm 3.464647440560e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.116387446048e-01
+25 Load Increment
+  0 SNES Function norm 5.988853294547e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.022593512320e-02 true resid norm 5.988853294547e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.341123009217e-09 true resid norm 3.696021771738e-09 ||r(i)||/||b|| 6.171501604662e-08
+    2 KSP preconditioned resid norm 5.519022012138e-17 true resid norm 2.703258764821e-09 ||r(i)||/||b|| 4.513816972747e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.42718e-06, 0.00251035]
+      Line search terminated: lambda = 0.999432, fnorms = 0.00112558
+  1 SNES Function norm 1.125583656929e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.980264292500e-04 true resid norm 1.125583656929e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.323212079122e-11 true resid norm 2.533128177020e-09 ||r(i)||/||b|| 2.250501916429e-06
+    2 KSP preconditioned resid norm 8.834383243888e-19 true resid norm 2.500416472425e-09 ||r(i)||/||b|| 2.221439923219e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.58577e-10, 5.93634e-07]
+      Line search terminated: lambda = 1.00027, fnorms = 2.91604e-07
+  2 SNES Function norm 2.916043892585e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.598078958664e-07 true resid norm 2.916043892585e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 7.681583040127e-15 true resid norm 3.163218988143e-09 ||r(i)||/||b|| 1.084763846040e-02
+    2 KSP preconditioned resid norm 2.405740211991e-22 true resid norm 3.163219459227e-09 ||r(i)||/||b|| 1.084764007589e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.58132e-21, 3.6812e-14]
+      Line search terminated: lambda = 1., fnorms = 3.49155e-14
+  3 SNES Function norm 3.491552529308e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.207126299021e-01
+26 Load Increment
+  0 SNES Function norm 6.004877914006e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.020485708997e-02 true resid norm 6.004877914006e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.485963270480e-09 true resid norm 4.151238966294e-09 ||r(i)||/||b|| 6.913111350043e-08
+    2 KSP preconditioned resid norm 6.484956723988e-17 true resid norm 3.187475992291e-09 ||r(i)||/||b|| 5.308144541717e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.41525e-06, 0.00250784]
+      Line search terminated: lambda = 0.999436, fnorms = 0.00112455
+  1 SNES Function norm 1.124548992648e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.977094274754e-04 true resid norm 1.124548992648e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.442718297986e-11 true resid norm 2.598076484348e-09 ||r(i)||/||b|| 2.310327519150e-06
+    2 KSP preconditioned resid norm 1.006643170239e-18 true resid norm 2.594434104471e-09 ||r(i)||/||b|| 2.307088549660e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.57173e-10, 5.91951e-07]
+      Line search terminated: lambda = 1.00027, fnorms = 2.92351e-07
+  2 SNES Function norm 2.923508109312e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.595229620759e-07 true resid norm 2.923508109312e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 7.924565915120e-15 true resid norm 2.723991357042e-09 ||r(i)||/||b|| 9.317543359520e-03
+    2 KSP preconditioned resid norm 2.539582352095e-22 true resid norm 2.723990589008e-09 ||r(i)||/||b|| 9.317540732425e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.47394e-21, 3.67314e-14]
+      Line search terminated: lambda = 1., fnorms = 3.47076e-14
+  3 SNES Function norm 3.470761703466e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.301366294568e-01
+27 Load Increment
+  0 SNES Function norm 6.021407482553e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.018305748574e-02 true resid norm 6.021407482553e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.398756003986e-09 true resid norm 5.745096206537e-09 ||r(i)||/||b|| 9.541118456413e-08
+    2 KSP preconditioned resid norm 5.930749752035e-17 true resid norm 3.295036624594e-09 ||r(i)||/||b|| 5.472203358005e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.40329e-06, 0.00250524]
+      Line search terminated: lambda = 0.99944, fnorms = 0.00112348
+  1 SNES Function norm 1.123477451764e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.973656673704e-04 true resid norm 1.123477451764e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.417927265996e-11 true resid norm 3.426253912175e-09 ||r(i)||/||b|| 3.049686406075e-06
+    2 KSP preconditioned resid norm 9.574093851650e-19 true resid norm 3.540910175712e-09 ||r(i)||/||b|| 3.151741203310e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.55732e-10, 5.90208e-07]
+      Line search terminated: lambda = 1.00026, fnorms = 2.93111e-07
+  2 SNES Function norm 2.931114650516e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.592150327061e-07 true resid norm 2.931114650516e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.088499788541e-15 true resid norm 2.943783319311e-09 ||r(i)||/||b|| 1.004322133490e-02
+    2 KSP preconditioned resid norm 2.619883283232e-22 true resid norm 2.943783362863e-09 ||r(i)||/||b|| 1.004322148349e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.44255e-21, 3.6645e-14]
+      Line search terminated: lambda = 1., fnorms = 3.5324e-14
+  3 SNES Function norm 3.532399154678e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.399100841104e-01
+28 Load Increment
+  0 SNES Function norm 6.038431947923e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.016053658005e-02 true resid norm 6.038431947923e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.386441780899e-09 true resid norm 5.064178553093e-09 ||r(i)||/||b|| 8.386578828357e-08
+    2 KSP preconditioned resid norm 5.806115455153e-17 true resid norm 3.729803514116e-09 ||r(i)||/||b|| 6.176774941380e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.39132e-06, 0.00250255]
+      Line search terminated: lambda = 0.999444, fnorms = 0.00112237
+  1 SNES Function norm 1.122369504651e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.969947859341e-04 true resid norm 1.122369504651e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.508462509616e-11 true resid norm 3.550388849048e-09 ||r(i)||/||b|| 3.163297679005e-06
+    2 KSP preconditioned resid norm 1.052011088095e-18 true resid norm 3.548774295778e-09 ||r(i)||/||b|| 3.161859156964e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.54255e-10, 5.88406e-07]
+      Line search terminated: lambda = 1.00026, fnorms = 2.93884e-07
+  2 SNES Function norm 2.938841405082e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.588835563429e-07 true resid norm 2.938841405082e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.150800061774e-15 true resid norm 3.807955567446e-09 ||r(i)||/||b|| 1.295733604699e-02
+    2 KSP preconditioned resid norm 2.788060392696e-22 true resid norm 3.807954993806e-09 ||r(i)||/||b|| 1.295733409506e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.41031e-21, 3.65527e-14]
+      Line search terminated: lambda = 1., fnorms = 3.55533e-14
+  3 SNES Function norm 3.555333370684e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.500323101211e-01
+29 Load Increment
+  0 SNES Function norm 6.055941089579e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.013729553831e-02 true resid norm 6.055941089579e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.520410197729e-09 true resid norm 5.453412446986e-09 ||r(i)||/||b|| 9.005061915760e-08
+    2 KSP preconditioned resid norm 6.578647396447e-17 true resid norm 4.266730518507e-09 ||r(i)||/||b|| 7.045528441236e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.37934e-06, 0.00249976]
+      Line search terminated: lambda = 0.999449, fnorms = 0.00112123
+  1 SNES Function norm 1.121225425838e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.965963104611e-04 true resid norm 1.121225425838e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.516047679369e-11 true resid norm 3.995233493257e-09 ||r(i)||/||b|| 3.563274076014e-06
+    2 KSP preconditioned resid norm 1.021525855303e-18 true resid norm 4.046837153705e-09 ||r(i)||/||b|| 3.609298416222e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.52743e-10, 5.86545e-07]
+      Line search terminated: lambda = 1.00026, fnorms = 2.94668e-07
+  2 SNES Function norm 2.946683563769e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.585289246614e-07 true resid norm 2.946683563769e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.178993127980e-15 true resid norm 3.797986339063e-09 ||r(i)||/||b|| 1.288902000120e-02
+    2 KSP preconditioned resid norm 2.735404896545e-22 true resid norm 3.797986181776e-09 ||r(i)||/||b|| 1.288901946743e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.34623e-21, 3.64544e-14]
+      Line search terminated: lambda = 1., fnorms = 3.56144e-14
+  3 SNES Function norm 3.561436101315e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.605025992030e-01
+30 Load Increment
+  0 SNES Function norm 6.073924534843e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.011333508586e-02 true resid norm 6.073924534843e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.659240991089e-09 true resid norm 5.574829436296e-09 ||r(i)||/||b|| 9.178298815397e-08
+    2 KSP preconditioned resid norm 7.549031898306e-17 true resid norm 4.154057784696e-09 ||r(i)||/||b|| 6.839165947594e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.36738e-06, 0.00249688]
+      Line search terminated: lambda = 0.999453, fnorms = 0.00112005
+  1 SNES Function norm 1.120045496052e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.961698428979e-04 true resid norm 1.120045496052e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.563810833287e-11 true resid norm 3.599805455916e-09 ||r(i)||/||b|| 3.213981457542e-06
+    2 KSP preconditioned resid norm 1.053709325146e-18 true resid norm 3.615611091751e-09 ||r(i)||/||b|| 3.228093059161e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.51199e-10, 5.84627e-07]
+      Line search terminated: lambda = 1.00026, fnorms = 2.9546e-07
+  2 SNES Function norm 2.954601744256e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.581501063034e-07 true resid norm 2.954601744256e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.238221167070e-15 true resid norm 4.713641340857e-09 ||r(i)||/||b|| 1.595355905418e-02
+    2 KSP preconditioned resid norm 3.023072777384e-22 true resid norm 4.713640923927e-09 ||r(i)||/||b|| 1.595355764306e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.28212e-21, 3.63498e-14]
+      Line search terminated: lambda = 1., fnorms = 3.57355e-14
+  3 SNES Function norm 3.573545072013e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.713202185669e-01
+31 Load Increment
+  0 SNES Function norm 6.092371774875e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.008865585532e-02 true resid norm 6.092371774875e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.490685845413e-09 true resid norm 5.053349542028e-09 ||r(i)||/||b|| 8.294552152690e-08
+    2 KSP preconditioned resid norm 6.716137506604e-17 true resid norm 3.939262249015e-09 ||r(i)||/||b|| 6.465892750112e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.35544e-06, 0.00249391]
+      Line search terminated: lambda = 0.999457, fnorms = 0.00111883
+  1 SNES Function norm 1.118830219938e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.957151258958e-04 true resid norm 1.118830219938e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.667218817087e-11 true resid norm 4.593474902792e-09 ||r(i)||/||b|| 4.105604962160e-06
+    2 KSP preconditioned resid norm 1.134486583397e-18 true resid norm 4.577238092086e-09 ||r(i)||/||b|| 4.091092652414e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.49625e-10, 5.82653e-07]
+      Line search terminated: lambda = 1.00026, fnorms = 2.96261e-07
+  2 SNES Function norm 2.962613486511e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.577481998170e-07 true resid norm 2.962613486511e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.392178604605e-15 true resid norm 3.271358972663e-09 ||r(i)||/||b|| 1.104213893428e-02
+    2 KSP preconditioned resid norm 3.012082738660e-22 true resid norm 3.271359081082e-09 ||r(i)||/||b|| 1.104213930024e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.25224e-21, 3.62393e-14]
+      Line search terminated: lambda = 1., fnorms = 3.59261e-14
+  3 SNES Function norm 3.592614713114e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.824844109632e-01
+32 Load Increment
+  0 SNES Function norm 6.111272180431e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.006325864805e-02 true resid norm 6.111272180431e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.556000544368e-09 true resid norm 5.111956229931e-09 ||r(i)||/||b|| 8.364798816030e-08
+    2 KSP preconditioned resid norm 6.982390024347e-17 true resid norm 3.258161554738e-09 ||r(i)||/||b|| 5.331396571030e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.34355e-06, 0.00249085]
+      Line search terminated: lambda = 0.999461, fnorms = 0.00111758
+  1 SNES Function norm 1.117579945022e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.952318271343e-04 true resid norm 1.117579945022e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.622373469823e-11 true resid norm 4.703730654539e-09 ||r(i)||/||b|| 4.208853850224e-06
+    2 KSP preconditioned resid norm 1.164406569160e-18 true resid norm 4.723689644226e-09 ||r(i)||/||b|| 4.226712966054e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.48022e-10, 5.80624e-07]
+      Line search terminated: lambda = 1.00026, fnorms = 2.97066e-07
+  2 SNES Function norm 2.970663643939e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.573217488061e-07 true resid norm 2.970663643939e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.748531316107e-15 true resid norm 3.580573596345e-09 ||r(i)||/||b|| 1.205311009764e-02
+    2 KSP preconditioned resid norm 3.338336086605e-22 true resid norm 3.580573700151e-09 ||r(i)||/||b|| 1.205311044707e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.17964e-21, 3.6122e-14]
+      Line search terminated: lambda = 1., fnorms = 3.60483e-14
+  3 SNES Function norm 3.604831431407e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 1.939943947264e-01
+33 Load Increment
+  0 SNES Function norm 6.130615017375e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.003714428979e-02 true resid norm 6.130615017375e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.617299221380e-09 true resid norm 6.114061824011e-09 ||r(i)||/||b|| 9.972999130891e-08
+    2 KSP preconditioned resid norm 7.930243633665e-17 true resid norm 5.344651579890e-09 ||r(i)||/||b|| 8.717969673095e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.33171e-06, 0.00248769]
+      Line search terminated: lambda = 0.999465, fnorms = 0.00111629
+  1 SNES Function norm 1.116294938243e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.947197339001e-04 true resid norm 1.116294938243e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.749787607968e-11 true resid norm 4.156914557962e-09 ||r(i)||/||b|| 3.723849688420e-06
+    2 KSP preconditioned resid norm 1.246204521968e-18 true resid norm 4.090685255340e-09 ||r(i)||/||b|| 3.664520114888e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.46392e-10, 5.7854e-07]
+      Line search terminated: lambda = 1.00025, fnorms = 2.97875e-07
+  2 SNES Function norm 2.978747890347e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.568715821681e-07 true resid norm 2.978747890347e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.529291289544e-15 true resid norm 4.355319234290e-09 ||r(i)||/||b|| 1.462130866598e-02
+    2 KSP preconditioned resid norm 3.316638453947e-22 true resid norm 4.355320054129e-09 ||r(i)||/||b|| 1.462131141827e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.14579e-21, 3.59984e-14]
+      Line search terminated: lambda = 1., fnorms = 3.59563e-14
+  3 SNES Function norm 3.595633426430e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 2.058493638206e-01
+34 Load Increment
+  0 SNES Function norm 6.150389461902e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.001031363860e-02 true resid norm 6.150389461902e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.648376003604e-09 true resid norm 5.597104510418e-09 ||r(i)||/||b|| 9.100406641057e-08
+    2 KSP preconditioned resid norm 7.205557679120e-17 true resid norm 3.913755257580e-09 ||r(i)||/||b|| 6.363426709518e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.31993e-06, 0.00248445]
+      Line search terminated: lambda = 0.999469, fnorms = 0.00111498
+  1 SNES Function norm 1.114975908027e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.941786355074e-04 true resid norm 1.114975908027e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.733548756496e-11 true resid norm 4.166885121358e-09 ||r(i)||/||b|| 3.737197450956e-06
+    2 KSP preconditioned resid norm 1.178137243936e-18 true resid norm 4.198260700845e-09 ||r(i)||/||b|| 3.765337592157e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.44736e-10, 5.76404e-07]
+      Line search terminated: lambda = 1.00025, fnorms = 2.98687e-07
+  2 SNES Function norm 2.986867931163e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.563978568683e-07 true resid norm 2.986867931163e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.799242487651e-15 true resid norm 4.009895776038e-09 ||r(i)||/||b|| 1.342508563637e-02
+    2 KSP preconditioned resid norm 3.145043069643e-22 true resid norm 4.009895259726e-09 ||r(i)||/||b|| 1.342508390776e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.02812e-21, 3.58684e-14]
+      Line search terminated: lambda = 1., fnorms = 3.59958e-14
+  3 SNES Function norm 3.599580490825e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 2.180484878885e-01
+35 Load Increment
+  0 SNES Function norm 6.170584615438e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.998276751205e-02 true resid norm 6.170584615438e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.657376917120e-09 true resid norm 5.222986117200e-09 ||r(i)||/||b|| 8.464329464235e-08
+    2 KSP preconditioned resid norm 7.693938712696e-17 true resid norm 4.568192610417e-09 ||r(i)||/||b|| 7.403176352186e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.30825e-06, 0.00248112]
+      Line search terminated: lambda = 0.999473, fnorms = 0.00111362
+  1 SNES Function norm 1.113623051322e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.936083723763e-04 true resid norm 1.113623051322e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.801599511671e-11 true resid norm 4.923128313070e-09 ||r(i)||/||b|| 4.420821127244e-06
+    2 KSP preconditioned resid norm 1.298457939391e-18 true resid norm 4.945787301978e-09 ||r(i)||/||b|| 4.441168217655e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.43057e-10, 5.74217e-07]
+      Line search terminated: lambda = 1.00025, fnorms = 2.99499e-07
+  2 SNES Function norm 2.994987419340e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.559007752859e-07 true resid norm 2.994987419340e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.919848804630e-15 true resid norm 4.628826689602e-09 ||r(i)||/||b|| 1.545524585416e-02
+    2 KSP preconditioned resid norm 3.692213199545e-22 true resid norm 4.628826807439e-09 ||r(i)||/||b|| 1.545524624761e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.67882e-22, 3.5732e-14]
+      Line search terminated: lambda = 1., fnorms = 3.68486e-14
+  3 SNES Function norm 3.684857375056e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 2.305909122994e-01
+36 Load Increment
+  0 SNES Function norm 6.191189519190e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.995450651192e-02 true resid norm 6.191189519190e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.750348744747e-09 true resid norm 6.795238245874e-09 ||r(i)||/||b|| 1.097565859487e-07
+    2 KSP preconditioned resid norm 8.900044289536e-17 true resid norm 6.798912153785e-09 ||r(i)||/||b|| 1.098159268540e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.29666e-06, 0.0024777]
+      Line search terminated: lambda = 0.999477, fnorms = 0.00111224
+  1 SNES Function norm 1.112237078370e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.930089370331e-04 true resid norm 1.112237078370e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.915465993515e-11 true resid norm 3.602359762812e-09 ||r(i)||/||b|| 3.238841639853e-06
+    2 KSP preconditioned resid norm 1.289783088745e-18 true resid norm 3.612856560290e-09 ||r(i)||/||b|| 3.248279193844e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.41357e-10, 5.71979e-07]
+      Line search terminated: lambda = 1.00025, fnorms = 3.00308e-07
+  2 SNES Function norm 3.003084310289e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.553805066711e-07 true resid norm 3.003084310289e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 9.026730481825e-15 true resid norm 4.247952535722e-09 ||r(i)||/||b|| 1.414529895537e-02
+    2 KSP preconditioned resid norm 3.662907287508e-22 true resid norm 4.247952447962e-09 ||r(i)||/||b|| 1.414529866314e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.40098e-22, 3.55889e-14]
+      Line search terminated: lambda = 1., fnorms = 3.64982e-14
+  3 SNES Function norm 3.649822871576e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 2.434757582009e-01
+37 Load Increment
+  0 SNES Function norm 6.212193168317e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.992553209913e-02 true resid norm 6.212193168317e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.634946486826e-09 true resid norm 5.893186710979e-09 ||r(i)||/||b|| 9.486483358300e-08
+    2 KSP preconditioned resid norm 6.669741015185e-17 true resid norm 4.850965025422e-09 ||r(i)||/||b|| 7.808780078124e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.28518e-06, 0.00247419]
+      Line search terminated: lambda = 0.999481, fnorms = 0.00111082
+  1 SNES Function norm 1.110818208773e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.923801051719e-04 true resid norm 1.110818208773e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.996456920825e-11 true resid norm 4.930184390195e-09 ||r(i)||/||b|| 4.438335950256e-06
+    2 KSP preconditioned resid norm 1.354054910545e-18 true resid norm 4.960525330875e-09 ||r(i)||/||b|| 4.465649997182e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.39637e-10, 5.69692e-07]
+      Line search terminated: lambda = 1.00025, fnorms = 3.01115e-07
+  2 SNES Function norm 3.011147697060e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.548369660725e-07 true resid norm 3.011147697060e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 9.220088781301e-15 true resid norm 5.003389569089e-09 ||r(i)||/||b|| 1.661622103085e-02
+    2 KSP preconditioned resid norm 3.557211169705e-22 true resid norm 5.003390566054e-09 ||r(i)||/||b|| 1.661622434177e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [8.44616e-22, 3.54391e-14]
+      Line search terminated: lambda = 1., fnorms = 3.67539e-14
+  3 SNES Function norm 3.675393814843e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 2.567021225704e-01
+38 Load Increment
+  0 SNES Function norm 6.233584525698e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.989584436355e-02 true resid norm 6.233584525698e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.777455432208e-09 true resid norm 5.930327132875e-09 ||r(i)||/||b|| 9.513510418327e-08
+    2 KSP preconditioned resid norm 8.912224802227e-17 true resid norm 5.659399216318e-09 ||r(i)||/||b|| 9.078884216598e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.27382e-06, 0.00247059]
+      Line search terminated: lambda = 0.999485, fnorms = 0.00110937
+  1 SNES Function norm 1.109367391036e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.917219924305e-04 true resid norm 1.109367391036e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 3.003321916416e-11 true resid norm 6.281226122052e-09 ||r(i)||/||b|| 5.661989141562e-06
+    2 KSP preconditioned resid norm 1.437011732245e-18 true resid norm 6.266698816365e-09 ||r(i)||/||b|| 5.648894015634e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.37898e-10, 5.67358e-07]
+      Line search terminated: lambda = 1.00024, fnorms = 3.01917e-07
+  2 SNES Function norm 3.019171196588e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.542705355257e-07 true resid norm 3.019171196588e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 9.536346760183e-15 true resid norm 6.557649505691e-09 ||r(i)||/||b|| 2.172003201773e-02
+    2 KSP preconditioned resid norm 3.809463360919e-22 true resid norm 6.557648451512e-09 ||r(i)||/||b|| 2.172002852612e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [7.95817e-22, 3.52828e-14]
+      Line search terminated: lambda = 1., fnorms = 3.69156e-14
+  3 SNES Function norm 3.691555033125e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 2.702690782684e-01
+39 Load Increment
+  0 SNES Function norm 6.255352535271e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.986544542130e-02 true resid norm 6.255352535271e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.696706432767e-09 true resid norm 7.250132658732e-09 ||r(i)||/||b|| 1.159028626740e-07
+    2 KSP preconditioned resid norm 7.664202281655e-17 true resid norm 7.411360403290e-09 ||r(i)||/||b|| 1.184802992557e-07
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.26261e-06, 0.00246691]
+      Line search terminated: lambda = 0.999488, fnorms = 0.00110788
+  1 SNES Function norm 1.107884832189e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 5.910345903127e-04 true resid norm 1.107884832189e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 3.050464254931e-11 true resid norm 6.298474534604e-09 ||r(i)||/||b|| 5.685134728454e-06
+    2 KSP preconditioned resid norm 1.463250684751e-18 true resid norm 6.299122911176e-09 ||r(i)||/||b|| 5.685719966696e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.36144e-10, 5.64977e-07]
+      Line search terminated: lambda = 1.00024, fnorms = 3.02714e-07
+  2 SNES Function norm 3.027136717925e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.536829429425e-07 true resid norm 3.027136717925e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 9.402312073602e-15 true resid norm 4.619014346283e-09 ||r(i)||/||b|| 1.525869089074e-02
+    2 KSP preconditioned resid norm 3.976569300603e-22 true resid norm 4.619014379010e-09 ||r(i)||/||b|| 1.525869099885e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [6.77991e-22, 3.51203e-14]
+      Line search terminated: lambda = 1., fnorms = 3.70438e-14
+  3 SNES Function norm 3.704375368005e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=6
+  total number of function evaluations=253
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 2.841756740931e-01
+  SNES:
+    SNES Type                          : newtonls
+    SNES Convergence                   : CONVERGED_FNORM_RELATIVE
+    Number of Load Increments          : 40
+    Completed Load Increments          : 40
+    Total SNES Iterations              : 120
+    Final rnorm                        : 3.704375e-14
+  Linear Solver:
+    KSP Type                           : gmres
+    Total KSP Iterations               : 240
+    PC Type                            : lu
+  Performance:
+    SNES Solve Time                    : 1638.4 (1638.4) sec
+    DoFs/Sec in SNES                   : 1.18652e-05 (1.18652e-05) million
+    Strain Energy                      : 2.841756740931e-01
+************************************************************************************************************************
+***             WIDEN YOUR WINDOW TO 120 CHARACTERS.  Use 'enscript -r -fCourier9' to print this document            ***
+************************************************************************************************************************
+
+---------------------------------------------- PETSc Performance Summary: ----------------------------------------------
+
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+/Users/klstengel/Projects/CU_research_Brown/libCEED/examples/solids/elasticity on a libceed named Karens-MacBook-Pro.local with 1 processor, by klstengel Wed Jun  2 17:05:00 2021
+Using Petsc Development GIT revision: v3.15.0-236-g1ac03d2b70  GIT Date: 2021-04-19 19:56:59 +0000
+
+                         Max       Max/Min     Avg       Total
+Time (sec):           1.639e+03     1.000   1.639e+03
+Objects:              9.842e+05     1.000   9.842e+05
+Flop:                 7.205e+09     1.000   7.205e+09  7.205e+09
+Flop/sec:             4.395e+06     1.000   4.395e+06  4.395e+06
+Memory:               4.137e+06     1.000   4.137e+06  4.137e+06
+MPI Messages:         0.000e+00     0.000   0.000e+00  0.000e+00
+MPI Message Lengths:  2.520e+02     1.000   0.000e+00  2.520e+02
+MPI Reductions:       4.200e+01     1.000
+
+Flop counting convention: 1 flop = 1 real number operation of type (multiply/divide/add/subtract)
+                            e.g., VecAXPY() for real vectors of length N --> 2N flop
+                            and VecAXPY() for complex vectors of length N --> 8N flop
+
+Summary of Stages:   ----- Time ------  ----- Flop ------  --- Messages ---  -- Message Lengths --  -- Reductions --
+                        Avg     %Total     Avg     %Total    Count   %Total     Avg         %Total    Count   %Total
+ 0:      Main Stage: 6.7327e-01   0.0%  2.1120e+06   0.0%  0.000e+00   0.0%  0.000e+00        4.8%  2.000e+00   4.8%
+ 1: DM and Vector Setup Stage: 2.9915e-01   0.0%  8.8493e+06   0.1%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 2: libCEED Setup Stage: 6.1150e-03   0.0%  0.0000e+00   0.0%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 3: SNES Setup Stage: 9.1141e-02   0.0%  0.0000e+00   0.0%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 4: SNES Solve Stage: 1.6384e+03  99.9%  7.1943e+09  99.8%  0.000e+00   0.0%  0.000e+00       95.2%  4.000e+01  95.2%
+
+------------------------------------------------------------------------------------------------------------------------
+See the 'Profiling' chapter of the users' manual for details on interpreting output.
+Phase summary info:
+   Count: number of times phase was executed
+   Time and Flop: Max - maximum over all processors
+                  Ratio - ratio of maximum to minimum over all processors
+   Mess: number of messages sent
+   AvgLen: average message length (bytes)
+   Reduct: number of global reductions
+   Global: entire computation
+   Stage: stages of a computation. Set stages with PetscLogStagePush() and PetscLogStagePop().
+      %T - percent time in this phase         %F - percent flop in this phase
+      %M - percent messages in this phase     %L - percent message lengths in this phase
+      %R - percent reductions in this phase
+   Total Mflop/s: 10e-6 * (sum of flop over all processors)/(max time over all processors)
+------------------------------------------------------------------------------------------------------------------------
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+Event                Count      Time (sec)     Flop                              --- Global ---  --- Stage ----  Total
+                   Max Ratio  Max     Ratio   Max  Ratio  Mess   AvgLen  Reduct  %T %F %M %L %R  %T %F %M %L %R Mflop/s
+------------------------------------------------------------------------------------------------------------------------
+
+--- Event Stage 0: Main Stage
+
+BuildTwoSided          2 1.0 4.0054e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+DMPlexInterp          13 1.0 9.5265e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+DMPlexStratify        17 1.0 5.3618e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+DMPlexSymmetrize      17 1.0 7.0763e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetGraph             2 1.0 1.2875e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetUp                2 1.0 2.3818e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastBegin           4 1.0 9.5844e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastEnd             4 1.0 4.8161e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceBegin          2 1.0 5.3167e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceEnd            2 1.0 2.4796e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFPack                 6 1.0 2.2888e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack               6 1.0 2.0266e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatMult              288 1.0 2.0266e-04 1.0 6.91e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    34
+MatAssemblyBegin      18 1.0 5.9605e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd        18 1.0 2.2125e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecView                2 1.0 2.5113e-01 1.0 7.04e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  37 33  0  0  0     3
+VecCopy                4 1.0 3.3140e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                34 1.0 2.7466e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecPointwiseMult       1 1.0 1.5020e-05 1.0 1.00e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    67
+DualSpaceSetUp         1 1.0 6.8223e-02 1.0 4.92e+02 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  10  0  0  0  0     0
+FESetUp                1 1.0 5.9700e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+
+--- Event Stage 1: DM and Vector Setup Stage
+
+DMPlexInterp          32 1.0 2.5647e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   9  0  0  0  0     0
+DMPlexStratify        44 1.0 2.1140e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   7  0  0  0  0     0
+DMPlexSymmetrize      44 1.0 7.6923e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   3  0  0  0  0     0
+MatAssemblyBegin      42 1.0 1.4496e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd        42 1.0 4.9567e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                48 1.0 4.3297e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+DualSpaceSetUp         3 1.0 1.6224e-01 1.0 1.22e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  54  0  0  0  0     0
+FESetUp                3 1.0 2.9066e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+
+--- Event Stage 2: libCEED Setup Stage
+
+VecSet                 4 1.0 2.9802e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+
+--- Event Stage 3: SNES Setup Stage
+
+DMCreateMat            1 1.0 8.4885e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  93  0  0  0  0     0
+DMPlexPrealloc         1 1.0 8.0094e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  88  0  0  0  0     0
+MatAssemblyBegin       1 1.0 4.0531e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd         1 1.0 2.0027e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                 1 1.0 8.1062e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+
+--- Event Stage 4: SNES Solve Stage
+
+PetscBarrier           1 1.0 7.1526e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastBegin       10800 1.0 1.5889e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastEnd         10800 1.0 1.2111e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceBegin      10720 1.0 1.2380e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceEnd        10720 1.0 1.1057e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFPack             21520 1.0 7.0235e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack           21520 1.0 6.9344e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatMult           979800 1.0 1.1927e+00 1.0 2.35e+07 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    20
+MatSolve             360 1.0 9.9196e-03 1.0 2.63e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   266
+MatLUFactorSym         1 1.0 5.2214e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatLUFactorNum       120 1.0 1.8566e-02 1.0 1.15e+07 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   618
+MatAssemblyBegin     240 1.0 7.9370e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd       240 1.0 1.2112e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatGetRowIJ            1 1.0 1.9073e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatGetOrdering         1 1.0 5.1808e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatZeroEntries       120 1.0 6.9880e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatView              120 1.0 2.4828e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecView               40 1.0 6.4232e+00 1.0 2.81e+07 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     4
+VecDot               240 1.0 1.7347e-03 1.0 3.86e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    22
+VecMDot              240 1.0 1.9386e-03 1.0 5.80e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    30
+VecNorm            10480 1.0 5.8200e-02 1.0 1.22e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     2
+VecScale           10680 1.0 7.5144e-02 1.0 8.16e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    11
+VecCopy            10640 1.0 8.4400e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet             33491 1.0 2.6017e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecAXPY            20440 1.0 1.6158e-01 1.0 3.31e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    20
+VecAYPX              360 1.0 2.9058e-03 1.0 2.92e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    10
+VecMAXPY             600 1.0 5.2707e-03 1.0 1.56e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    30
+VecAssemblyBegin    9720 1.0 3.1645e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecAssemblyEnd      9720 1.0 3.1831e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecReduceArith       360 1.0 1.8849e-03 1.0 5.80e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    31
+VecReduceComm        120 1.0 4.1890e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecNormalize         360 1.0 9.2092e-03 1.0 8.71e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     9
+KSPSetUp             120 1.0 7.5293e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+KSPSolve             120 1.0 7.4639e-01 1.0 3.08e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     4
+KSPGMRESOrthog       240 1.0 9.1395e-03 1.0 1.16e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    13
+SNESSolve             40 1.0 1.6239e+03 1.0 7.14e+09 1.0 0.0e+00 0.0e+00 0.0e+00 99 99  0  0  0  99 99  0  0  0     4
+SNESSetUp              1 1.0 4.5061e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SNESFunctionEval   10120 1.0 1.6218e+03 1.0 7.12e+09 1.0 0.0e+00 0.0e+00 0.0e+00 99 99  0  0  0  99 99  0  0  0     4
+SNESJacobianEval     120 1.0 1.5783e+03 1.0 6.93e+09 1.0 0.0e+00 0.0e+00 0.0e+00 96 96  0  0  0  96 96  0  0  0     4
+SNESLineSearch       120 1.0 3.8375e+01 1.0 1.69e+08 1.0 0.0e+00 0.0e+00 0.0e+00  2  2  0  0  0   2  2  0  0  0     4
+PCSetUp              120 1.0 2.4183e-02 1.0 1.15e+07 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   475
+PCApply              360 1.0 1.3410e-02 1.0 2.63e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   196
+------------------------------------------------------------------------------------------------------------------------
+
+Memory usage is given in bytes:
+
+Object Type          Creations   Destructions     Memory  Descendants' Mem.
+Reports information only for process 0.
+
+--- Event Stage 0: Main Stage
+
+           Container    16             35        20160     0.
+    Distributed Mesh    60            107       568816     0.
+            DM Label   112            205       129560     0.
+          Quadrature   104            302       178784     0.
+           Index Set   494            602       618808     0.
+   IS L to G Mapping     0              1         1172     0.
+             Section   109            205       145960     0.
+   Star Forest Graph   120            183       193968     0.
+     Discrete System   102            149       133516     0.
+           Weak Form   102            155       126480     0.
+    GraphPartitioner    17             30        20640     0.
+              Matrix    34             52       255280     0.
+              Vector    26             68       199312     0.
+        Linear Space     1              4         2720     0.
+          Dual Space    17             29        27144     0.
+            FE Space     1              4         3152     0.
+                SNES     0              1         1532     0.
+              DMSNES     0              1          672     0.
+      SNESLineSearch     0              1          992     0.
+       Krylov Solver     0              1        18950     0.
+     DMKSP interface     0              1          656     0.
+      Preconditioner     0              1         1668     0.
+              Viewer     3              3         2408     0.
+       Field over DM     1              1          704     0.
+
+--- Event Stage 1: DM and Vector Setup Stage
+
+           Container    41             22        12672     0.
+    Distributed Mesh   158            111       571560     0.
+            DM Label   305            212       133984     0.
+          Quadrature   270             72        42624     0.
+           Index Set   642            537       481848     0.
+             Section   282            186       132432     0.
+   Star Forest Graph   316            253       267168     0.
+     Discrete System   269            222       198912     0.
+           Weak Form   275            222       181152     0.
+    GraphPartitioner    44             31        21328     0.
+              Matrix    83             68       209648     0.
+              Vector    48             22        36000     0.
+        Linear Space     3              0            0     0.
+          Dual Space    40             28        26208     0.
+            FE Space     3              0            0     0.
+
+--- Event Stage 2: libCEED Setup Stage
+
+              Vector     4              0            0     0.
+
+--- Event Stage 3: SNES Setup Stage
+
+   IS L to G Mapping     1              0            0     0.
+             Section     4              4         2848     0.
+   Star Forest Graph     2              2         2112     0.
+              Matrix     3              0            0     0.
+              Vector     1              0            0     0.
+                SNES     1              0            0     0.
+              DMSNES     1              0            0     0.
+      SNESLineSearch     1              0            0     0.
+       Krylov Solver     1              0            0     0.
+      Preconditioner     1              0            0     0.
+              Viewer     1              0            0     0.
+
+--- Event Stage 4: SNES Solve Stage
+
+          Quadrature 61200          61200     36230400     0.
+           Index Set 918005          918002   1087893208     0.
+              Matrix     1              1         3264     0.
+              Vector   811            800      1919360     0.
+     DMKSP interface     1              0            0     0.
+              Viewer    40             40        31360     0.
+========================================================================================================================
+Average time to get PetscTime(): 9.53674e-08
+#PETSc Option Table entries:
+-bc_clamp 1,2,3,4,5,6
+-bc_clamp_1_rotate 0,0,1,0,.3
+-bc_clamp_2_rotate 0,0,1,0,.3
+-bc_clamp_3_rotate 0,0,1,0,.3
+-bc_clamp_4_rotate 0,0,1,0,.3
+-bc_clamp_5_rotate 0,0,1,0,.3
+-bc_clamp_6_rotate 0,0,1,0,.3
+-degree 1
+-dm_plex_box_faces 4,4,4
+-E 2.8
+-K 4.667
+-log_view
+-mu_1 1
+-mu_2 0
+-nu 0.4
+-num_steps 40
+-outer_ksp_converged_reason
+-outer_ksp_max_it 50
+-outer_ksp_monitor_true_residual
+-outer_ksp_norm_type preconditioned
+-outer_ksp_type gmres
+-outer_pc_type lu
+-output_dir /Users/klstengel/Projects/CU_research_Brown/gradResearchData/libCEED/strain_plot/20210602_FSInitial-MR1/
+-print_strain_every_increment
+-problem FSInitial-MR1
+-snes_fd
+-snes_linesearch_atol 1e-30
+-snes_linesearch_monitor
+-snes_linesearch_type cp
+-snes_monitor
+-snes_view
+-view_soln
+#End of PETSc Option Table entries
+Compiled without FORTRAN kernels
+Compiled with full precision matrices (default)
+sizeof(short) 2 sizeof(int) 4 sizeof(long) 8 sizeof(void*) 8 sizeof(PetscScalar) 8 sizeof(PetscInt) 4
+Configure options: PETSC_ARCH=libceed --download-{hdf5,netcdf,pnetcdf,exodusii, lib,mpich}
+-----------------------------------------
+Libraries compiled on 2021-05-07 21:32:11 on Karens-MacBook-Pro.local 
+Machine characteristics: macOS-10.14.6-x86_64-i386-64bit
+Using PETSc directory: /Users/klstengel/Projects/CU_research_Brown/petsc
+Using PETSc arch: libceed
+-----------------------------------------
+
+Using C compiler: mpicc  -fPIC -Wall -Wwrite-strings -Wno-strict-aliasing -Wno-unknown-pragmas -fstack-protector -Qunused-arguments -fvisibility=hidden -g3   
+Using Fortran compiler: mpif90  -fPIC -Wall -ffree-line-length-0 -Wno-unused-dummy-argument -g     
+-----------------------------------------
+
+Using include paths: -I/Users/klstengel/Projects/CU_research_Brown/petsc/include -I/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/include -I/opt/X11/include
+-----------------------------------------
+
+Using C linker: mpicc
+Using Fortran linker: mpif90
+Using libraries: -Wl,-rpath,/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -L/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -lpetsc -Wl,-rpath,/opt/X11/lib -L/opt/X11/lib -Wl,-rpath,/usr/local/Cellar/mpich/3.3.2_1/lib -L/usr/local/Cellar/mpich/3.3.2_1/lib -Wl,-rpath,/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -Wl,-rpath,/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10 -L/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10 -llapack -lblas -lX11 -lc++ -ldl -lmpifort -lmpi -lpmpi -lgfortran -lquadmath -lm -lc++ -ldl
+-----------------------------------------
+
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+WARNING! There are options you set that were not used!
+WARNING! could be spelling mistake, etc!
+There are 2 unused database options. They are:
+Option left: name:-E value: 2.8
+Option left: name:-nu value: 0.4

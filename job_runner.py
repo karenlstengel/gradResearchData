@@ -3,9 +3,9 @@ from datetime import date
 import itertools
 
 os.system('clear')
-build_path = './~/Projects/CU_research_Brown/libCEED/examples/solids/elasticity'
+build_path = '/Users/klstengel/Projects/CU_research_Brown/libCEED/examples/solids/elasticity'
 
-out_dir = '/Users/klstengel/Desktop/libCEED_out/strain_plot/'
+out_dir = '/Users/klstengel/Projects/CU_research_Brown/gradResearchData/libCEED/strain_plot/'
 
 clopt_string = ""
 
@@ -47,20 +47,25 @@ for opt, val in cloptions.items():
         clopt_string = clopt_string + ' ' + opt
 
 # print(clopt_string)
-
+nu = [0.4]
+mu1 = [1]
+mu2 = [0]
+K = [round((2*1+ 2*1*nu[0])/(3- 6*nu[0]), 3)]
+E = [round(3*K[0] - 6*K[0]*nu[0], 3)]
+# print(K, E)
 #material properties, etc
 run_opts = {'-degree': [1],
-            '-E': [0.5],
-            '-nu': [0.4],
-            '-K': [10],
-            '-mu_1': [0.5],
-            '-mu_2': [0],
+            '-E': E,
+            '-nu': nu,
+            '-K': K,
+            '-mu_1': mu1,
+            '-mu_2': mu2,
             '-num_steps': [40],
             '-problem': ['FSInitial-NH1', 'FSInitial-MR1']
            }
-print(*[v for v in run_opts.values()])
+# print(*[v for v in run_opts.values()])
 opt_combos = list(itertools.product(*[v for v in run_opts.values()]))
-print(opt_combos)
+# print(opt_combos)
 
 for combo in opt_combos:
     combo_string = ''
@@ -69,6 +74,7 @@ for combo in opt_combos:
 
     print('Running elasticity with: ' + combo_string)
     out_loc = out_dir + date.today().strftime("%Y%m%d") + '_' + combo[-1] + '/'
-
-    print(build_path + ' ' + clopt_string + combo_string + ' -output_dir ' + out_loc + ' > ' + out_loc + 'log.txt')
-    # os.system()
+    if not os.path.exists(out_loc):
+        os.makedirs(out_loc)
+    # print(build_path + ' ' + clopt_string + combo_string + ' -output_dir ' + out_loc + ' > ' + out_loc + 'log.txt')
+    os.system(build_path + ' ' + clopt_string + combo_string + ' -output_dir ' + out_loc + ' > ' + out_loc + 'log.txt')

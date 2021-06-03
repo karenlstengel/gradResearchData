@@ -11,7 +11,7 @@ os.system('clear')
 toSave = ['-E', '-nu', '-mu_1', '-K', '-mu_2', '-problem', '-bc_clamp', '-bc_clamp_1_rotate', '-bc_clamp_2_rotate', '-bc_clamp_3_rotate', '-bc_clamp_4_rotate', '-bc_clamp_5_rotate', '-bc_clamp_6_rotate', 'Configure', 'Load', 'Strain']
 df = pd.DataFrame(columns = toSave)
 
-paths = glob.glob('strain_plot/**/log.txt', recursive=True)
+paths = glob.glob('libCEED/strain_plot/**/log.txt', recursive=True)
 print('Number of log files: ', len(paths))
 for path in paths:
     print(path)

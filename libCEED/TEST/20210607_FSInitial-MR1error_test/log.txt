@@ -1,0 +1,542 @@
+
+-- Elasticity Example - libCEED + PETSc --
+  libCEED:
+    libCEED Backend                    : /cpu/self/avx/blocked
+    libCEED Backend MemType            : host
+  PETSc:
+    PETSc Vec Type                     : seq
+  Problem:
+    Problem Name                       : Hyperelasticity finite strain Initial config Moony-Rivlin w/ dXref_dxinit, Grad(u) storage
+    Forcing Function                   : None
+  Mesh:
+    File                               : Box Mesh
+    Number of 1D Basis Nodes (p)       : 2
+    Number of 1D Quadrature Points (q) : 2
+    Global nodes                       : 27
+    Owned nodes                        : 27
+    DoF per node                       : 3
+  Multigrid:
+    Type                               : Algebraic multigrid
+    Number of Levels                   : 0
+    Level 0 (coarse):
+      Number of 1D Basis Nodes (p)     : 2
+      Global Nodes                     : 27
+      Owned Nodes                      : 27
+    Level 0 (fine):
+      Number of 1D Basis Nodes (p)     : 2
+      Global Nodes                     : 27
+      Owned Nodes                      : 27
+0 Load Increment
+  0 SNES Function norm 1.237551419770e+00 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.142315271294e+00 true resid norm 1.237551419770e+00 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 4.999050511857e-08 true resid norm 4.983268897870e-08 ||r(i)||/||b|| 4.026716642444e-08
+    2 KSP preconditioned resid norm 1.925946719614e-15 true resid norm 3.531759258307e-08 ||r(i)||/||b|| 2.853828295040e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-0.469863, 1.08104]
+      Line search terminated: lambda = 0.69704, fnorms = 0.410731
+  1 SNES Function norm 4.107313249605e-01 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 3.079641895821e-01 true resid norm 4.107313249605e-01 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 9.562416617845e-09 true resid norm 2.181790090376e-08 ||r(i)||/||b|| 5.311964191156e-08
+    2 KSP preconditioned resid norm 4.109128639807e-16 true resid norm 3.371396534209e-09 ||r(i)||/||b|| 8.208277112862e-09
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-0.000260333, 0.100744]
+      Line search terminated: lambda = 0.997423, fnorms = 0.0654227
+  2 SNES Function norm 6.542270718946e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.719317743012e-02 true resid norm 6.542270718946e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.041276129976e-09 true resid norm 3.151624006253e-09 ||r(i)||/||b|| 4.817324353647e-08
+    2 KSP preconditioned resid norm 3.873289461327e-17 true resid norm 2.541135752700e-09 ||r(i)||/||b|| 3.884180068154e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-3.99798e-06, 0.0015924]
+      Line search terminated: lambda = 0.997496, fnorms = 0.000976336
+  3 SNES Function norm 9.763364598736e-04 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 6.565726155572e-04 true resid norm 9.763364598736e-04 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 3.306335924583e-11 true resid norm 2.508543139001e-09 ||r(i)||/||b|| 2.569342887518e-06
+    2 KSP preconditioned resid norm 1.298492396080e-18 true resid norm 2.523640774705e-09 ||r(i)||/||b|| 2.584806445753e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [7.5574e-11, 5.41217e-07]
+      Line search terminated: lambda = 1.00014, fnorms = 3.51302e-07
+  4 SNES Function norm 3.513016457832e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.209193575235e-07 true resid norm 3.513016457832e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 6.489931487350e-15 true resid norm 2.210376994775e-09 ||r(i)||/||b|| 6.291963107224e-03
+    2 KSP preconditioned resid norm 2.664545219947e-22 true resid norm 2.210375607241e-09 ||r(i)||/||b|| 6.291959157530e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [1.06481e-21, 6.53514e-14]
+      Line search terminated: lambda = 1., fnorms = 4.28424e-14
+  5 SNES Function norm 4.284243284887e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=10
+  total number of function evaluations=421
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 7.154237722455e-02
+1 Load Increment
+  0 SNES Function norm 1.299596647613e+00 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.115777531743e+00 true resid norm 1.299596647613e+00 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.384010092666e-07 true resid norm 1.429238990316e-07 ||r(i)||/||b|| 1.099755830350e-07
+    2 KSP preconditioned resid norm 1.415174368079e-14 true resid norm 8.784272606240e-08 ||r(i)||/||b|| 6.759229967524e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-0.472221, 1.06438]
+      Line search terminated: lambda = 0.692684, fnorms = 0.409027
+  1 SNES Function norm 4.090266927739e-01 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 3.238160108391e-01 true resid norm 4.090266927739e-01 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.291302528950e-08 true resid norm 3.272237233537e-08 ||r(i)||/||b|| 8.000057921270e-08
+    2 KSP preconditioned resid norm 7.748897325858e-16 true resid norm 6.603766580349e-09 ||r(i)||/||b|| 1.614507487412e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-0.000405058, 0.102466]
+      Line search terminated: lambda = 0.996062, fnorms = 0.0692826
+  2 SNES Function norm 6.928260033320e-02 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.582461390070e-02 true resid norm 6.928260033320e-02 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.582336209554e-09 true resid norm 5.384849371257e-09 ||r(i)||/||b|| 7.772296861492e-08
+    2 KSP preconditioned resid norm 7.059770371327e-17 true resid norm 5.146187663619e-09 ||r(i)||/||b|| 7.427821182909e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-5.56271e-06, 0.00150067]
+      Line search terminated: lambda = 0.996307, fnorms = 0.00102772
+  3 SNES Function norm 1.027724825448e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 6.208981067197e-04 true resid norm 1.027724825448e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 4.426986556467e-11 true resid norm 6.482308488366e-09 ||r(i)||/||b|| 6.307435928229e-06
+    2 KSP preconditioned resid norm 1.887400451453e-18 true resid norm 6.575110582937e-09 ||r(i)||/||b|| 6.397734510371e-06
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [8.19269e-11, 5.07013e-07]
+      Line search terminated: lambda = 1.00016, fnorms = 3.31632e-07
+  4 SNES Function norm 3.316320635837e-07 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 1.872071309491e-07 true resid norm 3.316320635837e-07 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 7.071007086214e-15 true resid norm 7.216133636901e-09 ||r(i)||/||b|| 2.175945702874e-02
+    2 KSP preconditioned resid norm 3.709513311010e-22 true resid norm 7.216133065634e-09 ||r(i)||/||b|| 2.175945530615e-02
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search terminated: lambda = 1., fnorms = 3.12027e-14
+  5 SNES Function norm 3.120273767144e-14 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=10
+  total number of function evaluations=421
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      factor fill ratio given 5., needed 1.19825
+        Factored matrix follows:
+          Mat Object: 1 MPI processes
+            type: seqaij
+            rows=81, cols=81, bs=3
+            package used to perform factorization: petsc
+            total: nonzeros=3699, allocated nonzeros=3699
+              using I-node routines: found 27 nodes, limit used is 5
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=81, cols=81
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=81, cols=81, bs=3
+      total: nonzeros=3087, allocated nonzeros=3087
+      total number of mallocs used during MatSetValues calls=0
+        using I-node routines: found 27 nodes, limit used is 5
+    Strain Energy                      : 2.841756740931e-01
+  SNES:
+    SNES Type                          : newtonls
+    SNES Convergence                   : CONVERGED_FNORM_RELATIVE
+    Number of Load Increments          : 2
+    Completed Load Increments          : 2
+    Total SNES Iterations              : 10
+    Final rnorm                        : 3.120274e-14
+  Linear Solver:
+    KSP Type                           : gmres
+    Total KSP Iterations               : 20
+    PC Type                            : lu
+  Performance:
+    SNES Solve Time                    : 146.293 (146.293) sec
+    DoFs/Sec in SNES                   : 1.10737e-05 (1.10737e-05) million
+    Strain Energy                      : 2.841756740931e-01
+************************************************************************************************************************
+***             WIDEN YOUR WINDOW TO 120 CHARACTERS.  Use 'enscript -r -fCourier9' to print this document            ***
+************************************************************************************************************************
+
+---------------------------------------------- PETSc Performance Summary: ----------------------------------------------
+
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+/Users/klstengel/Projects/CU_research_Brown/libCEED/examples/solids/elasticity on a libceed named Karens-MacBook-Pro.local with 1 processor, by klstengel Mon Jun  7 13:12:23 2021
+Using Petsc Development GIT revision: v3.15.0-236-g1ac03d2b70  GIT Date: 2021-04-19 19:56:59 +0000
+
+                         Max       Max/Min     Avg       Total
+Time (sec):           1.474e+02     1.000   1.474e+02
+Objects:              8.542e+04     1.000   8.542e+04
+Flop:                 6.077e+08     1.000   6.077e+08  6.077e+08
+Flop/sec:             4.122e+06     1.000   4.122e+06  4.122e+06
+Memory:               4.137e+06     1.000   4.137e+06  4.137e+06
+MPI Messages:         0.000e+00     0.000   0.000e+00  0.000e+00
+MPI Message Lengths:  2.400e+01     1.000   0.000e+00  2.400e+01
+MPI Reductions:       4.000e+00     1.000
+
+Flop counting convention: 1 flop = 1 real number operation of type (multiply/divide/add/subtract)
+                            e.g., VecAXPY() for real vectors of length N --> 2N flop
+                            and VecAXPY() for complex vectors of length N --> 8N flop
+
+Summary of Stages:   ----- Time ------  ----- Flop ------  --- Messages ---  -- Message Lengths --  -- Reductions --
+                        Avg     %Total     Avg     %Total    Count   %Total     Avg         %Total    Count   %Total
+ 0:      Main Stage: 7.0832e-01   0.5%  2.1120e+06   0.3%  0.000e+00   0.0%  0.000e+00       50.0%  2.000e+00  50.0%
+ 1: DM and Vector Setup Stage: 3.1179e-01   0.2%  8.8493e+06   1.5%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 2: libCEED Setup Stage: 6.3741e-03   0.0%  0.0000e+00   0.0%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 3: SNES Setup Stage: 9.1361e-02   0.1%  0.0000e+00   0.0%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 4: SNES Solve Stage: 1.4629e+02  99.2%  5.9671e+08  98.2%  0.000e+00   0.0%  0.000e+00       50.0%  2.000e+00  50.0%
+
+------------------------------------------------------------------------------------------------------------------------
+See the 'Profiling' chapter of the users' manual for details on interpreting output.
+Phase summary info:
+   Count: number of times phase was executed
+   Time and Flop: Max - maximum over all processors
+                  Ratio - ratio of maximum to minimum over all processors
+   Mess: number of messages sent
+   AvgLen: average message length (bytes)
+   Reduct: number of global reductions
+   Global: entire computation
+   Stage: stages of a computation. Set stages with PetscLogStagePush() and PetscLogStagePop().
+      %T - percent time in this phase         %F - percent flop in this phase
+      %M - percent messages in this phase     %L - percent message lengths in this phase
+      %R - percent reductions in this phase
+   Total Mflop/s: 10e-6 * (sum of flop over all processors)/(max time over all processors)
+------------------------------------------------------------------------------------------------------------------------
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+Event                Count      Time (sec)     Flop                              --- Global ---  --- Stage ----  Total
+                   Max Ratio  Max     Ratio   Max  Ratio  Mess   AvgLen  Reduct  %T %F %M %L %R  %T %F %M %L %R Mflop/s
+------------------------------------------------------------------------------------------------------------------------
+
+--- Event Stage 0: Main Stage
+
+BuildTwoSided          2 1.0 3.8147e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+DMPlexInterp          13 1.0 8.9238e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+DMPlexStratify        17 1.0 5.0795e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+DMPlexSymmetrize      17 1.0 7.0715e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetGraph             2 1.0 1.2159e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetUp                2 1.0 2.1386e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastBegin           4 1.0 9.6798e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastEnd             4 1.0 5.1022e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceBegin          2 1.0 4.0770e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceEnd            2 1.0 2.1935e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFPack                 6 1.0 1.8597e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack               6 1.0 2.0981e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatMult              288 1.0 2.4414e-04 1.0 6.91e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    28
+MatAssemblyBegin      18 1.0 5.8174e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd        18 1.0 2.2221e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecView                2 1.0 2.4696e-01 1.0 7.04e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  35 33  0  0  0     3
+VecCopy                4 1.0 3.4332e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                34 1.0 2.5368e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecPointwiseMult       1 1.0 1.1921e-05 1.0 1.00e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    84
+DualSpaceSetUp         1 1.0 6.4498e-02 1.0 4.92e+02 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   9  0  0  0  0     0
+FESetUp                1 1.0 5.6505e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+
+--- Event Stage 1: DM and Vector Setup Stage
+
+DMPlexInterp          32 1.0 2.6879e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   9  0  0  0  0     0
+DMPlexStratify        44 1.0 2.1652e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   7  0  0  0  0     0
+DMPlexSymmetrize      44 1.0 7.9374e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   3  0  0  0  0     0
+MatAssemblyBegin      42 1.0 1.5712e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd        42 1.0 5.1141e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                48 1.0 4.0507e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+DualSpaceSetUp         3 1.0 1.6637e-01 1.0 1.22e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  53  0  0  0  0     0
+FESetUp                3 1.0 2.8198e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+
+--- Event Stage 2: libCEED Setup Stage
+
+VecSet                 4 1.0 3.1233e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+
+--- Event Stage 3: SNES Setup Stage
+
+DMCreateMat            1 1.0 8.5625e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  94  0  0  0  0     0
+DMPlexPrealloc         1 1.0 8.0527e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  88  0  0  0  0     0
+MatAssemblyBegin       1 1.0 4.0531e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd         1 1.0 2.0981e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                 1 1.0 8.1062e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+
+--- Event Stage 4: SNES Solve Stage
+
+PetscBarrier           1 1.0 8.1062e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastBegin         896 1.0 1.4311e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastEnd           896 1.0 1.0740e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceBegin        892 1.0 1.1218e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceEnd          892 1.0 9.9103e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFPack              1788 1.0 6.2928e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack            1788 1.0 6.2194e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatMult            81266 1.0 1.0606e-01 1.0 1.95e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    18
+MatSolve              30 1.0 8.4305e-04 1.0 2.20e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   260
+MatLUFactorSym         1 1.0 5.5695e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatLUFactorNum        10 1.0 1.6813e-03 1.0 9.57e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   569
+MatAssemblyBegin      20 1.0 6.8188e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd        20 1.0 1.1659e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatGetRowIJ            1 1.0 2.0981e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatGetOrdering         1 1.0 5.5218e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatZeroEntries        10 1.0 5.8889e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatView                6 1.0 1.0011e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecView                2 1.0 3.3137e-01 1.0 1.41e+06 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     4
+VecDot                20 1.0 1.5426e-04 1.0 3.22e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    21
+VecMDot               20 1.0 1.6975e-04 1.0 4.83e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    28
+VecNorm              872 1.0 5.1584e-03 1.0 9.98e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     2
+VecScale             890 1.0 6.9983e-03 1.0 6.80e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    10
+VecCopy              884 1.0 7.6809e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet              2793 1.0 2.3416e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecAXPY             1702 1.0 1.4919e-02 1.0 2.76e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    18
+VecAYPX               30 1.0 2.7418e-04 1.0 2.43e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     9
+VecMAXPY              50 1.0 4.5943e-04 1.0 1.30e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    28
+VecAssemblyBegin     810 1.0 2.7785e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecAssemblyEnd       810 1.0 2.8577e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecReduceArith        30 1.0 1.7023e-04 1.0 4.83e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    28
+VecReduceComm         10 1.0 3.4094e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecNormalize          30 1.0 7.9465e-04 1.0 7.26e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     9
+KSPSetUp              10 1.0 2.6107e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+KSPSolve              10 1.0 6.1276e-02 1.0 2.57e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     4
+KSPGMRESOrthog        20 1.0 8.0419e-04 1.0 9.69e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    12
+SNESSolve              2 1.0 1.4552e+02 1.0 5.94e+08 1.0 0.0e+00 0.0e+00 0.0e+00 99 98  0  0  0  99100  0  0  0     4
+SNESSetUp              1 1.0 6.5804e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SNESFunctionEval     842 1.0 1.4534e+02 1.0 5.92e+08 1.0 0.0e+00 0.0e+00 0.0e+00 99 97  0  0  0  99 99  0  0  0     4
+SNESJacobianEval      10 1.0 1.4164e+02 1.0 5.77e+08 1.0 0.0e+00 0.0e+00 0.0e+00 96 95  0  0  0  97 97  0  0  0     4
+SNESLineSearch        10 1.0 3.4681e+00 1.0 1.41e+07 1.0 0.0e+00 0.0e+00 0.0e+00  2  2  0  0  0   2  2  0  0  0     4
+PCSetUp               10 1.0 3.5150e-03 1.0 9.57e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   272
+PCApply               30 1.0 1.1482e-03 1.0 2.20e+05 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0   191
+------------------------------------------------------------------------------------------------------------------------
+
+Memory usage is given in bytes:
+
+Object Type          Creations   Destructions     Memory  Descendants' Mem.
+Reports information only for process 0.
+
+--- Event Stage 0: Main Stage
+
+           Container    16             35        20160     0.
+    Distributed Mesh    60            107       568816     0.
+            DM Label   112            205       129560     0.
+          Quadrature   104            302       178784     0.
+           Index Set   494            602       618808     0.
+   IS L to G Mapping     0              1         1172     0.
+             Section   109            205       145960     0.
+   Star Forest Graph   120            183       193968     0.
+     Discrete System   102            149       133516     0.
+           Weak Form   102            155       126480     0.
+    GraphPartitioner    17             30        20640     0.
+              Matrix    34             52       255280     0.
+              Vector    26             68       199312     0.
+        Linear Space     1              4         2720     0.
+          Dual Space    17             29        27144     0.
+            FE Space     1              4         3152     0.
+                SNES     0              1         1532     0.
+              DMSNES     0              1          672     0.
+      SNESLineSearch     0              1          992     0.
+       Krylov Solver     0              1        18950     0.
+     DMKSP interface     0              1          656     0.
+      Preconditioner     0              1         1668     0.
+              Viewer     3              3         2408     0.
+       Field over DM     1              1          704     0.
+
+--- Event Stage 1: DM and Vector Setup Stage
+
+           Container    41             22        12672     0.
+    Distributed Mesh   158            111       571560     0.
+            DM Label   305            212       133984     0.
+          Quadrature   270             72        42624     0.
+           Index Set   642            537       481848     0.
+             Section   282            186       132432     0.
+   Star Forest Graph   316            253       267168     0.
+     Discrete System   269            222       198912     0.
+           Weak Form   275            222       181152     0.
+    GraphPartitioner    44             31        21328     0.
+              Matrix    83             68       209648     0.
+              Vector    48             22        36000     0.
+        Linear Space     3              0            0     0.
+          Dual Space    40             28        26208     0.
+            FE Space     3              0            0     0.
+
+--- Event Stage 2: libCEED Setup Stage
+
+              Vector     4              0            0     0.
+
+--- Event Stage 3: SNES Setup Stage
+
+   IS L to G Mapping     1              0            0     0.
+             Section     4              4         2848     0.
+   Star Forest Graph     2              2         2112     0.
+              Matrix     3              0            0     0.
+              Vector     1              0            0     0.
+                SNES     1              0            0     0.
+              DMSNES     1              0            0     0.
+      SNESLineSearch     1              0            0     0.
+       Krylov Solver     1              0            0     0.
+      Preconditioner     1              0            0     0.
+              Viewer     1              0            0     0.
+
+--- Event Stage 4: SNES Solve Stage
+
+          Quadrature  5076           5076      3004992     0.
+           Index Set 76145          76142     90232984     0.
+              Matrix     1              1         3264     0.
+              Vector    75             64       150304     0.
+     DMKSP interface     1              0            0     0.
+              Viewer     2              2         1568     0.
+========================================================================================================================
+Average time to get PetscTime(): 0.
+#PETSc Option Table entries:
+-bc_clamp 1,2,3,4,5,6
+-bc_clamp_1_rotate 0,0,1,0,.3
+-bc_clamp_2_rotate 0,0,1,0,.3
+-bc_clamp_3_rotate 0,0,1,0,.3
+-bc_clamp_4_rotate 0,0,1,0,.3
+-bc_clamp_5_rotate 0,0,1,0,.3
+-bc_clamp_6_rotate 0,0,1,0,.3
+-degree 1
+-dm_plex_box_faces 4,4,4
+-E 2.8
+-K 4.667
+-log_view
+-mu_1 1.0
+-mu_2 0
+-nu 0.4
+-num_steps 2
+-outer_ksp_converged_reason
+-outer_ksp_max_it 50
+-outer_ksp_monitor_true_residual
+-outer_ksp_norm_type preconditioned
+-outer_ksp_type gmres
+-outer_pc_type lu
+-output_dir /Users/klstengel/Projects/CU_research_Brown/gradResearchData/libCEED/TEST/20210607_FSInitial-MR1error_test/
+-print_strain_every_increment
+-problem FSInitial-MR1
+-snes_fd
+-snes_linesearch_atol 1e-30
+-snes_linesearch_monitor
+-snes_linesearch_type cp
+-snes_monitor
+-snes_view
+-view_soln
+#End of PETSc Option Table entries
+Compiled without FORTRAN kernels
+Compiled with full precision matrices (default)
+sizeof(short) 2 sizeof(int) 4 sizeof(long) 8 sizeof(void*) 8 sizeof(PetscScalar) 8 sizeof(PetscInt) 4
+Configure options: PETSC_ARCH=libceed --download-{hdf5,netcdf,pnetcdf,exodusii, lib,mpich}
+-----------------------------------------
+Libraries compiled on 2021-05-07 21:32:11 on Karens-MacBook-Pro.local 
+Machine characteristics: macOS-10.14.6-x86_64-i386-64bit
+Using PETSc directory: /Users/klstengel/Projects/CU_research_Brown/petsc
+Using PETSc arch: libceed
+-----------------------------------------
+
+Using C compiler: mpicc  -fPIC -Wall -Wwrite-strings -Wno-strict-aliasing -Wno-unknown-pragmas -fstack-protector -Qunused-arguments -fvisibility=hidden -g3   
+Using Fortran compiler: mpif90  -fPIC -Wall -ffree-line-length-0 -Wno-unused-dummy-argument -g     
+-----------------------------------------
+
+Using include paths: -I/Users/klstengel/Projects/CU_research_Brown/petsc/include -I/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/include -I/opt/X11/include
+-----------------------------------------
+
+Using C linker: mpicc
+Using Fortran linker: mpif90
+Using libraries: -Wl,-rpath,/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -L/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -lpetsc -Wl,-rpath,/opt/X11/lib -L/opt/X11/lib -Wl,-rpath,/usr/local/Cellar/mpich/3.3.2_1/lib -L/usr/local/Cellar/mpich/3.3.2_1/lib -Wl,-rpath,/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -L/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -Wl,-rpath,/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10 -L/usr/local/Cellar/gcc/10.2.0_4/lib/gcc/10 -llapack -lblas -lX11 -lc++ -ldl -lmpifort -lmpi -lpmpi -lgfortran -lquadmath -lm -lc++ -ldl
+-----------------------------------------
+
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+WARNING! There are options you set that were not used!
+WARNING! could be spelling mistake, etc!
+There are 2 unused database options. They are:
+Option left: name:-E value: 2.8
+Option left: name:-nu value: 0.4

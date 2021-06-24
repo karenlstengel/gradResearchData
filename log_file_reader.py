@@ -11,7 +11,7 @@ os.system('clear')
 toSave = ['-E', '-nu', '-mu_1', '-K', '-mu_2', '-problem', '-bc_clamp', '-bc_clamp_1_rotate', '-bc_clamp_2_rotate', '-bc_clamp_3_rotate', '-bc_clamp_4_rotate', '-bc_clamp_5_rotate', '-bc_clamp_6_rotate', 'Configure', 'Load', 'Strain']
 df = pd.DataFrame(columns = toSave)
 
-paths = glob.glob('libCEED/strain_plot/**/log.txt', recursive=True)
+paths = glob.glob('libCEED/altair_plot/**/log.txt', recursive=True)
 print('Number of log files: ', len(paths))
 for path in paths:
     print(path)
@@ -33,7 +33,7 @@ for path in paths:
                     elif d == 'Load' and len(line_arr) == 3:
                         load_array.append( int(line_arr[0]) )
                     elif d == 'Strain':
-                        print('Strain Energy', float(line_arr[-1]))
+                        # print('Strain Energy', float(line_arr[-1]))
                         strain_array.append(float(line_arr[-1]))
                     else:
                         data[d] = line_arr[1]
@@ -42,6 +42,6 @@ for path in paths:
         data['Load'] = load_array
         data['Strain'] = strain_array
         df = df.append(data, ignore_index = True)
-print(df.head())
+print(df.head(10))
 print(date.today())
-df.to_csv('log_csv/' + date.today().strftime("%Y%m%d") + '_strain_plot_MRvsNH.csv')
+df.to_csv('log_csv/altair_plot_MRvsNH.csv')

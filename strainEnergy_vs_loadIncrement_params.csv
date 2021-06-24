@@ -1,0 +1,6 @@
+Parameter,Neo-Hookean J - 1,Mooney-Rivlin J - 1,Mooney-Rivlin J - 1 (2),Mooney-Rivlin log(J)
+$E$,2.8,2.8,2.8,2.8
+$\nu$,0.4,0.4,0.4,0.4
+$\mu_1$,1.0,1.0,0.5,1.0
+$\mu_2$,0.0,0.0,0.5,0.0
+$K$,4.667,4.667,4.667,4.667

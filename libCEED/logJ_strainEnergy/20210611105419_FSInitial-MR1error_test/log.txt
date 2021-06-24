@@ -1,0 +1,427 @@
+
+-- Elasticity Example - libCEED + PETSc --
+  libCEED:
+    libCEED Backend                    : /cpu/self/avx/blocked
+    libCEED Backend MemType            : host
+  PETSc:
+    PETSc Vec Type                     : seq
+  Problem:
+    Problem Name                       : Hyperelasticity finite strain Initial config Moony-Rivlin w/ dXref_dxinit, Grad(u) storage
+    Forcing Function                   : None
+  Mesh:
+    File                               : Box Mesh
+    Number of 1D Basis Nodes (p)       : 2
+    Number of 1D Quadrature Points (q) : 2
+    Global nodes                       : 0
+    Owned nodes                        : 0
+    DoF per node                       : 3
+  Multigrid:
+    Type                               : Algebraic multigrid
+    Number of Levels                   : 0
+    Level 0 (coarse):
+      Number of 1D Basis Nodes (p)     : 2
+      Global Nodes                     : 0
+      Owned Nodes                      : 0
+    Level 0 (fine):
+      Number of 1D Basis Nodes (p)     : 2
+      Global Nodes                     : 0
+      Owned Nodes                      : 0
+0 Load Increment
+  0 SNES Function norm 0.000000000000e+00 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=0
+  total number of function evaluations=1
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+    PC has not been set up so information may be incomplete
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      matrix solver type: petsc
+      matrix not yet factored; no additional information available
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=0, cols=0
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=0, cols=0, bs=3
+      total: nonzeros=0, allocated nonzeros=0
+      total number of mallocs used during MatSetValues calls=0
+        not using I-node routines
+    Strain Energy                      : 4.860981688080e-02
+1 Load Increment
+  0 SNES Function norm 0.000000000000e+00 
+SNES Object: 1 MPI processes
+  type: newtonls
+  maximum iterations=50, maximum function evaluations=10000
+  tolerances: relative=1e-08, absolute=1e-50, solution=1e-08
+  total number of linear solver iterations=0
+  total number of function evaluations=1
+  norm schedule ALWAYS
+  Jacobian is built using finite differences one column at a time
+  SNESLineSearch Object: 1 MPI processes
+    type: cp
+    maxstep=1.000000e+08, minlambda=1.000000e-12
+    tolerances: relative=1.000000e-08, absolute=1.000000e-30, lambda=1.000000e-08
+    maximum iterations=1
+  KSP Object: (outer_) 1 MPI processes
+    type: gmres
+      restart=30, using Classical (unmodified) Gram-Schmidt Orthogonalization with no iterative refinement
+      happy breakdown tolerance 1e-30
+    maximum iterations=50, initial guess is zero
+    tolerances:  relative=1e-10, absolute=1e-50, divergence=10000.
+    left preconditioning
+    using PRECONDITIONED norm type for convergence test
+  PC Object: (outer_) 1 MPI processes
+    type: lu
+    PC has not been set up so information may be incomplete
+      out-of-place factorization
+      tolerance for zero pivot 2.22045e-14
+      matrix ordering: nd
+      matrix solver type: petsc
+      matrix not yet factored; no additional information available
+    linear system matrix followed by preconditioner matrix:
+    Mat Object: 1 MPI processes
+      type: shell
+      rows=0, cols=0
+    Mat Object: 1 MPI processes
+      type: seqaij
+      rows=0, cols=0, bs=3
+      total: nonzeros=0, allocated nonzeros=0
+      total number of mallocs used during MatSetValues calls=0
+        not using I-node routines
+    Strain Energy                      : 2.227379037631e-01
+  SNES:
+    SNES Type                          : newtonls
+    SNES Convergence                   : CONVERGED_FNORM_ABS
+    Number of Load Increments          : 2
+    Completed Load Increments          : 2
+    Total SNES Iterations              : 0
+    Final rnorm                        : 0.000000e+00
+  Linear Solver:
+    KSP Type                           : gmres
+    Total KSP Iterations               : 0
+    PC Type                            : lu
+  Performance:
+    SNES Solve Time                    : 0.159542 (0.159542) sec
+    DoFs/Sec in SNES                   : 0. (0.) million
+    Strain Energy                      : 2.227379037631e-01
+************************************************************************************************************************
+***             WIDEN YOUR WINDOW TO 120 CHARACTERS.  Use 'enscript -r -fCourier9' to print this document            ***
+************************************************************************************************************************
+
+---------------------------------------------- PETSc Performance Summary: ----------------------------------------------
+
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+/Users/klstengel/Projects/CU_research_Brown/libCEED/examples/solids/elasticity on a libceed named Karens-MacBook-Pro.local with 1 processor, by klstengel Fri Jun 11 10:54:19 2021
+Using Petsc Development GIT revision: v3.15.0-739-g75ae01e686  GIT Date: 2021-06-07 09:26:52 -0500
+
+                         Max       Max/Min     Avg       Total
+Time (sec):           5.326e-01     1.000   5.326e-01
+Objects:              3.895e+03     1.000   3.895e+03
+Flop:                 1.484e+07     1.000   1.484e+07  1.484e+07
+Flop/sec:             2.787e+07     1.000   2.787e+07  2.787e+07
+Memory:               3.956e+06     1.000   3.956e+06  3.956e+06
+MPI Messages:         0.000e+00     0.000   0.000e+00  0.000e+00
+MPI Message Lengths:  2.400e+01     1.000   0.000e+00  2.400e+01
+MPI Reductions:       4.000e+00     1.000
+
+Flop counting convention: 1 flop = 1 real number operation of type (multiply/divide/add/subtract)
+                            e.g., VecAXPY() for real vectors of length N --> 2N flop
+                            and VecAXPY() for complex vectors of length N --> 8N flop
+
+Summary of Stages:   ----- Time ------  ----- Flop ------  --- Messages ---  -- Message Lengths --  -- Reductions --
+                        Avg     %Total     Avg     %Total    Count   %Total     Avg         %Total    Count   %Total
+ 0:      Main Stage: 1.7077e-01  32.1%  1.9987e+06  13.5%  0.000e+00   0.0%  0.000e+00       50.0%  2.000e+00  50.0%
+ 1: DM and Vector Setup Stage: 1.9335e-01  36.3%  8.8493e+06  59.6%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 2: libCEED Setup Stage: 1.3480e-03   0.3%  0.0000e+00   0.0%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 3: SNES Setup Stage: 7.5060e-03   1.4%  0.0000e+00   0.0%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 4: SNES Solve Stage: 1.5956e-01  30.0%  3.9963e+06  26.9%  0.000e+00   0.0%  0.000e+00       50.0%  2.000e+00  50.0%
+
+------------------------------------------------------------------------------------------------------------------------
+See the 'Profiling' chapter of the users' manual for details on interpreting output.
+Phase summary info:
+   Count: number of times phase was executed
+   Time and Flop: Max - maximum over all processors
+                  Ratio - ratio of maximum to minimum over all processors
+   Mess: number of messages sent
+   AvgLen: average message length (bytes)
+   Reduct: number of global reductions
+   Global: entire computation
+   Stage: stages of a computation. Set stages with PetscLogStagePush() and PetscLogStagePop().
+      %T - percent time in this phase         %F - percent flop in this phase
+      %M - percent messages in this phase     %L - percent message lengths in this phase
+      %R - percent reductions in this phase
+   Total Mflop/s: 10e-6 * (sum of flop over all processors)/(max time over all processors)
+------------------------------------------------------------------------------------------------------------------------
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+Event                Count      Time (sec)     Flop                              --- Global ---  --- Stage ----  Total
+                   Max Ratio  Max     Ratio   Max  Ratio  Mess   AvgLen  Reduct  %T %F %M %L %R  %T %F %M %L %R Mflop/s
+------------------------------------------------------------------------------------------------------------------------
+
+--- Event Stage 0: Main Stage
+
+BuildTwoSided          2 1.0 4.3000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+DMPlexInterp          13 1.0 9.6410e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  2  0  0  0  0   6  0  0  0  0     0
+DMPlexStratify        17 1.0 6.0960e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   4  0  0  0  0     0
+DMPlexSymmetrize      17 1.0 7.5800e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetGraph             2 1.0 7.0000e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetUp                2 1.0 1.4600e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastBegin           4 1.0 8.9000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastEnd             4 1.0 5.4000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceBegin          2 1.0 3.6000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceEnd            2 1.0 2.2000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFPack                 6 1.0 2.0000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack               6 1.0 2.2000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatMult               18 1.0 2.7000e-05 1.0 4.32e+02 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    16
+MatAssemblyBegin      18 1.0 7.6000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd        18 1.0 2.1400e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecView                2 1.0 9.6493e-02 1.0 6.67e+05 1.0 0.0e+00 0.0e+00 0.0e+00 18  4  0  0  0  57 33  0  0  0     7
+VecCopy                4 1.0 3.5000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                37 1.0 3.0800e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecPointwiseMult       1 1.0 1.2000e-05 1.0 6.40e+01 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     5
+DualSpaceSetUp         1 1.0 6.1097e-02 1.0 4.92e+02 1.0 0.0e+00 0.0e+00 0.0e+00 11  0  0  0  0  36  0  0  0  0     0
+FESetUp                1 1.0 6.3700e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+
+--- Event Stage 1: DM and Vector Setup Stage
+
+DMPlexInterp          32 1.0 2.8111e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  5  0  0  0  0  15  0  0  0  0     0
+DMPlexStratify        44 1.0 1.6444e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  3  0  0  0  0   9  0  0  0  0     0
+DMPlexSymmetrize      44 1.0 2.2990e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+MatAssemblyBegin      42 1.0 1.5400e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd        42 1.0 5.3100e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                56 1.0 5.4200e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+DualSpaceSetUp         3 1.0 1.4028e-01 1.0 1.22e+03 1.0 0.0e+00 0.0e+00 0.0e+00 26  0  0  0  0  73  0  0  0  0     0
+FESetUp                3 1.0 2.9380e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   2  0  0  0  0     0
+
+--- Event Stage 2: libCEED Setup Stage
+
+VecSet                 4 1.0 4.4000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   3  0  0  0  0     0
+
+--- Event Stage 3: SNES Setup Stage
+
+DMCreateMat            1 1.0 1.2350e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  16  0  0  0  0     0
+DMPlexPrealloc         1 1.0 8.0000e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  11  0  0  0  0     0
+MatAssemblyBegin       1 1.0 3.0000e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd         1 1.0 1.1000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                 1 1.0 8.0000e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+
+--- Event Stage 4: SNES Solve Stage
+
+PetscBarrier           1 1.0 8.0000e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastBegin           6 1.0 8.4000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastEnd             6 1.0 7.5000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceBegin          2 1.0 2.4000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceEnd            2 1.0 2.4000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFPack                 8 1.0 2.9000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack               8 1.0 2.7000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatMult               36 1.0 5.9000e-05 1.0 8.64e+02 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    15
+MatView                4 1.0 6.7700e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecView                2 1.0 5.1515e-02 1.0 1.33e+06 1.0 0.0e+00 0.0e+00 0.0e+00 10  9  0  0  0  32 33  0  0  0    26
+VecNorm                2 1.0 1.6000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecCopy                4 1.0 3.4000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                13 1.0 1.1800e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecAXPY                2 1.0 2.3000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SNESSolve              2 1.0 5.1223e-02 1.0 1.33e+06 1.0 0.0e+00 0.0e+00 0.0e+00 10  9  0  0  0  32 33  0  0  0    26
+SNESSetUp              1 1.0 5.3000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SNESFunctionEval       2 1.0 5.0963e-02 1.0 1.33e+06 1.0 0.0e+00 0.0e+00 0.0e+00 10  9  0  0  0  32 33  0  0  0    26
+------------------------------------------------------------------------------------------------------------------------
+
+Memory usage is given in bytes:
+
+Object Type          Creations   Destructions     Memory  Descendants' Mem.
+Reports information only for process 0.
+
+--- Event Stage 0: Main Stage
+
+           Container    16             29        16704     0.
+    Distributed Mesh    34             69       362488     0.
+            DM Label    70            139        87848     0.
+          Quadrature   104            302       178784     0.
+           Index Set   478            568       516188     0.
+   IS L to G Mapping     0              1          704     0.
+             Section   112            208       148096     0.
+   Star Forest Graph    68            119       126384     0.
+     Discrete System    50             85        76172     0.
+           Weak Form    50             91        56056     0.
+    GraphPartitioner    17             30        20640     0.
+              Matrix    34             64       207684     0.
+              Vector    29             55        96064     0.
+        Linear Space     1              4         2720     0.
+          Dual Space    17             29        27144     0.
+            FE Space     1              4         3152     0.
+                SNES     0              1         1540     0.
+              DMSNES     0              1          688     0.
+      SNESLineSearch     0              1          992     0.
+       Krylov Solver     0              1         1864     0.
+     DMKSP interface     0              1          656     0.
+      Preconditioner     0              1         1668     0.
+              Viewer     3              3         2408     0.
+       Field over DM     1              1          704     0.
+
+--- Event Stage 1: DM and Vector Setup Stage
+
+           Container    41             28        16128     0.
+    Distributed Mesh    94             59       312696     0.
+            DM Label   201            132        83424     0.
+          Quadrature   270             72        42624     0.
+           Index Set   603            513       457152     0.
+             Section   290            194       138128     0.
+   Star Forest Graph   188            137       144672     0.
+     Discrete System   141            106        94976     0.
+           Weak Form   147            106        65296     0.
+    GraphPartitioner    44             31        21328     0.
+              Matrix    83             56       175152     0.
+              Vector    56             36        60288     0.
+        Linear Space     3              0            0     0.
+          Dual Space    40             28        26208     0.
+            FE Space     3              0            0     0.
+
+--- Event Stage 2: libCEED Setup Stage
+
+              Vector     4              0            0     0.
+
+--- Event Stage 3: SNES Setup Stage
+
+   IS L to G Mapping     1              0            0     0.
+             Section     4              4         2848     0.
+   Star Forest Graph     2              2         2112     0.
+              Matrix     3              0            0     0.
+              Vector     1              0            0     0.
+                SNES     1              0            0     0.
+              DMSNES     1              0            0     0.
+      SNESLineSearch     1              0            0     0.
+       Krylov Solver     1              0            0     0.
+      Preconditioner     1              0            0     0.
+              Viewer     1              0            0     0.
+
+--- Event Stage 4: SNES Solve Stage
+
+          Quadrature    36             36        21312     0.
+           Index Set   540            540       500400     0.
+              Vector     5              4         6976     0.
+     DMKSP interface     1              0            0     0.
+              Viewer     3              2         1568     0.
+========================================================================================================================
+Average time to get PetscTime(): 0.
+#PETSc Option Table entries:
+-bc_clamp 1,2,3,4,5,6
+-bc_clamp_1_rotate 0,0,1,0,.3
+-bc_clamp_2_rotate 0,0,1,0,.3
+-bc_clamp_3_rotate 0,0,1,0,.3
+-bc_clamp_4_rotate 0,0,1,0,.3
+-bc_clamp_5_rotate 0,0,1,0,.3
+-bc_clamp_6_rotate 0,0,1,0,.3
+-degree 1
+-dm_plex_box_faces 4,4,4
+-E 2.8
+-K 4.667
+-log_view
+-mu_1 0.5
+-mu_2 0.5
+-nu 0.4
+-num_steps 2
+-outer_ksp_converged_reason
+-outer_ksp_max_it 50
+-outer_ksp_monitor_true_residual
+-outer_ksp_norm_type preconditioned
+-outer_ksp_type gmres
+-outer_pc_type lu
+-output_dir /Users/klstengel/Projects/CU_research_Brown/gradResearchData/libCEED/logJ_strainEnergy/20210611105419_FSInitial-MR1error_test/
+-print_strain_every_increment
+-problem FSInitial-MR1
+-snes_fd
+-snes_linesearch_atol 1e-30
+-snes_linesearch_monitor
+-snes_linesearch_type cp
+-snes_monitor
+-snes_view
+-view_soln
+#End of PETSc Option Table entries
+Compiled without FORTRAN kernels
+Compiled with full precision matrices (default)
+sizeof(short) 2 sizeof(int) 4 sizeof(long) 8 sizeof(void*) 8 sizeof(PetscScalar) 8 sizeof(PetscInt) 4
+Configure options: PETSC_ARCH=libceed --download-hdf5 --download-netcdf --download-pnetcdf --download-lib --download-mpich --download-zlib -with-cmake=1
+-----------------------------------------
+Libraries compiled on 2021-06-08 20:45:12 on Karens-MacBook-Pro.local 
+Machine characteristics: macOS-10.16-x86_64-i386-64bit
+Using PETSc directory: /Users/klstengel/Projects/CU_research_Brown/petsc
+Using PETSc arch: libceed
+-----------------------------------------
+
+Using C compiler: /Users/klstengel/Projects/CU_research_Brown/petsc/libceed/bin/mpicc  -Wall -Wwrite-strings -Wno-strict-aliasing -Wno-unknown-pragmas -fstack-protector -fno-stack-check -Qunused-arguments -fvisibility=hidden -g3 -O0   
+-----------------------------------------
+
+Using include paths: -I/Users/klstengel/Projects/CU_research_Brown/petsc/include -I/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/include -I/opt/X11/include
+-----------------------------------------
+
+Using C linker: /Users/klstengel/Projects/CU_research_Brown/petsc/libceed/bin/mpicc
+Using libraries: -Wl,-rpath,/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -L/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -lpetsc -Wl,-rpath,/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -L/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -Wl,-rpath,/opt/X11/lib -L/opt/X11/lib -llapack -lblas -lnetcdf -lpnetcdf -lhdf5_hl -lhdf5 -lz -lX11 -lc++ -ldl
+-----------------------------------------
+
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+WARNING! There are options you set that were not used!
+WARNING! could be spelling mistake, etc!
+There are 4 unused database options. They are:
+Option left: name:-dm_plex_box_faces value: 4,4,4
+Option left: name:-E value: 2.8
+Option left: name:-nu value: 0.4
+Option left: name:-outer_ksp_converged_reason (no value)

@@ -1,0 +1,738 @@
+
+-- Elasticity Example - libCEED + PETSc --
+  libCEED:
+    libCEED Backend                    : /cpu/self/avx/blocked
+    libCEED Backend MemType            : host
+  PETSc:
+    PETSc Vec Type                     : seq
+  Problem:
+    Problem Name                       : Hyperelasticity finite strain Initial config Moony-Rivlin w/ dXref_dxinit, Grad(u) storage
+    Forcing Function                   : None
+  Mesh:
+    File                               : Box Mesh
+    Number of 1D Basis Nodes (p)       : 2
+    Number of 1D Quadrature Points (q) : 2
+    Global nodes                       : 4
+    Owned nodes                        : 4
+    DoF per node                       : 3
+  Multigrid:
+    Type                               : Algebraic multigrid
+    Number of Levels                   : 0
+    Level 0 (coarse):
+      Number of 1D Basis Nodes (p)     : 2
+      Global Nodes                     : 4
+      Owned Nodes                      : 4
+    Level 0 (fine):
+      Number of 1D Basis Nodes (p)     : 2
+      Global Nodes                     : 4
+      Owned Nodes                      : 4
+0 Load Increment
+  0 SNES Function norm 3.330867875827e+00 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.522036186845e-01 true resid norm 3.330867875827e+00 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 8.600340889959e-09 true resid norm 7.264074055562e-08 ||r(i)||/||b|| 2.180835243655e-08
+    2 KSP preconditioned resid norm 5.268503212130e-16 true resid norm 2.462280503382e-08 ||r(i)||/||b|| 7.392309137362e-09
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [0.0688204, 0.649736]
+      Line search terminated: lambda = 1.11847, fnorms = 0.298497
+  1 SNES Function norm 2.984965852976e-01 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 6.969801720400e-02 true resid norm 2.984965852976e-01 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 3.009443499218e-09 true resid norm 1.997966046214e-08 ||r(i)||/||b|| 6.693430158414e-08
+    2 KSP preconditioned resid norm 4.330560449528e-17 true resid norm 2.451074279925e-08 ||r(i)||/||b|| 8.211398054960e-08
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-0.000221973, 0.017258]
+      Line search terminated: lambda = 0.987301, fnorms = 0.000956716
+  2 SNES Function norm 9.567164518966e-04 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.612775071666e-04 true resid norm 9.567164518966e-04 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 9.304671878405e-12 true resid norm 4.737089235427e-08 ||r(i)||/||b|| 4.951403549125e-05
+    2 KSP preconditioned resid norm 4.399521522370e-19 true resid norm 4.737086049471e-08 ||r(i)||/||b|| 4.951400219031e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [2.59702e-11, 1.22757e-07]
+      Line search terminated: lambda = 1.00021, fnorms = 8.33796e-08
+  3 SNES Function norm 8.337957890652e-08 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 6.349530107222e-08 true resid norm 8.337957890652e-08 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 3.013390686339e-15 true resid norm 2.612404444700e-08 ||r(i)||/||b|| 3.133146603713e-01
+    2 KSP preconditioned resid norm 1.392048882056e-22 true resid norm 2.612404451390e-08 ||r(i)||/||b|| 3.133146611737e-01
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search terminated: lambda = 1., fnorms = 1.10364e-14
+  4 SNES Function norm 1.103637699864e-14 
+1 Load Increment
+  0 SNES Function norm 2.500000000000e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.495800698377e-03 true resid norm 2.500000000000e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.853948125013e-10 true resid norm 2.511945720510e-08 ||r(i)||/||b|| 1.004778288204e-05
+    2 KSP preconditioned resid norm 5.652752603378e-18 true resid norm 4.852311844543e-08 ||r(i)||/||b|| 1.940924737817e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.24755e-10, 1.04738e-05]
+      Line search terminated: lambda = 0.999988, fnorms = 2.28544e-05
+  1 SNES Function norm 2.285443154919e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.138935344584e-06 true resid norm 2.285443154919e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.136110522004e-13 true resid norm 4.445794999976e-08 ||r(i)||/||b|| 1.945266059411e-03
+    2 KSP preconditioned resid norm 4.445883085006e-21 true resid norm 4.445795007098e-08 ||r(i)||/||b|| 1.945266062526e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.22596e-17, 4.65361e-11]
+      Line search terminated: lambda = 1., fnorms = 1.47846e-11
+  2 SNES Function norm 1.478464314869e-11 
+2 Load Increment
+  0 SNES Function norm 2.500000000121e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.495773420148e-03 true resid norm 2.500000000121e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.841864835870e-10 true resid norm 4.369430428254e-08 ||r(i)||/||b|| 1.747772171217e-05
+    2 KSP preconditioned resid norm 7.642796383018e-18 true resid norm 4.385029166433e-08 ||r(i)||/||b|| 1.754011666488e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.48538e-10, 1.04737e-05]
+      Line search terminated: lambda = 0.999986, fnorms = 2.28538e-05
+  1 SNES Function norm 2.285383724684e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.138903569046e-06 true resid norm 2.285383724684e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.697373246525e-13 true resid norm 3.924328431469e-08 ||r(i)||/||b|| 1.717142022621e-03
+    2 KSP preconditioned resid norm 5.174027475112e-21 true resid norm 3.924328350625e-08 ||r(i)||/||b|| 1.717141987247e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.22352e-17, 4.65335e-11]
+      Line search terminated: lambda = 1., fnorms = 1.48169e-11
+  2 SNES Function norm 1.481693105824e-11 
+3 Load Increment
+  0 SNES Function norm 2.500000000107e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.495727778761e-03 true resid norm 2.500000000107e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.971139832002e-10 true resid norm 4.342603272095e-08 ||r(i)||/||b|| 1.737041308763e-05
+    2 KSP preconditioned resid norm 6.043928190714e-18 true resid norm 4.355615693654e-08 ||r(i)||/||b|| 1.742246277387e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.72204e-10, 1.04736e-05]
+      Line search terminated: lambda = 0.999984, fnorms = 2.28533e-05
+  1 SNES Function norm 2.285329025282e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.138856166243e-06 true resid norm 2.285329025282e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.905164906042e-13 true resid norm 3.796362699121e-08 ||r(i)||/||b|| 1.661188676607e-03
+    2 KSP preconditioned resid norm 3.544294356141e-21 true resid norm 3.796362753938e-08 ||r(i)||/||b|| 1.661188700594e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.22273e-17, 4.65308e-11]
+      Line search terminated: lambda = 1., fnorms = 1.4795e-11
+  2 SNES Function norm 1.479495181796e-11 
+4 Load Increment
+  0 SNES Function norm 2.500000000100e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.495664100621e-03 true resid norm 2.500000000100e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.773376039837e-10 true resid norm 4.436152321133e-08 ||r(i)||/||b|| 1.774460928382e-05
+    2 KSP preconditioned resid norm 9.539394237424e-18 true resid norm 4.438761933376e-08 ||r(i)||/||b|| 1.775504773279e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-1.96104e-10, 1.04734e-05]
+      Line search terminated: lambda = 0.999981, fnorms = 2.28525e-05
+  1 SNES Function norm 2.285247500898e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.138798060663e-06 true resid norm 2.285247500898e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.766888831697e-13 true resid norm 4.170639079884e-08 ||r(i)||/||b|| 1.825027301526e-03
+    2 KSP preconditioned resid norm 3.513741248997e-21 true resid norm 4.170638902306e-08 ||r(i)||/||b|| 1.825027223820e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.211e-17, 4.6527e-11]
+      Line search terminated: lambda = 1., fnorms = 1.47935e-11
+  2 SNES Function norm 1.479348736530e-11 
+5 Load Increment
+  0 SNES Function norm 2.500000000090e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.495582204148e-03 true resid norm 2.500000000090e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.677803664403e-10 true resid norm 6.080531884837e-08 ||r(i)||/||b|| 2.432212753847e-05
+    2 KSP preconditioned resid norm 7.072731831883e-18 true resid norm 6.087072451472e-08 ||r(i)||/||b|| 2.434828980501e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-2.19907e-10, 1.04732e-05]
+      Line search terminated: lambda = 0.999979, fnorms = 2.28513e-05
+  1 SNES Function norm 2.285130099386e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.138677303906e-06 true resid norm 2.285130099386e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.464120688297e-13 true resid norm 4.825040629048e-08 ||r(i)||/||b|| 2.111494934290e-03
+    2 KSP preconditioned resid norm 3.610565751462e-21 true resid norm 4.825040987774e-08 ||r(i)||/||b|| 2.111495091273e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.23104e-17, 4.65213e-11]
+      Line search terminated: lambda = 1., fnorms = 1.47859e-11
+  2 SNES Function norm 1.478591629308e-11 
+6 Load Increment
+  0 SNES Function norm 2.500000000077e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.495482109438e-03 true resid norm 2.500000000077e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.027549517833e-10 true resid norm 4.332024427809e-08 ||r(i)||/||b|| 1.732809771070e-05
+    2 KSP preconditioned resid norm 2.314519723796e-18 true resid norm 4.341549148547e-08 ||r(i)||/||b|| 1.736619659365e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-2.43863e-10, 1.04729e-05]
+      Line search terminated: lambda = 0.999977, fnorms = 2.28499e-05
+  1 SNES Function norm 2.284986201392e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.138569239800e-06 true resid norm 2.284986201392e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.709385829997e-13 true resid norm 2.193177928148e-08 ||r(i)||/||b|| 9.598210819882e-04
+    2 KSP preconditioned resid norm 4.980575904701e-21 true resid norm 2.193177887485e-08 ||r(i)||/||b|| 9.598210641923e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.21794e-17, 4.65149e-11]
+      Line search terminated: lambda = 1., fnorms = 1.4797e-11
+  2 SNES Function norm 1.479701185049e-11 
+7 Load Increment
+  0 SNES Function norm 2.500000000067e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.495363843665e-03 true resid norm 2.500000000067e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.536585378398e-10 true resid norm 5.766838024819e-08 ||r(i)||/||b|| 2.306735209866e-05
+    2 KSP preconditioned resid norm 1.015007343128e-17 true resid norm 5.766441613968e-08 ||r(i)||/||b|| 2.306576645525e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-2.67624e-10, 1.04726e-05]
+      Line search terminated: lambda = 0.999974, fnorms = 2.28487e-05
+  1 SNES Function norm 2.284874725399e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.138463776056e-06 true resid norm 2.284874725399e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.075904923487e-13 true resid norm 3.134804843582e-08 ||r(i)||/||b|| 1.371981058189e-03
+    2 KSP preconditioned resid norm 5.074862821310e-21 true resid norm 3.134804547122e-08 ||r(i)||/||b|| 1.371980928440e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.22809e-17, 4.65094e-11]
+      Line search terminated: lambda = 1., fnorms = 1.47933e-11
+  2 SNES Function norm 1.479330347702e-11 
+8 Load Increment
+  0 SNES Function norm 2.500000000058e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.495227386909e-03 true resid norm 2.500000000058e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.779852699815e-10 true resid norm 3.437460994803e-08 ||r(i)||/||b|| 1.374984397889e-05
+    2 KSP preconditioned resid norm 1.832248291183e-17 true resid norm 3.435705721338e-08 ||r(i)||/||b|| 1.374282288503e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-2.9144e-10, 1.04723e-05]
+      Line search terminated: lambda = 0.999972, fnorms = 2.2847e-05
+  1 SNES Function norm 2.284697214405e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.138298033636e-06 true resid norm 2.284697214405e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.904525343559e-13 true resid norm 4.259384439928e-08 ||r(i)||/||b|| 1.864310252174e-03
+    2 KSP preconditioned resid norm 3.545596423167e-21 true resid norm 4.259384922438e-08 ||r(i)||/||b|| 1.864310463366e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.22286e-17, 4.65011e-11]
+      Line search terminated: lambda = 1., fnorms = 1.48259e-11
+  2 SNES Function norm 1.482592055998e-11 
+9 Load Increment
+  0 SNES Function norm 2.500000000046e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.495072676814e-03 true resid norm 2.500000000046e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.620773273988e-10 true resid norm 4.645429543603e-08 ||r(i)||/||b|| 1.858171817407e-05
+    2 KSP preconditioned resid norm 5.179331633255e-18 true resid norm 4.646962803176e-08 ||r(i)||/||b|| 1.858785121237e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-3.15264e-10, 1.04719e-05]
+      Line search terminated: lambda = 0.99997, fnorms = 2.28447e-05
+  1 SNES Function norm 2.284471002945e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.138093597693e-06 true resid norm 2.284471002945e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.870036306872e-13 true resid norm 3.130203088810e-08 ||r(i)||/||b|| 1.370209157732e-03
+    2 KSP preconditioned resid norm 6.477375689163e-21 true resid norm 3.130203251175e-08 ||r(i)||/||b|| 1.370209228806e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.24525e-17, 4.64908e-11]
+      Line search terminated: lambda = 1., fnorms = 1.47916e-11
+  2 SNES Function norm 1.479164842890e-11 
+10 Load Increment
+  0 SNES Function norm 2.500000000034e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.494899822622e-03 true resid norm 2.500000000034e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.350327696267e-10 true resid norm 3.442410512478e-08 ||r(i)||/||b|| 1.376964204973e-05
+    2 KSP preconditioned resid norm 7.053717585551e-18 true resid norm 3.440836642519e-08 ||r(i)||/||b|| 1.376334656989e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-3.39125e-10, 1.04714e-05]
+      Line search terminated: lambda = 0.999968, fnorms = 2.28427e-05
+  1 SNES Function norm 2.284272840702e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.137899395901e-06 true resid norm 2.284272840702e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.692220858566e-13 true resid norm 4.091006838603e-08 ||r(i)||/||b|| 1.790944919411e-03
+    2 KSP preconditioned resid norm 4.649488367419e-21 true resid norm 4.091006921469e-08 ||r(i)||/||b|| 1.790944955688e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.19357e-17, 4.64814e-11]
+      Line search terminated: lambda = 1., fnorms = 1.4819e-11
+  2 SNES Function norm 1.481902230209e-11 
+11 Load Increment
+  0 SNES Function norm 2.500000000026e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.494708743663e-03 true resid norm 2.500000000026e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.581848663117e-10 true resid norm 3.271850923773e-08 ||r(i)||/||b|| 1.308740369496e-05
+    2 KSP preconditioned resid norm 5.228778662628e-18 true resid norm 3.272649143011e-08 ||r(i)||/||b|| 1.309059657191e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-3.62844e-10, 1.04709e-05]
+      Line search terminated: lambda = 0.999965, fnorms = 2.28404e-05
+  1 SNES Function norm 2.284042117720e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.137672790012e-06 true resid norm 2.284042117720e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.997896963211e-13 true resid norm 2.747279203039e-08 ||r(i)||/||b|| 1.202814598612e-03
+    2 KSP preconditioned resid norm 4.038083599180e-21 true resid norm 2.747279701595e-08 ||r(i)||/||b|| 1.202814816890e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.21043e-17, 4.64705e-11]
+      Line search terminated: lambda = 1., fnorms = 1.47995e-11
+  2 SNES Function norm 1.479949027991e-11 
+12 Load Increment
+  0 SNES Function norm 2.500000000015e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.494499494304e-03 true resid norm 2.500000000015e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.677063370927e-10 true resid norm 2.867562388962e-08 ||r(i)||/||b|| 1.147024955578e-05
+    2 KSP preconditioned resid norm 8.016007090323e-18 true resid norm 2.904545533134e-08 ||r(i)||/||b|| 1.161818213247e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-3.86549e-10, 1.04704e-05]
+      Line search terminated: lambda = 0.999963, fnorms = 2.2838e-05
+  1 SNES Function norm 2.283802294747e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.137445271441e-06 true resid norm 2.283802294747e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.636114483058e-13 true resid norm 6.813354186634e-08 ||r(i)||/||b|| 2.983338007106e-03
+    2 KSP preconditioned resid norm 3.712958306272e-21 true resid norm 6.813354005436e-08 ||r(i)||/||b|| 2.983337927765e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.1933e-17, 4.64592e-11]
+      Line search terminated: lambda = 1., fnorms = 1.47902e-11
+  2 SNES Function norm 1.479020332092e-11 
+13 Load Increment
+  0 SNES Function norm 2.500000000003e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.494272094541e-03 true resid norm 2.500000000003e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.789123306357e-10 true resid norm 8.754862641843e-08 ||r(i)||/||b|| 3.501945056733e-05
+    2 KSP preconditioned resid norm 6.246998503172e-18 true resid norm 8.757211074997e-08 ||r(i)||/||b|| 3.502884429995e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-4.10254e-10, 1.04698e-05]
+      Line search terminated: lambda = 0.999961, fnorms = 2.28352e-05
+  1 SNES Function norm 2.283518890589e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.137162526064e-06 true resid norm 2.283518890589e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.225436228146e-13 true resid norm 7.569959533538e-08 ||r(i)||/||b|| 3.315041344627e-03
+    2 KSP preconditioned resid norm 7.094047259463e-21 true resid norm 7.569959324050e-08 ||r(i)||/||b|| 3.315041252888e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.17061e-17, 4.6446e-11]
+      Line search terminated: lambda = 1., fnorms = 1.47698e-11
+  2 SNES Function norm 1.476982216132e-11 
+14 Load Increment
+  0 SNES Function norm 2.499999999993e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.494026585623e-03 true resid norm 2.499999999993e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.361752488856e-10 true resid norm 4.600783524435e-08 ||r(i)||/||b|| 1.840313409779e-05
+    2 KSP preconditioned resid norm 9.438765714543e-18 true resid norm 4.600230788370e-08 ||r(i)||/||b|| 1.840092315353e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-4.34032e-10, 1.04691e-05]
+      Line search terminated: lambda = 0.999959, fnorms = 2.28321e-05
+  1 SNES Function norm 2.283206538800e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.136835953889e-06 true resid norm 2.283206538800e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.762170097932e-13 true resid norm 2.983979599846e-08 ||r(i)||/||b|| 1.306924953628e-03
+    2 KSP preconditioned resid norm 5.723639110111e-21 true resid norm 2.983979933088e-08 ||r(i)||/||b|| 1.306925099582e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.19879e-17, 4.64312e-11]
+      Line search terminated: lambda = 1., fnorms = 1.47352e-11
+  2 SNES Function norm 1.473523117055e-11 
+15 Load Increment
+  0 SNES Function norm 2.499999999980e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.493762976308e-03 true resid norm 2.499999999980e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.628886693862e-10 true resid norm 4.968005957650e-08 ||r(i)||/||b|| 1.987202383076e-05
+    2 KSP preconditioned resid norm 1.322820115558e-17 true resid norm 4.970590322927e-08 ||r(i)||/||b|| 1.988236129187e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-4.57833e-10, 1.04684e-05]
+      Line search terminated: lambda = 0.999956, fnorms = 2.28291e-05
+  1 SNES Function norm 2.282908437842e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.136548242292e-06 true resid norm 2.282908437842e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.958257432435e-13 true resid norm 4.206527730810e-08 ||r(i)||/||b|| 1.842617803273e-03
+    2 KSP preconditioned resid norm 6.480714697551e-21 true resid norm 4.206528022847e-08 ||r(i)||/||b|| 1.842617931197e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.16493e-17, 4.64172e-11]
+      Line search terminated: lambda = 1., fnorms = 1.47868e-11
+  2 SNES Function norm 1.478675285858e-11 
+16 Load Increment
+  0 SNES Function norm 2.499999999971e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.493481043380e-03 true resid norm 2.499999999971e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.934206941953e-10 true resid norm 3.882890021703e-08 ||r(i)||/||b|| 1.553156008699e-05
+    2 KSP preconditioned resid norm 1.275614740503e-17 true resid norm 3.884951844840e-08 ||r(i)||/||b|| 1.553980737954e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-4.81523e-10, 1.04677e-05]
+      Line search terminated: lambda = 0.999954, fnorms = 2.28255e-05
+  1 SNES Function norm 2.282552692090e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.136183060773e-06 true resid norm 2.282552692090e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.086227267860e-13 true resid norm 2.846264270099e-08 ||r(i)||/||b|| 1.246965417255e-03
+    2 KSP preconditioned resid norm 3.553020395780e-21 true resid norm 2.846264489952e-08 ||r(i)||/||b|| 1.246965513574e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.19576e-17, 4.64006e-11]
+      Line search terminated: lambda = 1., fnorms = 1.47305e-11
+  2 SNES Function norm 1.473050427686e-11 
+17 Load Increment
+  0 SNES Function norm 2.499999999964e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.493181120897e-03 true resid norm 2.499999999964e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.754918053384e-10 true resid norm 4.841485865227e-08 ||r(i)||/||b|| 1.936594346119e-05
+    2 KSP preconditioned resid norm 1.187622884145e-17 true resid norm 4.835652060893e-08 ||r(i)||/||b|| 1.934260824385e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-5.05216e-10, 1.04669e-05]
+      Line search terminated: lambda = 0.999952, fnorms = 2.28217e-05
+  1 SNES Function norm 2.282169280484e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.135814274426e-06 true resid norm 2.282169280484e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.901980052969e-13 true resid norm 2.969860454859e-08 ||r(i)||/||b|| 1.301332236945e-03
+    2 KSP preconditioned resid norm 7.246126330825e-21 true resid norm 2.969860553538e-08 ||r(i)||/||b|| 1.301332280184e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.18146e-17, 4.63829e-11]
+      Line search terminated: lambda = 1., fnorms = 1.47797e-11
+  2 SNES Function norm 1.477974631866e-11 
+18 Load Increment
+  0 SNES Function norm 2.499999999949e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.492862989761e-03 true resid norm 2.499999999949e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.473128688099e-10 true resid norm 3.646601953275e-08 ||r(i)||/||b|| 1.458640781340e-05
+    2 KSP preconditioned resid norm 1.016461818795e-17 true resid norm 3.649531397321e-08 ||r(i)||/||b|| 1.459812558958e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-5.28943e-10, 1.04661e-05]
+      Line search terminated: lambda = 0.999949, fnorms = 2.2818e-05
+  1 SNES Function norm 2.281797873407e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.135428034153e-06 true resid norm 2.281797873407e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.152443354324e-13 true resid norm 1.389024475563e-08 ||r(i)||/||b|| 6.087412438019e-04
+    2 KSP preconditioned resid norm 1.123941417317e-20 true resid norm 1.389024831725e-08 ||r(i)||/||b|| 6.087413998906e-04
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.18115e-17, 4.63653e-11]
+      Line search terminated: lambda = 1., fnorms = 1.47911e-11
+  2 SNES Function norm 1.479113463478e-11 
+19 Load Increment
+  0 SNES Function norm 2.499999999938e-03 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 4.492526832613e-03 true resid norm 2.499999999938e-03 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 1.598261314962e-10 true resid norm 7.540273890409e-08 ||r(i)||/||b|| 3.016109556238e-05
+    2 KSP preconditioned resid norm 5.254512974947e-18 true resid norm 7.538346213052e-08 ||r(i)||/||b|| 3.015338485296e-05
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [-5.52537e-10, 1.04652e-05]
+      Line search terminated: lambda = 0.999947, fnorms = 2.2814e-05
+  1 SNES Function norm 2.281403012099e-05 
+    Residual norms for outer_ solve.
+    0 KSP preconditioned resid norm 2.135028325636e-06 true resid norm 2.281403012099e-05 ||r(i)||/||b|| 1.000000000000e+00
+    1 KSP preconditioned resid norm 2.210835953692e-13 true resid norm 4.184507788766e-08 ||r(i)||/||b|| 1.834181758582e-03
+    2 KSP preconditioned resid norm 4.777613283765e-21 true resid norm 4.184507763318e-08 ||r(i)||/||b|| 1.834181747427e-03
+  Linear outer_ solve converged due to CONVERGED_RTOL iterations 2
+      Line search: lambdas = [1., 0.], ftys = [9.18082e-17, 4.63468e-11]
+      Line search terminated: lambda = 1., fnorms = 1.47933e-11
+  2 SNES Function norm 1.479331706901e-11 
+  SNES:
+    SNES Type                          : newtonls
+    SNES Convergence                   : CONVERGED_FNORM_RELATIVE
+    Number of Load Increments          : 20
+    Completed Load Increments          : 20
+    Total SNES Iterations              : 42
+    Final rnorm                        : 1.479332e-11
+  Linear Solver:
+    KSP Type                           : gmres
+    Total KSP Iterations               : 84
+    PC Type                            : lu
+  Performance:
+    SNES Solve Time                    : 3.26227 (3.26227) sec
+    DoFs/Sec in SNES                   : 0.000308987 (0.000308987) million
+    Strain Energy                      : -3.591316404315e-01
+************************************************************************************************************************
+***             WIDEN YOUR WINDOW TO 120 CHARACTERS.  Use 'enscript -r -fCourier9' to print this document            ***
+************************************************************************************************************************
+
+---------------------------------------------- PETSc Performance Summary: ----------------------------------------------
+
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+/Users/klstengel/Projects/CU_research_Brown/libCEED/examples/solids/elasticity on a libceed named Karens-MacBook-Pro.local with 1 processor, by klstengel Thu Jun 24 13:23:30 2021
+Using Petsc Development GIT revision: v3.15.0-739-g75ae01e686  GIT Date: 2021-06-07 09:26:52 -0500
+
+                         Max       Max/Min     Avg       Total
+Time (sec):           3.570e+00     1.000   3.570e+00
+Objects:              1.409e+04     1.000   1.409e+04
+Flop:                 8.372e+07     1.000   8.372e+07  8.372e+07
+Flop/sec:             2.345e+07     1.000   2.345e+07  2.345e+07
+Memory:               3.949e+06     1.000   3.949e+06  3.949e+06
+MPI Messages:         0.000e+00     0.000   0.000e+00  0.000e+00
+MPI Message Lengths:  1.320e+02     1.000   0.000e+00  1.320e+02
+MPI Reductions:       2.200e+01     1.000
+
+Flop counting convention: 1 flop = 1 real number operation of type (multiply/divide/add/subtract)
+                            e.g., VecAXPY() for real vectors of length N --> 2N flop
+                            and VecAXPY() for complex vectors of length N --> 8N flop
+
+Summary of Stages:   ----- Time ------  ----- Flop ------  --- Messages ---  -- Message Lengths --  -- Reductions --
+                        Avg     %Total     Avg     %Total    Count   %Total     Avg         %Total    Count   %Total
+ 0:      Main Stage: 1.0220e-01   2.9%  3.3358e+05   0.4%  0.000e+00   0.0%  0.000e+00        9.1%  2.000e+00   9.1%
+ 1: DM and Vector Setup Stage: 1.9283e-01   5.4%  8.8493e+06  10.6%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 2: libCEED Setup Stage: 1.6660e-03   0.0%  0.0000e+00   0.0%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 3: SNES Setup Stage: 1.1447e-02   0.3%  0.0000e+00   0.0%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 4: SNES Solve Stage: 3.2623e+00  91.4%  7.4535e+07  89.0%  0.000e+00   0.0%  0.000e+00       90.9%  2.000e+01  90.9%
+
+------------------------------------------------------------------------------------------------------------------------
+See the 'Profiling' chapter of the users' manual for details on interpreting output.
+Phase summary info:
+   Count: number of times phase was executed
+   Time and Flop: Max - maximum over all processors
+                  Ratio - ratio of maximum to minimum over all processors
+   Mess: number of messages sent
+   AvgLen: average message length (bytes)
+   Reduct: number of global reductions
+   Global: entire computation
+   Stage: stages of a computation. Set stages with PetscLogStagePush() and PetscLogStagePop().
+      %T - percent time in this phase         %F - percent flop in this phase
+      %M - percent messages in this phase     %L - percent message lengths in this phase
+      %R - percent reductions in this phase
+   Total Mflop/s: 10e-6 * (sum of flop over all processors)/(max time over all processors)
+------------------------------------------------------------------------------------------------------------------------
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+Event                Count      Time (sec)     Flop                              --- Global ---  --- Stage ----  Total
+                   Max Ratio  Max     Ratio   Max  Ratio  Mess   AvgLen  Reduct  %T %F %M %L %R  %T %F %M %L %R Mflop/s
+------------------------------------------------------------------------------------------------------------------------
+
+--- Event Stage 0: Main Stage
+
+BuildTwoSided          2 1.0 4.5000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+DMPlexInterp          13 1.0 9.7520e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  10  0  0  0  0     0
+DMPlexStratify        17 1.0 5.7870e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   6  0  0  0  0     0
+DMPlexSymmetrize      17 1.0 7.3000e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+SFSetGraph             2 1.0 8.0000e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetUp                2 1.0 1.5500e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastBegin           4 1.0 5.6000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastEnd             4 1.0 6.4000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceBegin          3 1.0 8.7000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceEnd            3 1.0 3.8000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFPack                 7 1.0 2.6000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack               7 1.0 4.0000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatMult                3 1.0 8.0000e-06 1.0 7.20e+01 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     9
+MatAssemblyBegin      18 1.0 6.8000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd        18 1.0 2.1100e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecView                2 1.0 6.8850e-02 1.0 1.12e+05 1.0 0.0e+00 0.0e+00 0.0e+00  2  0  0  0  0  67 33  0  0  0     2
+VecCopy                4 1.0 3.5000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                38 1.0 2.9600e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecPointwiseMult       1 1.0 1.2000e-05 1.0 6.40e+01 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     5
+DualSpaceSetUp         1 1.0 5.5313e-02 1.0 4.92e+02 1.0 0.0e+00 0.0e+00 0.0e+00  2  0  0  0  0  54  0  0  0  0     0
+FESetUp                1 1.0 6.1600e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+
+--- Event Stage 1: DM and Vector Setup Stage
+
+DMPlexInterp          32 1.0 2.7950e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0  14  0  0  0  0     0
+DMPlexStratify        44 1.0 1.6967e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   9  0  0  0  0     0
+DMPlexSymmetrize      44 1.0 2.2690e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+MatAssemblyBegin      42 1.0 1.5100e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd        42 1.0 5.2600e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                56 1.0 4.7700e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+DualSpaceSetUp         3 1.0 1.4030e-01 1.0 1.22e+03 1.0 0.0e+00 0.0e+00 0.0e+00  4  0  0  0  0  73  0  0  0  0     0
+FESetUp                3 1.0 2.8360e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+
+--- Event Stage 2: libCEED Setup Stage
+
+VecSet                 6 1.0 4.7000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   3  0  0  0  0     0
+
+--- Event Stage 3: SNES Setup Stage
+
+DMCreateMat            1 1.0 4.0510e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  35  0  0  0  0     0
+DMPlexPrealloc         1 1.0 3.2830e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0  29  0  0  0  0     0
+MatAssemblyBegin       1 1.0 4.0000e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd         1 1.0 1.3000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet                 1 1.0 1.0000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+
+--- Event Stage 4: SNES Solve Stage
+
+PetscBarrier           1 1.0 7.0000e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastBegin         880 1.0 1.2069e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFBcastEnd           880 1.0 1.1230e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceBegin        860 1.0 1.0542e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceEnd          860 1.0 9.8510e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFPack              1740 1.0 6.3350e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack            1740 1.0 6.4800e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatMult              880 1.0 6.4261e-02 1.0 1.61e+04 1.0 0.0e+00 0.0e+00 0.0e+00  2  0  0  0  0   2  0  0  0  0     0
+MatSolve             126 1.0 2.3960e-03 1.0 3.48e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    15
+MatLUFactorSym         1 1.0 1.4200e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatLUFactorNum        42 1.0 1.0030e-03 1.0 4.56e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    45
+MatAssemblyBegin      84 1.0 3.0600e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd        84 1.0 4.5300e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatGetRowIJ            1 1.0 2.7000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatGetOrdering         1 1.0 3.3900e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatZeroEntries        42 1.0 2.2900e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecView               20 1.0 9.0106e-02 1.0 2.22e+06 1.0 0.0e+00 0.0e+00 0.0e+00  3  3  0  0  0   3  3  0  0  0    25
+VecDot                84 1.0 9.0700e-04 1.0 1.93e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     2
+VecMDot               84 1.0 7.3300e-04 1.0 2.90e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     4
+VecNorm              776 1.0 4.5050e-03 1.0 6.26e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     1
+VecScale             840 1.0 5.7720e-03 1.0 7.56e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     1
+VecCopy              838 1.0 7.2840e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecSet              3031 1.0 2.5602e-02 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   1  0  0  0  0     0
+VecAXPY             2014 1.0 1.7346e-02 1.0 4.83e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     3
+VecAYPX              126 1.0 1.0650e-03 1.0 1.51e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     1
+VecMAXPY             210 1.0 2.0580e-03 1.0 8.06e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     4
+VecAssemblyBegin     504 1.0 1.8710e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecAssemblyEnd       504 1.0 1.8450e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecReduceArith       126 1.0 7.4300e-04 1.0 2.90e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     4
+VecReduceComm         42 1.0 1.6100e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecNormalize         126 1.0 3.5440e-03 1.0 4.41e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     1
+KSPSetUp              42 1.0 4.2700e-04 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+KSPSolve              42 1.0 1.2544e-01 1.0 5.76e+04 1.0 0.0e+00 0.0e+00 0.0e+00  4  0  0  0  0   4  0  0  0  0     0
+KSPGMRESOrthog        84 1.0 3.9780e-03 1.0 5.92e+03 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     1
+SNESSolve             20 1.0 3.1408e+00 1.0 7.23e+07 1.0 0.0e+00 0.0e+00 0.0e+00 88 86  0  0  0  96 97  0  0  0    23
+SNESSetUp              1 1.0 8.0000e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SNESFunctionEval     650 1.0 2.9044e+00 1.0 7.22e+07 1.0 0.0e+00 0.0e+00 0.0e+00 81 86  0  0  0  89 97  0  0  0    25
+SNESJacobianEval      42 1.0 2.5114e+00 1.0 6.07e+07 1.0 0.0e+00 0.0e+00 0.0e+00 70 72  0  0  0  77 81  0  0  0    24
+SNESLineSearch        42 1.0 3.9648e-01 1.0 9.34e+06 1.0 0.0e+00 0.0e+00 0.0e+00 11 11  0  0  0  12 13  0  0  0    24
+PCSetUp               42 1.0 3.4820e-03 1.0 4.56e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0    13
+PCApply              126 1.0 3.7640e-03 1.0 3.48e+04 1.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     9
+------------------------------------------------------------------------------------------------------------------------
+
+Memory usage is given in bytes:
+
+Object Type          Creations   Destructions     Memory  Descendants' Mem.
+Reports information only for process 0.
+
+--- Event Stage 0: Main Stage
+
+           Container    16             29        16704     0.
+    Distributed Mesh    34             69       362488     0.
+            DM Label    70            139        87848     0.
+          Quadrature    89            287       169904     0.
+           Index Set   257            346       310520     0.
+   IS L to G Mapping     0              1          704     0.
+             Section   112            208       148096     0.
+   Star Forest Graph    68            119       126384     0.
+     Discrete System    50             85        76172     0.
+           Weak Form    50             86        52976     0.
+    GraphPartitioner    17             30        20640     0.
+              Matrix    34             64       211380     0.
+              Vector    29             67       117184     0.
+        Linear Space     1              4         2720     0.
+          Dual Space    17             29        27144     0.
+            FE Space     1              4         3152     0.
+                SNES     0              1         1540     0.
+              DMSNES     0              1          688     0.
+      SNESLineSearch     0              1          992     0.
+       Krylov Solver     0              1        18950     0.
+     DMKSP interface     0              1          656     0.
+      Preconditioner     0              1         1668     0.
+              Viewer     3              3         2408     0.
+       Field over DM     1              1          704     0.
+
+--- Event Stage 1: DM and Vector Setup Stage
+
+           Container    41             28        16128     0.
+    Distributed Mesh    94             59       312696     0.
+            DM Label   201            132        83424     0.
+          Quadrature   270             72        42624     0.
+           Index Set   593            508       452492     0.
+             Section   290            194       138128     0.
+   Star Forest Graph   188            137       144672     0.
+     Discrete System   141            106        94976     0.
+           Weak Form   142            106        65296     0.
+    GraphPartitioner    44             31        21328     0.
+              Matrix    83             56       175152     0.
+              Vector    56             36        60288     0.
+        Linear Space     3              0            0     0.
+          Dual Space    40             28        26208     0.
+            FE Space     3              0            0     0.
+
+--- Event Stage 2: libCEED Setup Stage
+
+           Index Set     3              2         1800     0.
+              Vector     6              0            0     0.
+
+--- Event Stage 3: SNES Setup Stage
+
+   IS L to G Mapping     1              0            0     0.
+             Section     4              4         2848     0.
+   Star Forest Graph     2              2         2112     0.
+              Matrix     3              0            0     0.
+              Vector     1              0            0     0.
+                SNES     1              0            0     0.
+              DMSNES     1              0            0     0.
+      SNESLineSearch     1              0            0     0.
+       Krylov Solver     1              0            0     0.
+      Preconditioner     1              0            0     0.
+              Viewer     1              0            0     0.
+
+--- Event Stage 4: SNES Solve Stage
+
+          Quadrature   670            670       396640     0.
+           Index Set 10055          10052      9314816     0.
+              Matrix     1              1         3272     0.
+              Vector   283            272       467584     0.
+     DMKSP interface     1              0            0     0.
+              Viewer    20             20        15680     0.
+========================================================================================================================
+Average time to get PetscTime(): 1e-07
+#PETSc Option Table entries:
+-bc_clamp 1
+-bc_traction 2
+-bc_traction_2 0,0.1,0
+-degree 1
+-dm_plex_box_faces 3,3,3
+-E 0.0
+-K 20
+-ksp_monitor_singular_value
+-log_view
+-mu_1 0.0
+-mu_2 3.846153846153846
+-nu 0.5
+-num_steps 20
+-outer_ksp_converged_reason
+-outer_ksp_monitor_true_residual
+-outer_ksp_norm_type preconditioned
+-outer_ksp_type gmres
+-outer_pc_type lu
+-output_dir /Users/klstengel/Projects/CU_research_Brown/gradResearchData/libCEED/altair_plot/FSInitial-MR1_NH_equiv_test/
+-problem FSInitial-MR1
+-snes_fd
+-snes_linesearch_atol 1e-30
+-snes_linesearch_monitor
+-snes_linesearch_type cp
+-snes_monitor
+-view_soln
+#End of PETSc Option Table entries
+Compiled without FORTRAN kernels
+Compiled with full precision matrices (default)
+sizeof(short) 2 sizeof(int) 4 sizeof(long) 8 sizeof(void*) 8 sizeof(PetscScalar) 8 sizeof(PetscInt) 4
+Configure options: PETSC_ARCH=libceed --download-hdf5 --download-netcdf --download-pnetcdf --download-lib --download-mpich --download-zlib -with-cmake=1
+-----------------------------------------
+Libraries compiled on 2021-06-08 20:45:12 on Karens-MacBook-Pro.local 
+Machine characteristics: macOS-10.16-x86_64-i386-64bit
+Using PETSc directory: /Users/klstengel/Projects/CU_research_Brown/petsc
+Using PETSc arch: libceed
+-----------------------------------------
+
+Using C compiler: /Users/klstengel/Projects/CU_research_Brown/petsc/libceed/bin/mpicc  -Wall -Wwrite-strings -Wno-strict-aliasing -Wno-unknown-pragmas -fstack-protector -fno-stack-check -Qunused-arguments -fvisibility=hidden -g3 -O0   
+-----------------------------------------
+
+Using include paths: -I/Users/klstengel/Projects/CU_research_Brown/petsc/include -I/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/include -I/opt/X11/include
+-----------------------------------------
+
+Using C linker: /Users/klstengel/Projects/CU_research_Brown/petsc/libceed/bin/mpicc
+Using libraries: -Wl,-rpath,/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -L/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -lpetsc -Wl,-rpath,/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -L/Users/klstengel/Projects/CU_research_Brown/petsc/libceed/lib -Wl,-rpath,/opt/X11/lib -L/opt/X11/lib -llapack -lblas -lnetcdf -lpnetcdf -lhdf5_hl -lhdf5 -lz -lX11 -lc++ -ldl
+-----------------------------------------
+
+
+
+      ##########################################################
+      #                                                        #
+      #                       WARNING!!!                       #
+      #                                                        #
+      #   This code was compiled with a debugging option.      #
+      #   To get timing results run ./configure                #
+      #   using --with-debugging=no, the performance will      #
+      #   be generally two or three times faster.              #
+      #                                                        #
+      ##########################################################
+
+
+WARNING! There are options you set that were not used!
+WARNING! could be spelling mistake, etc!
+There are 4 unused database options. They are:
+Option left: name:-dm_plex_box_faces value: 3,3,3
+Option left: name:-E value: 0.0
+Option left: name:-ksp_monitor_singular_value (no value)
+Option left: name:-nu value: 0.5
